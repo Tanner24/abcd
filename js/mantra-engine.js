@@ -3,10 +3,15 @@
 
     // 1. DYNAMIC BACKGROUND ENGINE
     const bgEngine = document.getElementById('main-bg-engine');
+    const bgBlur = document.getElementById('bg-blur');
+
     window.changeBg = (url, mantraText) => {
         if (bgEngine) {
             bgEngine.style.backgroundImage = `url('${url}')`;
-            bgEngine.style.filter = "brightness(0.35) saturate(1.4)";
+            bgEngine.style.filter = "brightness(0.85) saturate(1.2)";
+        }
+        if (bgBlur) {
+            bgBlur.style.backgroundImage = `url('${url}')`;
         }
         if (mantraText) {
             updatePillars(mantraText);
@@ -16,7 +21,9 @@
     window.resetBg = (defaultMantra) => {
         if (bgEngine) {
             bgEngine.style.backgroundImage = 'none';
-            bgEngine.style.filter = "brightness(0.25)";
+        }
+        if (bgBlur) {
+            bgBlur.style.backgroundImage = 'none';
         }
         updatePillars(defaultMantra || "OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ");
     };

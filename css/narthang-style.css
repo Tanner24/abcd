@@ -31,14 +31,25 @@ body::after {
 @keyframes rain { from { background-position: 0 0; } to { background-position: 0 1000px; } }
 
 /* Dynamic Background Engine */
+#bg-blur {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -3; background-size: cover; background-position: center;
+    filter: blur(50px) brightness(0.3);
+    transition: background-image 1.2s ease-in-out;
+}
+
 #main-bg-engine {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     z-index: -2; background-size: contain; background-repeat: no-repeat;
     background-position: center;
     transition: background-image 1.2s ease-in-out, filter 1s ease;
-    filter: brightness(0.25) saturate(1.2);
-    background-color: #000;
+    filter: brightness(0); /* Default state */
 }
+
+body.hover-active #main-bg-engine {
+    filter: brightness(0.85) saturate(1.2);
+}
+
 
 .bg-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
