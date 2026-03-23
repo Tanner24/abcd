@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truyền Thừa Đức Dongchen Rinpoche - 四语传承</title>
+    <style>
+        :root {
+            --narthang-red: #800000d0; /* Đỏ nâu Narthang đặc trưng */
+            --kadampa-saffron: #26ff00e1; /* Màu vàng cam pháp phục */
+            --wisdom-gold: #FFD700; /* Vàng hoàng kim trí tuệ */
+            --lotus-white: #eae020; /* Trắng kem lụa cổ */
+            --bg-dark: #2B0504; /* Nền tối trầm mặc */
+        }
+
+        body {
+            font-family: 'EB Garamond', 'Segoe UI', serif;
+            background: radial-gradient(circle, #4A0404 0%, var(--bg-dark) 100%);
+            background-attachment: fixed;
+            color: var(--lotus-white);
+            margin: 0; padding: 0; overflow-x: hidden;
+        }
+
+        /* Hiệu ứng Mưa Trí Tuệ (Wisdom Rain) */
+        body::after {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(255, 215, 0, 0.15) 1px, transparent 1px);
+            background-size: 50px 50px; z-index: -1; animation: rain 20s linear infinite;
+        }
+        @keyframes rain { from { background-position: 0 0; } to { background-position: 0 1000px; } }
+
+        .nav-sticky {
+            position: sticky; top: 0;
+            background: linear-gradient(90deg, #300101, var(--narthang-red), #300101);
+            padding: 10px; display: flex; justify-content: center; gap: 10px;
+            z-index: 1000; border-bottom: 2px solid var(--wisdom-gold);
+            flex-wrap: wrap;
+        }
+
+        .flag-btn {
+            background: var(--lotus-white); border: 2px solid transparent; cursor: pointer;
+            padding: 5px 10px; border-radius: 4px; font-weight: bold; transition: 0.3s;
+            display: flex; align-items: center; font-size: 0.85em; color: var(--narthang-red);
+        }
+        .flag-btn.active-btn { border-color: var(--wisdom-gold); transform: scale(1.05); box-shadow: 0 0 15px var(--wisdom-gold); }
+        .flag-btn img { width: 20px; margin-right: 5px; border: 0.5px solid #ccc; }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: var(--wisdom-gold); text-align: center; text-transform: uppercase; font-family: serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .subtitle { text-align: center; color: var(--kadampa-saffron); font-style: italic; margin-bottom: 30px; font-weight: bold; }
+        
+        .lineage-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; margin-top: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #FFFDF0 0%, #F5E6BE 100%);
+            border-radius: 12px; padding: 25px; border: 2px solid var(--wisdom-gold);
+            color: #2E1A11; transition: 0.4s; cursor: pointer; position: relative;
+            overflow: hidden; animation: cardAppear 0.6s ease-out backwards;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 0 25px var(--wisdom-gold); }
+        .card::before { content: "卍"; position: absolute; bottom: -10px; right: -5px; font-size: 4em; color: rgba(139, 0, 0, 0.05); transform: rotate(-20deg); }
+
+        .card-num { color: var(--narthang-red); font-weight: bold; font-size: 0.85em; text-transform: uppercase; margin-bottom: 8px; border-left: 3px solid var(--kadampa-saffron); padding-left: 8px; }
+        .card-name { font-size: 1.3em; margin: 0 0 10px 0; color: #5D0000; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px; }
+        .card-bio { font-size: 0.95em; line-height: 1.6; color: #44261C; font-style: normal; }
+
+        .lang-page { display: none; }
+        .lang-page.active-page { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes cardAppear { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { text-align: center; padding: 40px; color: var(--wisdom-gold); border-top: 2px solid var(--wisdom-gold); margin-top: 50px; font-size: 0.9em; background: rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')"><img src="https://flagcdn.com/w80/vn.png"> VN</button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')"><img src="https://flagcdn.com/w80/us.png"> EN</button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')"><img src="https://flagcdn.com/w80/cn.png"> 中文</button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')"><img src="../FILE TRÌNH DUYỆT/The_National_Flag_of_Tibet.png">བོད་</button>
+    </div>
+
+    <div class="container">
+        <div id="vi" class="lang-page">
+            <h1>Hóa Thân của Ngài H.H 17th Kadam Kyabje Dongchen Chotrul Rinpoche</h1>
+            <p class="subtitle">Dòng Truyền thừa Kadampa Cổ - Tu viện Narthang</p>
+            <div class="lineage-grid" id="grid-vi"></div>
+        </div>
+        <div id="en" class="lang-page">
+            <h1>Incarnations of His Holiness the 17th Kadam Kyabje Dongchen Chotrul Rinpoche</h1>
+            <p class="subtitle">Kadampa Lineage - Narthang Monastery</p>
+            <div class="lineage-grid" id="grid-en"></div>
+   
+					</div>
+        <div id="zh" class="lang-page">
+            <h1>第十七世噶当恰杰洞辰楚朱仁波切之化身</h1>
+            <p class="subtitle">噶当派传承 - 纳塘寺</p>
+            <div class="lineage-grid" id="grid-zh"></div>
+        </div>
+        <div id="bo" class="lang-page">
+            <h1>བཀའ་གདམས་སྐྱབས་རྗེ་གདོང་ཆེན་ཆོས་སྤྲུལ་རིན་པོ་ཆེ་སྐུ་ཕྲེང་བཅུ་བདུན་པའི་སྤྲུལ་སྐུ།</h1>
+            <p class="subtitle">བཀའ་གདམས་པའི་བརྒྱུད་པ། སྣར་ཐང་དགོན་པ།</p>
+            <div class="lineage-grid" id="grid-bo"></div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Narthang Monastery Digital Scroll - Kadampa Lineage</footer>
+
+    <script>
+        const data = [
+            { id: 0, 
+              name: ["Mahasiddha Nagabodhi", "Mahasiddha Nagabodhi", "龙智菩萨", "གྲུབ་ཆེན་ཀླུ་བྱང་།"], 
+              bio: ["Đệ tử tâm truyền của Ngài Long Thọ.", "Heart-disciple of Nagarjuna.", "龙树菩萨之心子。", "སློབ་དཔོན་ཀླུ་སྒྲུབ་ཀྱི་ཐུགས་སྲས།"] },
+            { id: 1, 
+              name: ["Tumton Lodro Drakpa", "Tumton Lodro Drakpa", "敦尊洛珠札巴", "གཏུམ་སྟོན་བློ་གྲོས་གྲགས་པ།"], 
+              bio: [
+    "Khai sơn Tổ sư tu viện Narthang (1106-1166).", "The Founder-Archpatriarch of Narthang Monastery (1106-1166).","纳塘寺开山祖师 (1106-1166)。","སྣར་ཐང་དགོན་པ་ཕྱག་འདེབས་མཁན་པོ་བླ་མ་བརྒྱུད་པ། (༡༡༠༦-༡༡༦༦)།"
+] },
+            { id: 2, 
+              name: ["Gendun Gyatso", "Gendun Gyatso", "根敦嘉措", "དགེ་འདུན་རྒྱ་མཚོ།"], 
+              bio: ["Vị Dongchen đời thứ nhất.", "The 1st Dongchen incarnation.", "第一世洞钦活佛。", "དོང་ཆེན་སྐུ་ཕྲེང་དང་པོ།"] },
+            { id: 3, 
+              name: ["Yonten Gyatso", "Yonten Gyatso", "云丹嘉措", "ཡོན་ཏན་རྒྱ་མཚོ།"], 
+              bio: ["Bậc thầy mật pháp Kadampa.", "Master of Kadampa Tantra.", "噶当密法大师。", "བཀའ་གདམས་གསང་སྔགས་བདག་པོ།"] },
+            { id: 4, 
+              name: ["Gendun Gyatso (II)", "Gendun Gyatso (II)", "根敦嘉措（二世）", "དགེ་འདུན་རྒྱ་མཚོ་སྐུ་ཕྲེང་གཉིས་པ།"], 
+              bio: ["Mở rộng tu viện vùng Kham.", "Expanded monasteries in Kham.", "康区寺院扩建者。", "སྲོང་འཁོར་དགོན་པ་རྒྱ་བསྐྱེད་མཁན།"] },
+            { id: 5, 
+              name: ["Lobsang Teupai Gyalteen", "Lobsang Teupai Gyalteen", "罗桑丹贝坚赞", "བློ་བཟང་བསྟན་པའི་རྒྱལ་མཚན།"], 
+              bio: ["Trì giữ ngọn cờ giáo pháp.", "Upholder of the Dharma victory banner.", "正法胜幢持有者。", "བསྟན་པའི་རྒྱལ་མཚན་འཛིན་པ།"] },
+            { id: 6, 
+              name: ["Lobsang Teupai Nyima", "Lobsang Teupai Nyima", "罗桑丹贝尼玛", "བློ་བཟང་བསྟན་པའི་ཉི་མ།"], 
+              bio: ["Mặt trời giáo pháp vùng Amdo.", "Sun of Dharma in Amdo.", "安多教法之日。", "མདོ་སྨད་བསྟན་པའི་ཉི་མ།"] },
+            { id: 7, 
+              name: ["Ngawang Sonam Gyatso", "Ngawang Sonam Gyatso", "阿旺索南嘉措", "ངག་དབང་བསོད་ནམས་རྒྱ་མཚོ།"], 
+              bio: ["Bậc tự tại truyền thừa.", "Lord of the lineage.", "传承自在者。", "བརྒྱུད་པའི་བསྟན་པ་འཛིན་པ།"] },
+            { id: 8, 
+              name: ["Lobsang Tenpa", "Lobsang Tenpa", "罗桑丹巴", "བློ་བཟང་བསྟན་པ།"], 
+              bio: ["32nd Kumbum Trichen.", "32nd Kumbum Trichen.", "第三十二任塔尔寺法台。", "སྐུ་འབུམ་ཁྲི་པ་སོ་གཉིས་པ།"] },
+            { id: 9, 
+              name: ["Thubten Jigme Gyatso", "Thubten Jigme Gyatso", "图丹晋美嘉措", "ཐུབ་བསྟན་འཇིགས་མེད་རྒྱ་མཚོ།"], 
+              bio: ["44th Kumbum Trichen.", "44th Kumbum Trichen.", "第四十四任塔尔寺法台。", "སྐུ་འབུམ་ཁྲི་པ་ཞེ་བཞི་པ།"] },
+            { id: 10, 
+              name: ["Lobsang Jigme Namgyal", "Lobsang Jigme Namgyal", "罗桑晋美南嘉", "བློ་བཟང་འཇིགས་མེད་རྣམ་རྒྱལ།"], 
+              bio: ["Bậc học giả vĩ đại.", "Great scholar of Sutra & Tantra.", "显密伟大成就者。", "གསུང་འབུམ་མཛད་མཁན།"] },
+            { id: 11, 
+              name: ["Lobsang Thubten Jigme Gyatso", "Lobsang Thubten Jigme Gyatso", "罗桑图丹晋美嘉措", "བློ་བཟང་ཐུབ་བསྟན་འཇིགས་མེད་རྒྱ་མཚོ།"], 
+              bio: ["65th Kumbum Trichen.", "65th Kumbum Trichen.", "第六十五任塔尔寺法台。", "སྐུ་འབུམ་ཁྲི་པ་རེ་ལྔ་པ།"] },
+            { id: 12, 
+              name: ["Lobsang Tenzin Gyatso", "Lobsang Tenzin Gyatso", "罗桑丹增嘉措", "བློ་བཟང་བསྟན་འཛིན་རྒྱ་མཚོ།"], 
+              bio: ["Hộ trì giáo pháp thế kỷ 20.", "Guardian of the 20th century.", "二十世纪教法护持者。", "བསྟན་འཛིན་རྒྱ་མཚོ།"] },
+            { id: 13, 
+              name: ["Lobsang Jamyang Lungtok Gyatso", "Lobsang Jamyang Lungtok Gyatso", "罗桑嘉样隆多嘉措", "བློ་བཟང་འཇམ་དབྱངས་ལུང་རྟོགས་རྒྱ་མཚོ།"], 
+              bio: ["Bảo tồn tinh túy mật pháp.", "Preserver of Tantric essence.", "密法精髓保存者。", "གསང་སྔགས་བསྟན་པའི་མེ་རོ་གསོ་མཁན།"] },
+            { id: 14, 
+              name: ["Lobsang Teupai Nyima (II)", "Lobsang Teupai Nyima (II)", "罗桑丹贝尼玛（二世）", "བློ་བཟང་བསྟན་པའི་ཉི་མ།"], 
+              bio: ["Trao truyền giáo lý Kadam.", "Transmitter of Kadam teachings.", "噶当教法传人。", "བཀའ་གདམས་བསྟན་པའི་རྒྱུན་འཛིན་པ།"] },
+            { id: 15, 
+              name: ["Lobsang Teupai Nyima (III)", "Lobsang Teupai Nyima (III)", "罗桑丹贝尼玛（三世）", "བློ་བཟང་བསྟན་པའི་ཉི་མ།"], 
+              bio: ["Khôi phục truyền thống tu viện.", "Restorer of monastic traditions.", "寺院传统恢复者。", "ཆོས་སྡེ་ཉམས་གསོ་མཛད་མཁན།"] },
+            { id: 16, 
+              name: ["Lobsang Lungtok Tenzin Trinley", "Lobsang Lungtok Tenzin Trinley", "罗桑隆多丹增赤列", "བློ་བཟང་ལུང་རྟོགས་བསྟན་འཛིན་འཕྲིན་ལས།"], 
+              bio: ["Tiền đề cho sự hưng thịnh.", "Foundation for the revival.", "教法中兴之基。", "བསྟན་པ་ཡང་དར་གྱི་རྨང་གཞི།"] },
+            { id: 17, 
+              name: ["Kyabje Dongchen Chotrul Rinpoche", "Kyabje Dongchen Chotrul Rinpoche", "东钦尔尊仁波切", "སྐྱབས་རྗེ་དོང་ཆེན་ཆོས་སྤྲུལ་རིན་པོ་ཆེ།"], 
+              bio: ["Narthang Tripa đương nhiệm.", "The current Narthang Tripa.", "现任纳塘寺座主。", "ད་ལྟའི་སྣར་ཐང་ཁྲི་པ།"] }
+        ];
+
+        function blessCard(el) {
+            el.style.transform = "scale(1.05)";
+            const flash = document.createElement('div');
+            flash.style.position = 'absolute'; flash.style.top = '0'; flash.style.left = '0';
+            flash.style.width = '100%'; flash.style.height = '100%';
+            flash.style.background = 'rgba(218, 165, 32, 0.4)'; flash.style.zIndex = '10';
+            el.appendChild(flash);
+            setTimeout(() => {
+                flash.style.opacity = '0'; el.style.transform = "";
+                setTimeout(() => flash.remove(), 500);
+            }, 200);
+        }
+
+        function fillGrid() {
+            const langs = ['vi', 'en', 'zh', 'bo'];
+            const labels = {
+                vi: { root: "Cội Nguồn", life: "Đời Thứ" },
+                en: { root: "Root Source", life: "Incarnation #" },
+                zh: { root: "传承源头", life: "转世世系 #" },
+                bo: { root: "རྩ་བའི་བརྒྱུད་པ།", life: "སྐུ་ཕྲེང་།" }
+            };
+
+            langs.forEach((lang, langIdx) => {
+                const grid = document.getElementById(`grid-${lang}`);
+                grid.innerHTML = '';
+                data.forEach((item, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.style.animationDelay = `${index * 0.05}s`;
+                    card.onclick = function() { blessCard(this); };
+                    
+                    let titleStr = (item.id === 0) ? labels[lang].root : `${labels[lang].life} ${item.id}`;
+
+                    card.innerHTML = `
+                        <div class="card-num">${titleStr}</div>
+                        <h3 class="card-name">${item.name[langIdx]}</h3>
+                        <div class="card-bio">${item.bio[langIdx]}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+        }
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLang', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            document.getElementById(langId).classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            document.getElementById('btn-' + langId).classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            fillGrid();
+            const saved = localStorage.getItem('selectedLang') || 'vi';
+            setLang(saved);
+        };
+    </script>
+</body>
+</html>
+<style>
+    :root {
+        --wisdom-gold: #FFD700;
+        --wisdom-orange: #FF8C00;
+        --kadam-glow: rgba(255, 215, 0, 0.5);
+    }
+
+    /* 1. Trụ Kinh Luân dọc 20px */
+    .lineage-pillar {
+        position: fixed;
+        top: 0;
+        width: 20px;
+        height: 100vh;
+        z-index: 10000;
+        background: rgba(0, 0, 0, 0.02); 
+        pointer-events: none;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: 1px solid rgba(255, 215, 0, 0.1);
+        border-right: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; }
+
+    .pillar-content {
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        font-family: 'Times New Roman', serif;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        /* Hiệu ứng tia sáng lướt qua trên nền vàng cam */
+        background: linear-gradient(
+            to bottom, 
+            var(--wisdom-orange) 0%, 
+            var(--wisdom-gold) 45%, 
+            #FFFFFF 50%, 
+            var(--wisdom-gold) 55%, 
+            var(--wisdom-orange) 100%
+        );
+        background-size: 100% 300px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        /* Tốc độ 45s thiền định, Pulse hào quang, Shine tia sáng */
+        animation: 
+            mantraScroll 3s linear infinite, 
+            mantraPulse 4s ease-in-out infinite,
+            goldShine 3s linear infinite;
+    }
+
+    @keyframes mantraScroll {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+
+    @keyframes mantraPulse {
+        0%, 100% { filter: drop-shadow(0 0 1px var(--kadam-glow)); opacity: 0.8; }
+        50% { filter: drop-shadow(0 0 6px var(--wisdom-gold)); opacity: 1; }
+    }
+
+    @keyframes goldShine {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 300px; }
+    }
+
+    /* 2. Hiệu ứng Hoa Sen khi chạm (Lotus Touch) */
+    .lotus-touch {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10001;
+        width: 50px;
+        height: 50px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lotus_flower_icon.svg/1200px-Lotus_flower_icon.svg.png') no-repeat center;
+        background-size: contain;
+        filter: sepia(1) saturate(5) hue-rotate(-50deg) drop-shadow(0 0 10px white);
+        animation: lotusFade 1.5s ease-out forwards;
+    }
+
+    @keyframes lotusFade {
+        0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(2.5) rotate(45deg); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+        .lineage-pillar { width: 18px; }
+        .pillar-content { font-size: 11px; letter-spacing: 4px; }
+    }
+</style>
+
+<div class="lineage-pillar pillar-left">
+    <div class="pillar-content" id="rinpoche-l"></div>
+</div>
+
+<div class="lineage-pillar pillar-right">
+    <div class="pillar-content" id="rinpoche-r"></div>
+</div>
+
+<script>
+    // 1. Cấu trúc nội dung mật chú đa ngôn ngữ
+    // Tạng: ༀ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ན་དྷརྨ་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+    // Trung: 唵阿玛哈格热希扎那达玛达扎悉地吽吽
+    const mantraLine = "OM AH MAHA GURU SHRI JANAN DHARMA DHAVAJA SIDDI HUNG HUNG • ༀ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ན་དྷརྨ་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • 唵阿玛哈格热希扎那达玛达扎悉地吽吽 • ";
+    
+    const leftP = document.getElementById('rinpoche-l');
+    const rightP = document.getElementById('rinpoche-r');
+    
+    // Lặp lại chuỗi để tạo dòng chảy vô tận mượt mà ở tốc độ 45s
+    leftP.innerHTML = mantraLine.repeat(15);
+    rightP.innerHTML = mantraLine.repeat(15);
+
+    // 2. Xử lý hiệu ứng Hoa Sen khi chạm
+    function createLotus(e) {
+        const x = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+        const y = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+        
+        if (!x || !y) return;
+
+        const lotus = document.createElement('div');
+        lotus.className = 'lotus-touch';
+        lotus.style.left = x + 'px';
+        lotus.style.top = y + 'px';
+        
+        document.body.appendChild(lotus);
+        
+        setTimeout(() => {
+            lotus.remove();
+        }, 1500);
+    }
+
+    window.addEventListener('mousedown', createLotus);
+    window.addEventListener('touchstart', (e) => {
+        createLotus(e);
+    }, {passive: true});
+</script>
+<style>
+    :root {
+        --wisdom-gold: #fff700;
+        --wisdom-orange: #bfff003e;
+        --kadam-glow: rgba(255, 217, 0, 0.468);
+    }
+
+    /* 1. Trụ Kinh Luân dọc 20px */
+    .lineage-pillar {
+        position: fixed;
+        top: 0;
+        width: 20px;
+        height: 100vh;
+        z-index: 10000;
+        background: rgba(138, 8, 8, 0.24); 
+        pointer-events: none;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: 1px solid rgba(255, 215, 0, 0.1);
+        border-right: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; }
+
+    .pillar-content {
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        font-family: 'Times New Roman', serif;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        /* Hiệu ứng tia sáng lướt qua trên nền vàng cam */
+        background: linear-gradient(
+            to bottom, 
+            var(--wisdom-orange) 0%, 
+            var(--wisdom-gold) 45%, 
+            #FFFFFF 50%, 
+            var(--wisdom-gold) 55%, 
+            var(--wisdom-orange) 100%
+        );
+        background-size: 100% 300px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        /* Tốc độ 45s thiền định, Pulse hào quang, Shine tia sáng */
+        animation: 
+            mantraScroll 68s linear infinite, 
+            mantraPulse 4s ease-in-out infinite,
+            goldShine 3s linear infinite;
+    }
+
+    @keyframes mantraScroll {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+
+    @keyframes mantraPulse {
+        0%, 100% { filter: drop-shadow(0 0 1px var(--kadam-glow)); opacity: 0.8; }
+        50% { filter: drop-shadow(0 0 6px var(--wisdom-gold)); opacity: 1; }
+    }
+
+    @keyframes goldShine {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 300px; }
+    }
+
+    /* 2. Hiệu ứng Hoa Sen khi chạm (Lotus Touch) */
+    .lotus-touch {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10001;
+        width: 50px;
+        height: 50px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lotus_flower_icon.svg/1200px-Lotus_flower_icon.svg.png') no-repeat center;
+        background-size: contain;
+        filter: sepia(1) saturate(5) hue-rotate(-50deg) drop-shadow(0 0 10px white);
+        animation: lotusFade 1.5s ease-out forwards;
+    }
+
+    @keyframes lotusFade {
+        0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(2.5) rotate(45deg); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+        .lineage-pillar { width: 18px; }
+        .pillar-content { font-size: 11px; letter-spacing: 4px; }
+    }
+</style>
+
+<div class="lineage-pillar pillar-left">
+    <div class="pillar-content" id="rinpoche-l"></div>
+</div>
+
+<div class="lineage-pillar pillar-right">
+    <div class="pillar-content" id="rinpoche-r"></div>
+</div>
+
+<script>
+    // 1. Cấu trúc nội dung mật chú đa ngôn ngữ
+    // Tạng: ༀ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ན་དྷརྨ་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+    // Trung: 唵阿玛哈格热希扎那达玛达扎悉地吽吽
+    const mantraLine = "OM AH MAHA GURU SHRI JANAN DHARMA DHAVAJA SIDDI HUNG HUNG • ༀ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ན་དྷརྨ་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • 唵阿玛哈格热希扎那达玛达扎悉地吽吽 • ";
+    
+    const leftP = document.getElementById('rinpoche-l');
+    const rightP = document.getElementById('rinpoche-r');
+    
+    // Lặp lại chuỗi để tạo dòng chảy vô tận mượt mà ở tốc độ 45s
+    leftP.innerHTML = mantraLine.repeat(20);
+    rightP.innerHTML = mantraLine.repeat(20);
+
+    // 2. Xử lý hiệu ứng Hoa Sen khi chạm
+    function createLotus(e) {
+        const x = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+        const y = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+        
+        if (!x || !y) return;
+
+        const lotus = document.createElement('div');
+        lotus.className = 'lotus-touch';
+        lotus.style.left = x + 'px';
+        lotus.style.top = y + 'px';
+        
+        document.body.appendChild(lotus);
+        
+        setTimeout(() => {
+            lotus.remove();
+        }, 1500);
+    }
+
+    window.addEventListener('mousedown', createLotus);
+    window.addEventListener('touchstart', (e) => {
+        createLotus(e);
+    }, {passive: true});
+</script>
+

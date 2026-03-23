@@ -1,0 +1,197 @@
+:root {
+    --narthang-red: #800000d0;
+    --kadampa-saffron: #ff8c00;
+    --wisdom-gold: #FFD700;
+    --narthang-gold: #c5a059;
+    --lotus-white: #fdf5e6;
+    --bg-dark: #0a2417; /* Kadampa Green from source */
+    --narthang-dark: #013220; /* Kadampa Green Dark */
+    --kadam-glow: rgba(255, 215, 0, 0.5);
+    --super-glow: rgba(197, 160, 89, 0.4);
+    --transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: var(--bg-dark);
+    color: var(--lotus-white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Wisdom Rain Effect */
+body::after {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px; z-index: -1; animation: rain 20s linear infinite;
+    pointer-events: none;
+}
+@keyframes rain { from { background-position: 0 0; } to { background-position: 0 1000px; } }
+
+/* Dynamic Background Engine */
+#main-bg-engine {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2; background-size: cover; background-position: center;
+    transition: background-image 1.2s ease-in-out, filter 1s ease;
+    filter: brightness(0.25) saturate(1.2);
+}
+
+.bg-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Mantra Pillars */
+.mantra-pillar {
+    position: fixed; top: 0; width: 25px; height: 100vh;
+    z-index: 10000; pointer-events: none; overflow: hidden;
+    background: rgba(0,0,0,0.05);
+}
+.pillar-left { left: 0; border-right: 1px solid rgba(197, 160, 89, 0.2); }
+.pillar-right { right: 0; border-left: 1px solid rgba(197, 160, 89, 0.2); }
+
+.pillar-content {
+    writing-mode: vertical-rl; white-space: nowrap;
+    font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800;
+    letter-spacing: 5px; text-transform: uppercase;
+    background: linear-gradient(to bottom, #B8860B 0%, var(--wisdom-gold) 45%, #FFFFFF 50%, var(--wisdom-gold) 55%, #B8860B 100%);
+    background-size: 100% 300px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShine 3s linear infinite;
+}
+
+@keyframes goldShine { 0% { background-position: 0 0; } 100% { background-position: 0 300px; } }
+
+/* Lotus Touch Effect */
+.lotus-touch {
+    position: fixed; pointer-events: none; z-index: 10001;
+    width: 45px; height: 45px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lotus_flower_icon.svg/1200px-Lotus_flower_icon.svg.png') no-repeat center;
+    background-size: contain;
+    filter: sepia(1) saturate(5) hue-rotate(-50deg) drop-shadow(0 0 8px #fff);
+    animation: lotusFade 1.5s ease-out forwards;
+}
+@keyframes lotusFade {
+    0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.2) rotate(45deg); opacity: 0; }
+}
+
+/* Standardized Components */
+.container { 
+    max-width: 1400px; margin: 0 auto; padding: 60px 40px; 
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 10;
+}
+
+.bento-item {
+    background: rgba(10, 36, 23, 0.85); border: 1px solid rgba(197, 160, 89, 0.15);
+    padding: 35px; backdrop-filter: blur(20px); transition: 0.8s var(--transition);
+    display: flex; flex-direction: column; justify-content: center; cursor: pointer;
+    text-decoration: none; color: inherit; border-radius: 4px;
+}
+
+.bento-item:hover {
+    opacity: 1 !important; filter: blur(0) grayscale(0) !important;
+    transform: translateY(-12px) scale(1.03) !important;
+    border-color: #fff; background: rgba(197, 160, 89, 0.15);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(197, 160, 89, 0.2);
+    z-index: 20;
+}
+
+.header-box { grid-column: span 4; text-align: center; padding: 60px 20px; }
+.header-box h1 { font-family: 'Playfair Display', serif; font-size: 5.5em; letter-spacing: 12px; margin-bottom: 10px; }
+.header-box .subtitle { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; letter-spacing: 8px; color: var(--wisdom-gold); text-transform: uppercase; }
+
+.footer-box { grid-column: span 4; text-align: center; padding: 40px; margin-top: 40px; gap: 20px; }
+.tibetan-footer { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--wisdom-gold); opacity: 0.8; display: block; margin-bottom: 10px; }
+.footer-text { letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+/* Detail Card Template */
+.mahasiddha-detail-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    border-top: 8px solid var(--wisdom-gold);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 40px auto;
+    max-width: 900px;
+    color: #2c3e50;
+    grid-column: span 4;
+}
+
+.mahasiddha-header {
+    background-color: var(--narthang-red);
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.mahasiddha-content {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.mahasiddha-image {
+    flex: 0 0 350px;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.mahasiddha-info {
+    flex-grow: 1;
+    padding-top: 10px;
+}
+
+.mahasiddha-num {
+    color: var(--wisdom-gold);
+    font-weight: bold;
+    font-size: 1.1em;
+    background: var(--narthang-red);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.mahasiddha-name {
+    font-size: 2em;
+    color: var(--narthang-red);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mahasiddha-bio {
+    font-size: 1.05em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.info-title { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--wisdom-gold); letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase; display: block; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1000px) { 
+    .container { grid-template-columns: 1fr; padding: 40px 20px; } 
+    .bento-item { grid-column: span 1 !important; } 
+    .header-box h1 { font-size: 3em; } 
+    .mahasiddha-content { flex-direction: column; } 
+    .mahasiddha-image { width: 100%; height: 300px; } 
+}

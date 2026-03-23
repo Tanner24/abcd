@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Narthang Kadampa - Bento Heritage | 2026</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --narthang-gold: #c5a059;
+            --narthang-dark: #0a2417; /* Kadampa Green */
+            --narthang-white: #fdf5e6;
+            --super-glow: rgba(197, 160, 89, 0.4);
+            --transition-speed: 1.2s;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { 
+            font-family: 'EB Garamond', serif; 
+            background-color: var(--narthang-dark);
+            color: var(--narthang-white); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* DYNAMIC BACKGROUND ENGINE */
+        #main-bg-engine {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2; background-color: var(--narthang-dark);
+            background-size: cover; background-position: center;
+            transition: background-image var(--transition-speed) ease-in-out;
+            filter: brightness(0.3) saturate(1.2);
+        }
+
+        .bg-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, rgba(10, 36, 23, 0.2) 0%, rgba(5, 18, 12, 0.9) 100%);
+        }
+
+        /* MANTRA PILLARS */
+        .mantra-pillar {
+            position: fixed; top: 0; width: 50px; height: 100vh;
+            z-index: 100; pointer-events: none; overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.02), transparent);
+        }
+        .pillar-left { left: 0; border-right: 1px solid rgba(197, 160, 89, 0.1); }
+        .pillar-right { right: 0; border-left: 1px solid rgba(197, 160, 89, 0.1); }
+        .pillar-content {
+            writing-mode: vertical-rl; white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800;
+            letter-spacing: 10px; color: var(--narthang-gold);
+            text-shadow: 0 0 10px var(--narthang-gold);
+            position: absolute; top: 0;
+        }
+
+        /* BENTO GRID LAYOUT */
+        .container { 
+            max-width: 1100px; margin: 0 auto; padding: 80px 40px; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+            position: relative; z-index: 10;
+        }
+
+        .bento-item {
+            background: rgba(5, 18, 12, 0.65);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex; flex-direction: column; justify-content: center;
+            cursor: pointer;
+        }
+
+        .bento-item:hover {
+            border-color: var(--narthang-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 20px var(--super-glow);
+            background: rgba(197, 160, 89, 0.08);
+        }
+
+        /* Header chiếm 2 cột */
+        .header-box {
+            grid-column: span 2;
+            text-align: left;
+            background: transparent;
+            border: none;
+            justify-content: flex-end;
+        }
+
+        /* Mục 1: Narthang Heritage (Dọc) */
+        .heritage-box {
+            grid-row: span 2;
+            grid-column: 3;
+            text-align: center;
+        }
+
+        /* Mục 2: Đạo sư (Rộng) */
+        .guru-box {
+            grid-column: span 2;
+        }
+
+        /* Mục 3: Kadampa Lineage (Thường) */
+        .lamrim-box {
+            grid-column: span 1;
+        }
+
+        /* Footer chiếm 2 cột cuối */
+        .footer-box {
+            grid-column: span 2;
+            border: none;
+            background: transparent;
+            text-align: left;
+            padding-top: 0;
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; font-size: 5em; 
+            letter-spacing: 12px; text-transform: uppercase; color: #fff;
+            line-height: 1; margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif; color: var(--narthang-gold);
+            font-size: 0.8rem; letter-spacing: 6px; font-weight: 600; text-transform: uppercase;
+        }
+
+        .info-title {
+            font-family: 'Montserrat', sans-serif; font-weight: 800;
+            font-size: 1rem; color: var(--narthang-gold);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p { font-size: 1.1rem; line-height: 1.8; color: #efefef; }
+
+        .tibetan-footer { 
+            font-size: 2.2em; color: #fff; 
+            text-shadow: 0 0 20px var(--narthang-gold);
+            margin-bottom: 15px; display: block;
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1.2s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .header-box, .heritage-box, .guru-box, .lamrim-box, .footer-box { grid-column: span 1; grid-row: span 1; }
+            h1 { font-size: 3.5em; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div id="main-bg-engine"></div>
+    <div class="bg-overlay"></div>
+
+    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
+    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+
+    <div class="container">
+        <header class="bento-item header-box reveal">
+            <h1>Narthang</h1>
+            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
+        </header>
+
+        <div class="bento-item heritage-box reveal" 
+             onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" 
+             onmouseleave="resetBg()">
+            <span class="info-title">Narthang Heritage</span>
+            <p>Chiêm bái hình ảnh phục dựng tu viện Narthang Gompa</p>
+        </div>
+
+        <div class="bento-item guru-box reveal" 
+             onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')" 
+                 onmouseleave="resetBg()">
+            <span class="info-title">H.H 17thKadam Kyabje Dongchen Chotrul Rinpoche</span>
+            <p>Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa</p>
+        </div>
+
+        <div class="bento-item lamrim-box reveal" 
+             onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')" 
+             onmouseleave="resetBg()">
+            <span class="info-title">Dòng truyền thừa Kadampa Cổ </span>
+            <p>Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara</p>
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+            <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+            <div style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
+                OldKadampaVN - NARTHANG.COM • 2026
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            "use strict";
+            const bgEngine = document.getElementById('main-bg-engine');
+            window.changeBg = (url) => {
+                bgEngine.style.backgroundImage = `url('${url}')`;
+                bgEngine.style.filter = "brightness(0.35) saturate(1.4)";
+            };
+            window.resetBg = () => {
+                bgEngine.style.backgroundImage = 'none';
+                bgEngine.style.filter = "brightness(0.3)";
+            };
+
+            // Mantra Pillar
+            const MANTRA = "OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ";
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(50));
+            function animatePillars() {
+                pillars.forEach(p => {
+                    p.pos -= 0.7; 
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                animatePillars();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+        })();
+    </script>
+</body>
+</html>

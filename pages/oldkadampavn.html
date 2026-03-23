@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLD KADAMPA | Narthang 2026</title>
+    <link rel="stylesheet" href="../css/narthang-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        .item.big { grid-column: span 2; grid-row: span 2; border: 1px solid var(--wisdom-gold); }
+        .item.span-2 { grid-column: span 2; }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div id="main-bg-engine"></div>
+    <div class="bg-overlay"></div>
+    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
+    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+    
+    <div class="container" id="main-container">
+        <header class="bento-item header-box reveal">
+            <h1>Old Kadampa VN</h1>
+            <div class="subtitle">NARTHANG KADAMPA DI SẢN</div>
+        </header>
+
+        <div class="bento-item reveal" style="grid-column: span 2; grid-row: span 2; border: 1px solid var(--wisdom-gold);"
+             onclick="location.href='dongchen-rinpoche.html'"
+             onmouseenter="hub('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg', 'Om Ah Maha Guru Shri Janan Dharma Dhvaja Siddi Hung Hung')" 
+             onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
+            <span class="info-title">H.H 17th Kadam Kyabje Dongchen Chotrul Rinpoche</span>
+            <p>Hoá thân thành tựu sự nghiệp của Đức Tumton Lodro Drakpa - Người sáng lập tu viện Narthang Gompa.</p>
+        </div>
+
+        <div class="bento-item reveal" 
+             onclick="location.href='shakyamuni.html'"
+             onmouseenter="hub('https://www.craftyhandnepal.com/7698-thickbox_default/20x16-shakyamuni-buddha-gautam-buddha-thangka-painting.jpg', 'TADYATHA OM MUNI MUNI MAHA MUNIYE SVAHA')" 
+             onmouseleave="res()">
+            <span class="info-title">Shakyamuni</span>
+            <p>Đức Phật Thích Ca Mâu Ni - Cội nguồn đạo sư của mọi giáo pháp.</p>
+        </div>
+
+        <div class="bento-item reveal" 
+             onclick="location.href='avalokitesvara.html'"
+             onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPFAAB18-1.webp?v=1718814329&width=2048', 'OM MANI PADME HUM')" 
+             onmouseleave="res()">
+            <span class="info-title">Avalokitesvara</span>
+            <p>Đức Quán Thế Âm - Lòng từ bi bao trùm khắp tam giới.</p>
+        </div>
+
+        <div class="bento-item reveal" 
+             onclick="location.href='tara.html'"
+             onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPGTBO18-1.webp?v=1718816651&width=2048', 'OM TARE TUTTARE TURE SVAHA')" 
+             onmouseleave="res()">
+            <span class="info-title">Tara</span>
+            <p>Lục Độ Phật Mẫu Tara - Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Trang chủ</a>
+             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+             <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
+        </footer>
+    </div>
+
+    <script src="../js/mantra-engine.js"></script>
+    <script>
+        const cont = document.getElementById('main-container');
+        window.hub = (u, t) => {
+            changeBg(u, t);
+            cont.classList.add('hover-active');
+        };
+        window.res = (d) => {
+            resetBg(d);
+            cont.classList.remove('hover-active');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>84 Đại Thành Tựu Giả - Mahasiddhas Full List</title>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-red: #ff0000;
+            --text-dark: #f0e7e7;
+            --bg-light: #f9e578;
+            --card-white: #d4eeff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: var(--deep-red);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .flag-btn {
+            background: white;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 5px 12px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        /* Hiệu ứng cho nút đang được chọn */
+        .flag-btn.active-btn {
+            border-color: var(--primary-gold);
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            transform: scale(1.05);
+        }
+
+        .flag-btn:hover { transform: scale(1.1); }
+        .flag-btn img { width: 30px; height: 20px; margin-right: 8px; border: 1px solid #eee; }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .lang-page { display: none; }
+        .lang-page.active-page { display: block; animation: fadeIn 0.5s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h1 { color: #800000; text-align: center; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        
+        .mahasiddha-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--card-white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-gold);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .card-num { color: var(--deep-red); font-weight: bold; font-size: 0.85em; text-transform: uppercase; margin-bottom: 8px; }
+        .card-name { font-size: 1.25em; margin: 0 0 10px 0; color: #b22222; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 8px; }
+        .card-bio { font-size: 0.92em; line-height: 1.6; color: #444; font-style: italic; }
+
+        @media (max-width: 992px) { .mahasiddha-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .mahasiddha-grid { grid-template-columns: 1fr; } }
+
+        footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')"><img src="https://flagcdn.com/w80/vn.png"> VN</button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')"><img src="https://flagcdn.com/w80/us.png"> EN</button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')"><img src="https://flagcdn.com/w80/cn.png"> CN</button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"> BO</button>
+    </div>
+
+    <div class="container">
+        <div id="vi" class="lang-page">
+            <h1>84 Đại Thành Tựu Giả</h1>
+            <div class="mahasiddha-grid" id="grid-vi"></div>
+        </div>
+
+        <div id="en" class="lang-page">
+            <h1>The 84 Mahasiddhas</h1>
+            <div class="mahasiddha-grid" id="grid-en"></div>
+        </div>
+
+        <div id="zh" class="lang-page">
+            <h1>八十四大成就者</h1>
+            <div class="mahasiddha-grid" id="grid-zh"></div>
+        </div>
+
+        <div id="bo" class="lang-page">
+            <h1>གྲུབ་ཐོབ་བརྒྱད་ཅུ་རྩ་བཞི།</h1>
+            <div class="mahasiddha-grid" id="grid-bo"></div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Kadampa Lineage Resources - Narthang Monastery</footer>
+
+    <script>
+        const ordinalsVi = ["Thứ Nhất", "Thứ Nhì", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Thứ Tám", "Thứ Chín", "Thứ Mười", "Thứ Mười Một", "Thứ Mười Hai", "Thứ Mười Ba", "Thứ Mười Bốn", "Thứ Mười Lăm", "Thứ Mười Sáu", "Thứ Mười Bảy", "Thứ Mười Tám", "Thứ Mười Chín", "Thứ Hai Mươi", "Thứ Hai Mươi Mốt", "Thứ Hai Mươi Hai", "Thứ Hai Mươi Ba", "Thứ Hai Mươi Tư", "Thứ Hai Mươi Lăm", "Thứ Hai Mươi Sáu", "Thứ Hai Mươi Bảy", "Thứ Hai Mươi Tám", "Thứ Hai Mươi Chín", "Thứ Ba Mươi", "Thứ Ba Mươi Mốt", "Thứ Ba Mươi Hai", "Thứ Ba Mươi Ba", "Thứ Ba Mươi Tư", "Thứ Ba Mươi Lăm", "Thứ Ba Mươi Sáu", "Thứ Ba Mươi Bảy", "Thứ Ba Mươi Tám", "Thứ Ba Mươi Chín", "Thứ Bốn Mươi", "Thứ Bốn Mươi Mốt", "Thứ Bốn Mươi Hai", "Thứ Bốn Mươi Ba", "Thứ Bốn Mươi Tư", "Thứ Bốn Mươi Lăm", "Thứ Bốn Mươi Sáu", "Thứ Bốn Mươi Bảy", "Thứ Bốn Mươi Tám", "Thứ Bốn Mươi Chín", "Thứ Năm Mươi", "Thứ Năm Mươi Mốt", "Thứ Năm Mươi Hai", "Thứ Năm Mươi Ba", "Thứ Năm Mươi Tư", "Thứ Năm Mươi Lăm", "Thứ Năm Mươi Sáu", "Thứ Năm Mươi Bảy", "Thứ Năm Mươi Tám", "Thứ Năm Mươi Chín", "Thứ Sáu Mươi", "Thứ Sáu Mươi Mốt", "Thứ Sáu Mươi Hai", "Thứ Sáu Mươi Ba", "Thứ Sáu Mươi Tư", "Thứ Sáu Mươi Lăm", "Thứ Sáu Mươi Sáu", "Thứ Sáu Mươi Bảy", "Thứ Sáu Mươi Tám", "Thứ Sáu Mươi Chín", "Thứ Bảy Mươi", "Thứ Bảy Mươi Mốt", "Thứ Bảy Mươi Hai", "Thứ Bảy Mươi Ba", "Thứ Bảy Mươi Tư", "Thứ Bảy Mươi Lăm", "Thứ Bảy Mươi Sáu", "Thứ Bảy Mươi Bảy", "Thứ Bảy Mươi Tám", "Thứ Bảy Mươi Chín", "Thứ Tám Mươi", "Thứ Tám Mươi Mốt", "Thứ Tám Mươi Hai", "Thứ Tám Mươi Ba", "Thứ Tám Mươi Tư"];
+
+        const data = [
+            { id: 1, name: ["Luipa", "Luipa", "魯伊巴", "ལུ་ཨི་པ།"], bio: ["Kẻ ăn ruột cá, người đạt đại định.", "The Fish-Gut Eater.", "食魚內臟者。", "ཉ་ལྟོ་བ།"] },
+            { id: 2, name: ["Lilapa", "Lilapa", "里拉巴", "ལི་ལ་པ།"], bio: ["Vị vua hưởng lạc biến lạc thú thành đạo.", "The Royal Hedonist.", "享樂國王。", "སྒེག་པ་བ།"] },
+            { id: 3, name: ["Virupa", "Virupa", "毗瓦巴", "བི་རུ་པ།"], bio: ["Chủ tể các Yoga, người ngăn dòng sông Ấn.", "Lord of Yogis.", "瑜伽士之主。", "བི་རུ་པ།"] },
+            { id: 4, name: ["Dombipa", "Dombipa", "東比巴", "ཌོམྦི་པ།"], bio: ["Cưỡi hổ cầm rắn, bậc thầy tánh không.", "The Tiger-Rider.", "騎虎者。", "ཌོམྦི་པ།"] },
+            { id: 5, name: ["Shavaripa", "Shavaripa", "夏瓦里巴", "ཤa་ཝ་རི་པ།"], bio: ["Người thợ săn đạt giải thoát nhờ tâm từ.", "The Hunter.", "獵人。", "ཤ་ཝ་རི་པ།"] },
+            { id: 6, name: ["Saraha", "Saraha", "薩拉哈", "ས་ར་ཧ།"], bio: ["Mũi tên chân lý, cha đẻ các bản đạo ca.", "The Arrow-Maker.", "製箭者。", "ས་ར་ཧ།"] },
+            { id: 7, name: ["Kankaripa", "Kankaripa", "康卡里巴", "ཀངྐ་རི་པ།"], bio: ["Người góa phụ tu hành bên thi hài vợ.", "The Widower.", "悼念亡妻者。", "ཀངྐ་རི་པ།"] },
+            { id: 8, name: ["Minapa", "Minapa", "米納巴", "མི་ན་པ།"], bio: ["Người sống trong bụng cá suốt 12 năm.", "The Fisherman.", "魚腹生活者。", "མི་ན་པ།"] },
+            { id: 9, name: ["Gorakpa", "Gorakpa", "葛拉克巴", "གོ་རཀྵ་པ།"], bio: ["Người chăn bò đạt bất tử.", "The Immortal Cowherd.", "牧牛者。", "གོ་རཀྵ་པ།"] },
+            { id: 10, name: ["Chaurangipa", "Chaurangipa", "秋朗吉巴", "ཙཽ་རངྒི་པ།"], bio: ["Hoàng tử bị chặt chi nhưng hồi sinh nhờ Yoga.", "The Dismembered Prince.", "肢體重生王子。", "ཙཽ་རངྒི་པ།"] },
+            { id: 11, name: ["Chamaripa", "Chamaripa", "查馬里巴", "ཙa་མ་རི་པ།"], bio: ["Người đóng giày thần thánh.", "The Divine Cobbler.", "神聖鞋匠。", "ཙ་མ་རི་པ།"] },
+            { id: 12, name: ["Khadgapa", "Khadgapa", "卡德加巴", "ཁ་ཌྒa་པ།"], bio: ["Kiếm sĩ của trí tuệ.", "The Master of the Sword.", "智慧劍客。", "ཁ་ཌྒ་པ།"] },
+            { id: 13, name: ["Nagarjuna", "Nagarjuna", "龍樹菩薩", "ཀླུ་སྒྲུབ་ཞབས།"], bio: ["Bậc thầy Trung Quán, lấy kinh từ Long Cung.", "Master of Madhyamaka.", "中觀大師。", "ཀླུ་སྒྲུབ་ཞབས།"] },
+            { id: 14, name: ["Kanhapa", "Kanhapa", "卡納巴", "ཀཱa་ཎ་པ།"], bio: ["Vị thánh bóng đêm đầy quyền năng.", "The Dark Lord.", "黑行者。", "ཀཱa་ཎ་པ།"] },
+            { id: 15, name: ["Aryadeva", "Aryadeva", "聖天菩薩", "འཕགས་པ་ལྷ།"], bio: ["Đệ tử độc nhãn của Ngài Long Thọ.", "The One-Eyed disciple.", "獨眼弟子。", "འཕགས་པ་ལྷ།"] },
+            { id: 16, name: ["Thaganapa", "Thaganapa", "塔加納巴", "ཐa་ག་ན་པ།"], bio: ["Người nói dối chuyển hóa thành chân lý.", "The Master of Lies.", "說謊者。", "ཐa་ག་ན་པ།"] },
+            { id: 17, name: ["Naropa", "Naropa", "那洛巴", "ནཱa་རོ་པ།"], bio: ["Bậc thầy của những truyền thuyết khổ hạnh.", "The Great Scholar.", "那洛巴。", "ནཱ་རོ་པ།"] },
+            { id: 18, name: ["Shalipa", "Shalipa", "夏里巴", "ཤ་ལི་པ།"], bio: ["Người sói đạt giác ngộ.", "The Jackal-Healer.", "狼人。", "ཤ་ལི་པ།"] },
+            { id: 19, name: ["Tilopa", "Tilopa", "帝洛巴", "ཏི་ལོ་པ།"], bio: ["Người giã vừng, sơ tổ dòng Kagyu.", "The Sesame Crusher.", "壓榨芝麻者。", "ཏི་ལོ་པ།"] },
+            { id: 20, name: ["Chatrapa", "Chatrapa", "查查巴", "ཙa་ཏྲa་པ།"], bio: ["Người mang sách đạt trí tuệ.", "The Book-Carrier.", "背書者。", "ཙa་ཏྲ་པ།"] },
+            { id: 21, name: ["Bhadrapa", "Bhadrapa", "巴札巴", "བྷa་དྲ་པ།"], bio: ["Vị Bà-la-môn thanh tịnh.", "The Auspicious Brahmin.", "婆羅門。", "བྷa་དྲa་པ།"] },
+            { id: 22, name: ["Dhikipa", "Dhikipa", "迪吉巴", "དྷི་ཀི་པ།"], bio: ["Người chăn tằm.", "The Silk-Weaver.", "養蠶者。", "དྷི་ཀི་པ།"] },
+            { id: 23, name: ["Ajogi", "Ajogi", "阿若吉", "ཨ་ཛོ་ཀི་པ།"], bio: ["Người lười biếng đạt giác ngộ.", "The Idle One.", "懶惰者。", "ཨa་ཛོ་ཀི་པ།"] },
+            { id: 24, name: ["Kalapa", "Kalapa", "卡拉巴", "ཀa་ལ་པ།"], bio: ["Người đẹp trai thoát khỏi sự phù phiếm.", "The Handsome One.", "美男子。", "ཀa་ལ་པ།"] },
+            { id: 25, name: ["Dombipa", "Dombipa", "東比巴", "ཌོམྦི་པ།"], bio: ["Người gảy đàn nhị.", "The Lute Player.", "彈琴者。", "ཌོམྦི་པ།"] },
+            { id: 26, name: ["Zelapa", "Zelapa", "傑拉巴", "ཛa་ལ་པ།"], bio: ["Người bán bình gốm.", "The Potter.", "陶藝師。", "ཛa་ལ་པ།"] },
+            { id: 27, name: ["Dharmapa", "Dharmapa", "達摩巴", "དྷརྨ་པ།"], bio: ["Người đọc kinh đạt định.", "The Preacher.", "說法者。", "དྷརྨ་པ།"] },
+            { id: 28, name: ["Dhokipa", "Dhokipa", "多吉巴", "དྷོ་ཀི་པ།"], bio: ["Người gánh nước.", "The Water-Carrier.", "挑水夫。", "དྷོ་ཀི་པ།"] },
+            { id: 29, name: ["Nagabodhi", "Nagabodhi", "龍智菩薩", "ཀླུ་བྱང་།"], bio: ["Đệ tử tâm truyền của Ngài Long Thọ.", "Disciple of Nagarjuna.", "龍樹心子。", "ཀླུ་བྱང་།"] },
+            { id: 30, name: ["Saroruha", "Saroruha", "薩若茹哈", "ས་རོ་རུ་ཧ།"], bio: ["Người sinh ra từ hoa sen trí tuệ.", "The Lotus-Born.", "蓮生者。", "ས་རོ་རུ་ཧ།"] },
+            { id: 31, name: ["Shalipa", "Shalipa", "夏里巴", "ཤ་ལི་པ།"], bio: ["Hành giả của những dòng nước trí tuệ.", "The Jackal-Yogi.", "狼人瑜伽士。", "ཤ་ལི་པ།"] },
+            { id: 32, name: ["Chatrapa", "Chatrapa", "查查巴", "ཙa་ཏྲa་པ།"], bio: ["Kẻ ăn mày may mắn.", "The Lucky Beggar.", "幸運乞者。", "ཙa་ཏྲa་པ།"] },
+            { id: 33, name: ["Bhadrapa", "Bhadrapa", "巴札巴", "བྷa་དྲa་པ།"], bio: ["Bậc thầy của sự khiêm nhường.", "The Excluded Brahmin.", "婆羅門。", "བྷa་དྲa་པ།"] },
+            { id: 34, name: ["Kumbharipa", "Kumbharipa", "昆巴里巴", "ཀུམྦྷ་རི་པ།"], bio: ["Người làm bình gốm đạt đại định.", "The Potter.", "陶工。", "ཀུམྦྷ་རི་པ།"] },
+            { id: 35, name: ["Vicanapa", "Vicanapa", "維察納巴", "བི་ཙa་ན་པ།"], bio: ["Người bán trầu đạt giải thoát.", "The Seller of Betel.", "賣檳榔者。", "བི་ཙa་ན་པ།"] },
+            { id: 36, name: ["Kamparipa", "Kamparipa", "坎帕里巴", "ཀམྤa་རི་པ།"], bio: ["Người thợ rèn tâm trí.", "The Blacksmith.", "鐵匠。", "ཀམྤa་རི་པ།"] },
+            { id: 37, name: ["Gubaripa", "Gubaripa", "古巴里巴", "གུ་བ་རི་པ།"], bio: ["Hành giả của những bài ca bí mật.", "The Music Maker.", "樂師。", "གུ་བ་རི་པ།"] },
+            { id: 38, name: ["Shantalipa", "Shantalipa", "仙塔里巴", "ཤཱནྟa་ལི་པ།"], bio: ["Người dệt vải tâm trí tịnh lạc.", "The Weaver of Peace.", "和平編織者。", "ཤཱནྟa་ལི་པ།"] },
+            { id: 39, name: ["Tantipa", "Tantipa", "坦提巴", "ཏནྟི་པ།"], bio: ["Người dệt vải già đạt giác ngộ.", "The Senile Weaver.", "老織工。", "ཏནྟི་པ།"] },
+            { id: 40, name: ["Camaripa", "Camaripa", "查馬里巴", "ཙa་མ་རི་པ།"], bio: ["Hành giả đóng giày tâm linh.", "The Shoemaker.", "鞋匠。", "ཙa་མ་རི་པ།"] },
+            { id: 41, name: ["Khantalipa", "Khantalipa", "康塔里巴", "ཁནྟa་ལི་པ།"], bio: ["Kẻ nghèo dệt vải thành pháp khí.", "The Ragman.", "拾荒者。", "ཁནྟa་ལི་པ།"] },
+            { id: 42, name: ["Dharikapa", "Dharikapa", "達里加巴", "དྷa་རི་ཀ་པ།"], bio: ["Vị vua trở thành nô lệ vì pháp.", "The Slave-King.", "奴隸國王。", "དྷa་རི་ཀa་པ།"] },
+            { id: 43, name: ["Putalipa", "Putalipa", "普塔里巴", "པུ་ཏa་ལི་པ།"], bio: ["Người gánh túi đạt giác ngộ.", "The Mendicant.", "乞者。", "པུ་ཏa་ལི་པ།"] },
+            { id: 44, name: ["Panahapa", "Panahapa", "帕納哈巴", "པ་ན་ཧ་པ།"], bio: ["Người bán ủng đạt tâm bất nhị.", "The Boot-seller.", "賣靴者。", "པ་ན་ཧa་པ།"] },
+            { id: 45, name: ["Kokilipa", "Kokilipa", "科基里巴", "ཀོ་ཀི་ལི་པ།"], bio: ["Vị vua thức tỉnh nhờ tiếng chim.", "The Complacent King.", "自滿國王。", "ཀོ་ཀི་ལི་པ།"] },
+            { id: 46, name: ["Anangapa", "Anangapa", "阿南加巴", "ཨa་ནང་ག་པ།"], bio: ["Vị vua chiến thắng sự kiêu mạn.", "The Handsome King.", "俊美君王。", "ཨa་ནང་ག་པ།"] },
+            { id: 47, name: ["Lakshminkara", "Lakshminkara", "拉芯卡拉", "ལཀྵྨཱིངྐa་རཱ།"], bio: ["Nữ hành giả của đại lạc.", "The Princess of Bliss.", "大樂公主。", "ལཀྵྨཱིངྐa་རཱ།"] },
+            { id: 48, name: ["Samudra", "Samudra", "薩穆卓", "ས་མུ་དྲ།"], bio: ["Người nhặt ngọc từ biển tâm.", "The Pearl Diver.", "採珠者。", "ས་མུ་དྲ།"] },
+            { id: 49, name: ["Vyali", "Vyali", "維亞里", "བྷྱa་ལི་པ།"], bio: ["Bậc thầy luyện kim tìm thấy vàng thực.", "The Alchemist.", "鍊金術士。", "བྷྱa་ལི་པ།"] },
+            { id: 50, name: ["Vyalipa", "Vyalipa", "維亞里巴", "བྷྱa་ལི་པ།"], bio: ["Người chinh phục độc dược.", "The Alchemist Yogi.", "鍊金瑜伽士。", "བྷྱa་ལི་པ།"] },
+            { id: 51, name: ["Kotalipa", "Kotalipa", "科塔里巴", "ཀོ་ཏa་ལི་པ།"], bio: ["Người thợ làm vườn tâm.", "The Mountaineer.", "山地人。", "ཀོ་ཏa་ལི་པ།"] },
+            { id: 52, name: ["Pancapa", "Pancapa", "潘察巴", "པཉྩ་པ།"], bio: ["Hành giả của năm loại trí tuệ.", "The Preacher.", "布道者。", "པཉྩa་པ།"] },
+            { id: 53, name: ["Sakara", "Sakara", "薩卡拉", "ས་ཀa་ར།"], bio: ["Người dạo chơi trong cõi tịnh.", "The Wanderer.", "流浪者。", "ས་ཀa་ར།"] },
+            { id: 54, name: ["Saroruha", "Saroruha", "薩若茹哈", "ས་རོ་རུ་ཧ།"], bio: ["Hành giả hoa sen tâm thức.", "The Lotus-Born Yogi.", "蓮生瑜伽士。", "ས་རོ་རུ་ཧ།"] },
+            { id: 55, name: ["Kanhapa", "Kanhapa", "卡納巴", "ཀཱa་ཎ་པ།"], bio: ["Bậc đạo sư của các bí thuật.", "The Yogi of Darkness.", "黑暗瑜伽士。", "ཀཱa་ཎa་པ།"] },
+            { id: 56, name: ["Aryadeva", "Aryadeva", "聖天菩薩", "འཕགས་པ་ལྷ།"], bio: ["Người chiến thắng các ngoại đạo.", "The Reformer.", "改革者。", "འཕགས་པ་ལྷ།"] },
+            { id: 57, name: ["Thaganapa", "Thaganapa", "塔加納巴", "ཐa་ག་ན་པ།"], bio: ["Người biến ảo tưởng thành thực tại.", "The Master of Illusion.", "幻覺大師。", "ཐaa་ག་ན་པ།"] },
+            { id: 58, name: ["Naropa", "Naropa", "那洛巴", "ནཱa་རོ་པ།"], bio: ["Hành giả đạt đại thủ ấn.", "The Scholar-Saint.", "學問聖者。", "ནཱa་རོ་པ།"] },
+            { id: 59, name: ["Shalipa", "Shalipa", "夏里巴", "ཤ་ལི་པ།"], bio: ["Người chế ngự nỗi sợ hãi.", "The Jackal-Yogi.", "狼人瑜伽士。", "ཤ་ལི་པ།"] },
+            { id: 60, name: ["Tilopa", "Tilopa", "帝洛巴", "ཏི་ལོ་པ།"], bio: ["Hành giả chứng ngộ trực tiếp.", "The Great Ancestor.", "偉大祖師。", "ཏི་ལོ་པ།"] },
+            { id: 61, name: ["Chatrapa", "Chatrapa", "查查巴", "ཙa་ཏྲa་པ།"], bio: ["Hành giả mang lọng tre pháp.", "The Umbrella Carrier.", "持傘者。", "ཙa་ཏྲa་པ།"] },
+            { id: 62, name: ["Bhadrapa", "Bhadrapa", "巴札巴", "བྷa་དྲa་པ།"], bio: ["Bà-la-môn thanh tịnh tâm ý.", "The Excluded Brahmin.", "婆羅門。", "བྷa་དྲa་པ།"] },
+            { id: 63, name: ["Dhikipa", "Dhikipa", "迪吉巴", "དྷི་ཀི་པ།"], bio: ["Người dệt sợi dây giải thoát.", "The Silk Weaver.", "織工。", "དྷི་ཀི་པ།"] },
+            { id: 64, name: ["Ajogi", "Ajogi", "阿若吉", "ཨa་ཛོ་ཀི་པ།"], bio: ["Hành giả buông xả hoàn toàn.", "The Lazy Yogi.", "懶惰瑜伽士。", "ཨa་ཛོ་ཀི་པ།"] },
+            { id: 65, name: ["Kalapa", "Kalapa", "卡拉巴", "ཀa་ལ་པ།"], bio: ["Chuyển hóa vẻ đẹp thành pháp.", "The Handsome One.", "美男子。", "ཀa་ལ་པ།"] },
+            { id: 66, name: ["Dombipa", "Dombipa", "東比巴", "ཌོམྦི་པ།"], bio: ["Hành giả của âm nhạc nội tâm.", "The Musician.", "音樂家。", "ཌོམྦི་པ།"] },
+            { id: 67, name: ["Zelapa", "Zelapa", "傑拉巴", "ཛa་ལ་པ།"], bio: ["Bậc thầy những chiếc bình rỗng tâm.", "The Potter.", "陶藝家。", "ཛa་ལ་པ།"] },
+            { id: 68, name: ["Dharmapa", "Dharmapa", "達摩巴", "དྷརྨa་པ།"], bio: ["Đạo sư của giáo lý chân thực.", "The Preacher.", "布道者。", "དྷརྨa་པ།"] },
+            { id: 69, name: ["Dhokipa", "Dhokipa", "多吉巴", "དྷོ་ཀི་པ།"], bio: ["Người gánh nước đạt đại lạc.", "The Water-Carrier.", "挑水者。", "དྷོ་ཀི་པ།"] },
+            { id: 70, name: ["Nagabodhi", "Nagabodhi", "龍智菩薩", "ཀླུ་བྱང་།"], bio: ["Hành giả chuyển hóa thân kim cương.", "The Heart-Disciple.", "心子。", "ཀླུ་བྱང་།"] },
+            { id: 71, name: ["Saroruha", "Saroruha", "薩若茹哈", "ས་རོ་རུ་ཧ།"], bio: ["Bậc thầy hoa sen của trí tuệ.", "The Lotus-Born Master.", "蓮生大師。", "ས་རོ་རུ་ཧ།"] },
+            { id: 72, name: ["Shalipa", "Shalipa", "夏里巴", "ཤa་ལི་པ།"], bio: ["Hành giả của tiếng rú Jackal.", "The Jackal-Siddha.", "狼人成就者。", "ཤa་ལི་པ།"] },
+            { id: 73, name: ["Chatrapa", "Chatrapa", "查查巴", "ཙa་ཏྲa་པ།"], bio: ["Kẻ ăn mày may mắn chứng đạo.", "The Lucky Beggar.", "幸運乞丐。", "ཙa་ཏྲa་པ།"] },
+            { id: 74, name: ["Bhadrapa", "Bhadrapa", "巴札巴", "བྷa་དྲa་པ།"], bio: ["Bà-la-môn chuyển hóa tự ngã.", "The Transformed Brahmin.", "轉化婆羅門。", "བྷa་དྲa་པ།"] },
+            { id: 75, name: ["Kumbharipa", "Kumbharipa", "昆巴里巴", "ཀུམྦྷa་རི་པ།"], bio: ["Hành giả làm đồ gốm tâm thức.", "The Potter Yogi.", "陶工瑜伽士。", "ཀུམྦྷa་རི་པ།"] },
+            { id: 76, name: ["Vicanapa", "Vicanapa", "維察納巴", "བི་ཙa་ན་པ།"], bio: ["Người bán trầu đạt quả vị.", "The Betel Seller.", "檳榔販子。", "བི་ཙa་ན་པ།"] },
+            { id: 77, name: ["Kamparipa", "Kamparipa", "坎帕里巴", "ཀམྤa་རི་པ།"], bio: ["Hành giả rèn luyện tánh không.", "The Blacksmith Yogi.", "鐵匠瑜伽士。", "ཀམྤa་རི་པ།"] },
+            { id: 78, name: ["Gubaripa", "Gubaripa", "古巴里巴", "གུ་བ་རི་པ།"], bio: ["Bậc thầy âm thanh huyền bí.", "The Musician Yogi.", "音樂瑜伽士。", "གུ་བ་རི་པ།"] },
+            { id: 79, name: ["Shantalipa", "Shantalipa", "仙塔里巴", "ཤཱནྟa་ལི་པ།"], bio: ["Người dệt vải tĩnh lặng.", "The Peaceful Weaver.", "和平織工。", "ཤཱནྟa་ལི་པ།"] },
+            { id: 80, name: ["Tantipa", "Tantipa", "坦提巴", "ཏནྟི་པ།"], bio: ["Hành giả dệt lưới bảo vệ.", "The Protective Weaver.", "守護織工。", "ཏནྟི་པ།"] },
+            { id: 81, name: ["Camaripa", "Camaripa", "查馬里巴", "ཙa་མ་རི་པ།"], bio: ["Bậc thầy đóng giày chân lý.", "The Truthful Shoemaker.", "真理鞋匠。", "ཙaa་མ་རི་པ།"] },
+            { id: 82, name: ["Khantalipa", "Khantalipa", "康塔里巴", "ཁནྟa་ལི་པ།"], bio: ["Người nhặt giẻ vụn đạt trí tuệ.", "The Ragman of Wisdom.", "智慧拾荒者。", "ཁནྟa་ལི་པ།"] },
+            { id: 83, name: ["Dharikapa", "Dharikapa", "達里加巴", "དྷa་རི་ཀa་པ།"], bio: ["Hành giả vương giả giải thoát.", "The Royal Yogi.", "皇家瑜伽士。", "དྷa་རི་ཀa་པ།"] },
+            { id: 84, name: ["Putalipa", "Putalipa", "普塔里巴", "པུ་ཏa་ལི་པ།"], bio: ["Đạo sư mang túi pháp cuối cùng.", "The Last Bag-Carrier.", "最後持袋者。", "པུ་ཏa་ལི་པ།"] }
+        ];
+
+        // Hàm điền dữ liệu vào các Grid
+        function fillGrid() {
+            const langs = ['vi', 'en', 'zh', 'bo'];
+            langs.forEach((lang, langIdx) => {
+                const grid = document.getElementById(`grid-${lang}`);
+                grid.innerHTML = ''; 
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    
+                    let orderDisplay;
+                    if (lang === 'vi') {
+                        orderDisplay = `Đại Thành Tựu Giả ${ordinalsVi[item.id-1]}`;
+                    } else if (lang === 'bo') {
+                        orderDisplay = `གྲུབ་ཐོབ་ #${item.id}`;
+                    } else {
+                        orderDisplay = `Mahasiddha #${item.id}`;
+                    }
+                    
+                    card.innerHTML = `
+                        <div class="card-num">${orderDisplay}</div>
+                        <h3 class="card-name">${item.name[langIdx]}</h3>
+                        <div class="card-bio">${item.bio[langIdx]}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+        }
+
+        // Hàm đổi ngôn ngữ và lưu vào LocalStorage
+        function setLang(langId) {
+            // 1. Lưu lựa chọn vào LocalStorage
+            localStorage.setItem('selectedLanguage', langId);
+
+            // 2. Cập nhật hiển thị các trang
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if(targetPage) targetPage.classList.add('active-page');
+
+            // 3. Cập nhật trạng thái nút bấm (Active style)
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if(activeBtn) activeBtn.classList.add('active-btn');
+
+            // Cuộn lên đầu trang khi đổi ngôn ngữ (tùy chọn)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Chạy khi trang web tải xong
+        window.onload = function() {
+            // Bước 1: Render dữ liệu
+            fillGrid();
+
+            // Bước 2: Kiểm tra ngôn ngữ đã lưu trong LocalStorage
+            const savedLang = localStorage.getItem('selectedLanguage');
+            
+            // Bước 3: Nếu có ngôn ngữ đã lưu thì hiển thị, nếu không mặc định là 'vi'
+            if (savedLang) {
+                setLang(savedLang);
+            } else {
+                setLang('vi');
+            }
+        };
+    </script>
+</body>
+</html>
+<style>
+    :root {
+        --narthang-red: #8B0000;
+        --kadampa-green: #2E8B57;
+        --wisdom-gold: #DAA520;
+        --lotus-white: #fdf5e6;
+    }
+
+    body {
+        background: radial-gradient(circle, #1a0f0a 0%, #050505 100%);
+        background-attachment: fixed;
+    }
+
+    /* Hiệu ứng hạt sáng bay lơ lửng (Mưa Trí Tuệ) */
+    body::after {
+        content: "";
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-image: radial-gradient(rgba(218, 165, 32, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: -1;
+        animation: rain 20s linear infinite;
+    }
+
+    @keyframes rain { from { background-position: 0 0; } to { background-position: 0 1000px; } }
+
+    .nav-sticky {
+        background: linear-gradient(90deg, #4b0000, var(--narthang-red), #4b0000);
+        border-bottom: 2px solid var(--wisdom-gold);
+    }
+
+    /* Thiết kế Thẻ Mahasiddha như một bức họa Thangka */
+    .card {
+        background: linear-gradient(135deg, #ffffff 0%, #f4e4bc 100%);
+        border: 2px solid var(--wisdom-gold);
+        position: relative;
+        overflow: hidden;
+        perspective: 1000px;
+    }
+
+    .card::before {
+        content: "卍";
+        position: absolute; bottom: -10px; right: -5px;
+        font-size: 4em; color: rgba(209, 190, 190, 0.05);
+        transform: rotate(-20deg);
+    }
+
+    /* Hiệu ứng Hào Quang khi Hover */
+    .card:hover {
+        box-shadow: 0 0 25px var(--wisdom-gold);
+        border-color: var(--narthang-red);
+        background: #fff;
+    }
+
+    .card-name {
+        font-family: 'Cinzel', serif;
+        text-shadow: 1px 1px 0px rgba(251, 245, 245, 0.1);
+    }
+
+    /* Hiệu ứng xuất hiện mượt mà cho từng vị */
+    .mahasiddha-grid div {
+        animation: cardAppear 0.8s ease-out backwards;
+    }
+
+    @keyframes cardAppear {
+        from { opacity: 0; transform: scale(0.8) translateY(30px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+</style>
+<script>
+    // Hàm tạo hiệu ứng "Gia trì" khi nhấn vào thẻ
+    function blessCard(element) {
+        element.style.transition = "0.2s";
+        element.style.transform = "scale(1.1) rotateY(10deg)";
+        
+        // Tạo hiệu ứng chớp sáng vàng
+        const flash = document.createElement('div');
+        flash.style.position = 'absolute';
+        flash.style.top = '0'; flash.style.left = '0';
+        flash.style.width = '100%'; flash.style.height = '100%';
+        flash.style.background = 'rgba(218, 165, 32, 0.4)';
+        flash.style.zIndex = '10';
+        element.appendChild(flash);
+
+        setTimeout(() => {
+            flash.style.opacity = '0';
+            element.style.transform = "scale(1) rotateY(0deg)";
+            setTimeout(() => flash.remove(), 500);
+        }, 200);
+    }
+
+    // Nâng cấp hàm fillGrid để thêm sự kiện nhấn
+    function fillGrid() {
+        const langs = ['vi', 'en', 'zh', 'bo'];
+        langs.forEach((lang, langIdx) => {
+            const grid = document.getElementById(`grid-${lang}`);
+            grid.innerHTML = ''; 
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.animationDelay = `${index * 0.05}s`; // Hiệu ứng domino
+                card.onclick = function() { blessCard(this); };
+                
+                let orderDisplay = (lang === 'vi') ? `Bậc Thánh ${ordinalsVi[item.id-1]}` : `Siddha #${item.id}`;
+                
+                card.innerHTML = `
+                    <div class="card-num">${orderDisplay}</div>
+                    <h3 class="card-name">${item.name[langIdx]}</h3>
+                    <div class="card-bio">${item.bio[langIdx]}</div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+    }
+
+		<style>
+    :root {
+        --mani-gold: #FFD700;
+        --mani-silver: #F5F5F5;
+        --lotus-pink: #FFB7C5;
+        --kadam-glow: rgba(255, 215, 0, 0.5);
+    }
+
+    /* 1. Trụ Kinh Luân dọc */
+    .mani-pillar {
+        position: fixed;
+        top: 0;
+        width: 20px;
+        height: 100vh;
+        z-index: 10000;
+        background: rgba(255, 255, 255, 0.02); 
+        pointer-events: none;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: 1px solid rgba(255, 215, 0, 0.1);
+        border-right: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; }
+
+    .pillar-content {
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        font-family: 'Times New Roman', serif;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        /* Hiệu ứng tia sáng lướt qua trên nền vàng bạc */
+        background: linear-gradient(
+            to bottom, 
+            #B8860B 0%, 
+            var(--mani-gold) 45%, 
+            #FFFFFF 50%, 
+            var(--mani-gold) 55%, 
+            #B8860B 100%
+        );
+        background-size: 100% 300px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        /* Chạy 45s (Thiền định), Pulse (Hào quang), Shine (Tia sáng lướt) */
+        animation: 
+            maniScroll 45s linear infinite, 
+            maniPulse 4s ease-in-out infinite,
+            goldShine 3s linear infinite;
+    }
+
+    @keyframes maniScroll {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+
+    @keyframes maniPulse {
+        0%, 100% { filter: drop-shadow(0 0 1px var(--kadam-glow)); opacity: 0.8; }
+        50% { filter: drop-shadow(0 0 6px var(--mani-gold)); opacity: 1; }
+    }
+
+    @keyframes goldShine {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 300px; }
+    }
+
+    /* 2. Hiệu ứng Hoa Sen khi chạm (Lotus Touch) */
+    .lotus-touch {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10001;
+        width: 40px;
+        height: 40px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lotus_flower_icon.svg/1200px-Lotus_flower_icon.svg.png') no-repeat center;
+        background-size: contain;
+        filter: sepia(1) saturate(5) hue-rotate(-50deg); /* Biến hoa sen thành màu hồng vàng */
+        animation: lotusFade 1.5s ease-out forwards;
+    }
+
+    @keyframes lotusFade {
+        0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+        50% { opacity: 0.8; }
+        100% { transform: translate(-50%, -50%) scale(2) rotate(45deg); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+        .mani-pillar { width: 18px; }
+        .pillar-content { font-size: 11px; }
+    }
+</style>
+
+<div class="mani-pillar pillar-left">
+    <div class="pillar-content" id="mani-l">
+        OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • 
+    </div>
+</div>
+
+<div class="mani-pillar pillar-right">
+    <div class="pillar-content" id="mani-r">
+        OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • 
+    </div>
+</div>
+
+<script>
+    const maniText = "OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ";
+    const leftP = document.getElementById('mani-l');
+    const rightP = document.getElementById('mani-r');
+    
+    leftP.innerHTML = maniText.repeat(25);
+    rightP.innerHTML = maniText.repeat(25);
+
+    // Xử lý hiệu ứng Hoa Sen khi chạm/click
+    function createLotus(e) {
+        const x = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+        const y = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+        
+        if (!x || !y) return;
+
+        const lotus = document.createElement('div');
+        lotus.className = 'lotus-touch';
+        lotus.style.left = x + 'px';
+        lotus.style.top = y + 'px';
+        
+        document.body.appendChild(lotus);
+        
+        setTimeout(() => {
+            lotus.remove();
+        }, 1500);
+    }
+
+    window.addEventListener('mousedown', createLotus);
+    window.addEventListener('touchstart', createLotus);
+</script>
+
+	
+
+

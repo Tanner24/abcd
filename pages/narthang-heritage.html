@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narthang Heritage | 2026</title>
+    <link rel="stylesheet" href="../css/narthang-style.css">
+    <style>
+        :root {
+            --narthang-dark: #0a2417; /* Deep Kadampa Green */
+            --narthang-gold: #c5a059;
+            --super-glow: rgba(197, 160, 89, 0.4);
+        }
+        #main-bg-engine {
+            background-image: url('https://kadampavn.com/wp-content/uploads/2026/01/mona.jpg');
+        }
+        .heritage-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            grid-column: span 4;
+            margin-top: 30px;
+        }
+        .heritage-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid var(--narthang-gold);
+            filter: grayscale(0.5);
+            transition: 0.5s;
+        }
+        .heritage-img:hover {
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div id="main-bg-engine"></div>
+    <div class="bg-overlay"></div>
+    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
+    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+    <div class="container">
+        <header class="bento-item header-box reveal">
+            <h1>NARTHANG HERITAGE</h1>
+            <div class="subtitle">Di Sản Tu Viện Narthang Gompa</div>
+        </header>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Lịch Sử Hào Hùng</span>
+            <p>Narthang là một trong những tu viện quan trọng nhất của dòng Kadampa, nổi tiếng với xưởng in kinh đồ sộ và những bậc thầy uyên bác. Di sản của Narthang vẫn còn sống mãi trong tâm thức của các hành giả ngày nay.</p>
+        </div>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Kiến Trúc & Phục Dựng</span>
+            <p>Những hình ảnh phục dựng và tư liệu quý báu về tu viện được lưu giữ nhằm bảo tồn tinh hoa văn hóa Kadampa qua hàng thế kỷ.</p>
+        </div>
+        
+        <div class="heritage-gallery bento-item reveal" style="background: transparent; border: none;">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona1.jpg" class="heritage-img" alt="Narthang 1">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona2.jpg" class="heritage-img" alt="Narthang 2">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona3.jpg" class="heritage-img" alt="Narthang 3">
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Quay về Trang chủ</a>
+             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+             <div class="footer-text">NARTHANG HERITAGE • 2026</div>
+        </footer>
+    </div>
+    <script src="../js/mantra-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tara | Narthang Kadampa 2026</title>
+    <link rel="stylesheet" href="../css/narthang-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body oncontextmenu="return false;">
+    <div id="main-bg-engine"></div>
+    <div class="bg-overlay"></div>
+    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
+    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+    
+    <div class="container">
+        <div class="mahasiddha-detail-card reveal">
+            <div class="mahasiddha-header">Phật Mẫu Kadampa</div>
+            <div class="mahasiddha-content">
+                <div class="mahasiddha-image" style="background-image: url('https://norbulingka.org/cdn/shop/files/THPGTBO18-1.webp?v=1718816651&width=2048');"></div>
+                <div class="mahasiddha-info">
+                    <div class="mahasiddha-num">Lục Độ Phật Mẫu</div>
+                    <h2 class="mahasiddha-name">TARA</h2>
+                    <div class="mahasiddha-bio">
+                        Lục Độ Phật Mẫu Tara - Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm. Ngài là hiện thân cho các hoạt động giác ngộ và sự bảo hộ nhanh chóng.
+                    </div>
+                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: #666; letter-spacing: 2px;">
+                        Mantra: OM TARE TUTTARE TURE SVAHA
+                    </div>
+                </div>
+            </div>
+            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
+                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../js/mantra-engine.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            changeBg('https://norbulingka.org/cdn/shop/files/THPGTBO18-1.webp?v=1718816651&width=2048', 'OM TARE TUTTARE TURE SVAHA');
+        });
+    </script>
+</body>
+</html>
