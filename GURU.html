@@ -1,132 +1,277 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche | 17 Lời Nguyện Kim Cương</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <title>H.H 17th Kadam Kyabje Dongchen Chotrul Rinpoche </title>
 
-    <!-- Core Styles -->
-    <link rel="stylesheet" href="css/narthang-style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --narthang-dark: #0a2417; /* Kadampa Green */
+            --kadampa-green-dark: #013220;
+            /* Xanh Kadampa trầm mặc */
+            --kadampa-green-light: #0a2417;
             --narthang-gold: #c5a059;
-            --super-glow: rgba(197, 160, 89, 0.4);
+            --narthang-white: #fdf5e6;
+            --tara-glow: rgba(0, 255, 204, 0.3);
+            --transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--kadampa-green-dark);
+            color: var(--narthang-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+        }
+
+        /* DYNAMIC BACKGROUND ENGINE - HÌNH ẢNH ĐẠO SƯ NỀN */
         #main-bg-engine {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            transition: background-image var(--transition), filter 1s ease;
+            filter: brightness(0.25) saturate(1.1);
             background-image: url('https://kadampavn.com/wp-content/uploads/2024/12/DSC05888-scaled.jpg');
         }
-    </style>
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
+        }
+
+        /* MANTRA PILLARS - GURU MANTRA (TẠNG, PHẠN, LA TINH) */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 65px;
+            height: 100vh;
+            z-index: 100;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .pillar-left {
+            left: 0;
+            border-right: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .pillar-right {
+            right: 0;
+            border-left: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 12px;
+            color: var(--narthang-gold);
+            text-shadow: 0 0 15px var(--narthang-gold);
+            position: absolute;
+            top: 0;
+            opacity: 0.6;
+        }
+
+        /* BENTO GRID LAYOUT */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* SELECTIVE FOCUS LOGIC */
+        .container.hover-active .item {
+            opacity: 0.15;
+            filter: blur(5px) grayscale(0.5);
+            transform: scale(0.97);
+        }
+
+        .container .item:hover {
+            opacity: 1 !important;
+            filter: blur(0) grayscale(0) !important;
+            transform: translateY(-12px) scale(1.03) !important;
+            border-color: var(--narthang-white);
+            background: rgba(197, 160, 89, 0.15);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.8), 0 0 40px var(--super-glow);
+            z-index: 20;
+        }
+
+        .bento-item {
+            background: rgba(10, 36, 23, 0.85);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 35px;
+            backdrop-filter: blur(20px);
+            transition: all 0.7s var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .header-box {
+            grid-column: span 4;
+            background: transparent !important;
+            border: none !important;
+            padding-bottom: 50px;
+            text-align: left;
+        }
+
+        .big-wish {
+            grid-column: span 2;
+            grid-row: span 2;
+            border: 1.5px solid var(--narthang-gold);
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        .foot-box {
+            grid-column: span 4;
+            border: none !important;
+            background: transparent !important;
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8em;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--narthang-gold);
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #efefef;
+            font-weight: 300;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         @media (max-width: 1100px) {
-            .container { grid-template-columns: 1fr; padding: 40px 20px; }
-            .header-box, .big-wish, .span-2, .bento-item, .foot-box { grid-column: span 1; grid-row: span 1; }
-            h1 { font-size: 3em; }
+            .container {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .header-box,
+            .big-wish,
+            .span-2,
+            .bento-item,
+            .foot-box {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
         }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
 
     <div id="main-bg-engine"></div>
     <div class="bg-overlay"></div>
 
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
+    </div>
 
     <div class="container" id="main-container">
         <header class="bento-item header-box reveal">
-            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
-            <h1>H.H Kyabje Kadama Choje Dongchen Chotrul Rinpoche</h1>
+            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI
+                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
+            <h1>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</h1>
             <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;"></div>
         </header>
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title"></span>
-            <p>Đạo Sư, Chư Phật, Thánh Pháp, Hiền Thánh Tăng Hộ pháp, <br>
-            Tập hội Chư Không Hành nam, nữ<br>
-Trì Minh Vương nam, nữ Mật Thệ Kim Cương Thừa<br
-Nương uy thần lực Tam Bảo với lòng từ và bi<br>
-Vì lợi lạc cho tất cả hành giả nam, nữ trong mạt kiếp<br>
-Sự nghiệp thành tựu quả vị Phật là tối cao Vô Thượng<br>
-Nay ta vì con là những người có lòng sùng mộ<Br>
-Phát lời nguyện rộng lớn mà chư Đạo Sư đã làm<br>
-Những lời này không thốt ra vì hư danh<br>
-Mà là vì sự nghiệp của tất cả chúng sanh<br>
-Ta mang danh hiệu Thành Tựu Sự Nghiệp<br>
-Hành giả điên làm lợi lạc chúng sanh<br>
-Người sẽ phá tan tất cả tà kiến bằng trí tuệ<br>
-Đây là lời nguyện mạnh mẽ chống lại ma vương<br>
-Tam Bảo là tôn quý không gì có thể sánh<br>
-Chư Đạo Sư hiện thân của Đấng Chiến Thắng<br>
-Chư Phật Thập Lực đã vẹn toàn đầy đủ.<br>
-Chư Không Hành, Hộ Pháp, Long Thiên, Tôn Thần<br>
-Xin gia trì ban phước cho lời nguyện mạnh mẽ khiến lợi lạc cho
-tất cả những người chí thành.</p>
-        </div>
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title"></span>
-            <p><div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-    
-            <p>Emaho ! tuyệt vời thay! Hãy lắng nghe những lời chân thật vì lợi lạc chúng
-sanh sau đây.
-Hết thảy đều là sự thật và không hề hư vọng! Vì những lời chân thật này đều
-được xuất phát từ lòng từ bi,vì sự mạnh mẽ chính là những thành tựu mà ta
-đạt được, vì sự thật của nhân quả là vô cùng chân thật và không có gì trên đời
-này cao quý hơn Phật Quả.
-Để xác tín về Giáo Pháp là sự thật tuyệt đối, ta không hề sợ hãi với lòng tin chí
-thành mãnh liệt. Đấng Đạo Sư của ta đã rất từ bi vì ta mà gia trì, vì ta mà khai
-thị những sự thật. Không có gì cao quý hơn việc thực hiện trọng trách giúp đỡ
-chúng sanh bằng lòng từ bi mà ta nhận được từ Đấng Đạo Sư. Ngài đã tin
-tưởng và giao phó cho ta trọng trách lớn lao này.
-Ta nhận thức bổn phận trong đời này mà nghĩ đến Đạo Sư, nghĩ đến Tam Bảo
-đúng như Chư Phật thời quá khứ đã làm. Vì vậy, ta cũng đã phát nguyện mà
-không hề hư dối. Nếu chỉ vì giả dối mà không vì Giáo Pháp làm lợi chúng
-sanh, thời ta sẽ khôngdám phát khởi trong sạch trước Tam Bảo. Đây là lời
-chân thật mà ta đã không màng nghĩ cho bản thân mà thốt ra.
-17 LỜI NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH
-CỦA ĐẠO SƯ H.H KADHAM DONGCHEN RINPOCHE ĐỜI THỨ 17
-Tam Bảo là chân thật, Giáo Pháp là chân thật, nhân quả là chân thật, chân
-lý như mặt trời soi sáng. Xin cho sự thật thanh tịnh này lan rộng khắp để
-làm lợi lạc cho hết thảy chúng sanh hữu tình.
-Ta - H.E Dongchen Rinpoche đời thứ 17 dòng Kadhampa, nhân danh Đấng
-Đạo Sư vĩ đại H.H 25th Kadham Trichen Rinpoche - Đấng mang danh hiệu
-“Đại Thừa Pháp Vương đời thứ 25” đối trước Tam Bảo, Đạo Sư, Hộ Pháp,
-Daka, Dakini phát ra lời nguyện sau. Xin hãy lắng nghe và ban phước cho lời
-nguyện vì lợi lạc chúng sanh mà chứng giám. Tất cả những công đức có
-được xin nguyện dâng lên Đạo Sư Tôn Kính Của Con - Đấng Đại Thừa Pháp
-Vương Kadham Trichen Serkyong Tritul Tôn Quý!
-Này các hành giả, con hãy lắng nghe bằng lòng sùng mộ chí thành nhất của
-con. Ta - H.H 17th Kadham Dongchen Rinpoche người sẽ trở thành Đạo Sư
-của con mà phát lời nguyện rộng lớn, đáp trả lại lòng sùng mộ của con với
-ta. Hãy lắng nghe với lòng sùng mộ dưới sự chứng giám của Tam Bảo, Hộ
-Pháp, Daka, Dakini, Chư Thiên. Ta phát lên lời nguyện chân thật:</p>
-        </p>
-        </div>
+
         <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Nhất</span>
-            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
+            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
+                phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những
+                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Hai</span>
-            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách tốt nhất.</p>
+            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
+                tốt nhất.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Ba</span>
-            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các thiện hạnh làm lợi lạc cho chúng sanh.</p>
+            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
+                thiện hạnh làm lợi lạc cho chúng sanh.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Tư</span>
-            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
+            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
+                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Năm</span>
-            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện tu hành một cách tốt nhất.</p>
+            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
+                tu hành một cách tốt nhất.</p>
         </div>
 
         <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
@@ -136,67 +281,90 @@ Pháp, Daka, Dakini, Chư Thiên. Ta phát lên lời nguyện chân thật:</p>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Bảy</span>
-            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ não và đạt được Phật Quả.</p>
+            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
+                não và đạt được Phật Quả.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Tám</span>
-            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con mà tịnh hóa nó.</p>
+            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
+                mà tịnh hóa nó.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Chín</span>
-            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch thanh tịnh mà nhanh thành tựu Phật Quả.</p>
+            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
+                thanh tịnh mà nhanh thành tựu Phật Quả.</p>
         </div>
 
         <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười</span>
-            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước nguyện.</p>
+            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
+                vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để
+                lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên
+                ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước
+                nguyện.</p>
         </div>
 
         <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Một</span>
-            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
+            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
+                đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền
+                tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ
+                thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi
+                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Hai</span>
-            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
+            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
+                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Ba</span>
-            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
+            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
+                sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy
+                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Bốn</span>
-            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an lạc.</p>
+            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
+                tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà
+                phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an
+                lạc.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Lăm</span>
-            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
+            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
+                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
         </div>
 
         <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Sáu</span>
-            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của họ.</p>
+            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
+                chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của
+                họ.</p>
         </div>
 
         <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
             <span class="info-title">Lời nguyện thứ Mười Bảy</span>
-            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
+            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
+                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
         </div>
 
         <footer class="bento-item foot-box reveal">
-            <span style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">NARTHANG.COM • OLD KADAMPA VN • 2026</p>
+            <span
+                style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
+            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
+                NARTHANG.COM • OLD KADAMPA VN • 2026</p>
         </footer>
     </div>
 
     <script>
-        (function() {
+        (function () {
             "use strict";
             const bg = document.getElementById('main-bg-engine');
             const mLeft = document.getElementById('mantra-l');
@@ -205,7 +373,7 @@ Pháp, Daka, Dakini, Chư Thiên. Ta phát lên lời nguyện chân thật:</p>
 
             // MANTRA: TẠNG, PHẠN (La tinh hóa), LA TINH
             const MANTRA_TEXT = "OM AH MAHA GURU SHRI JANAN DHARMA DVHAJA SIDDI HUNG HUNG • ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱaན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • OM AH MAHA GURU SHRI JANAN DHARMA DVHAJA SIDDI HUNG HUNG • ";
-            
+
             let pos = 0;
             const fullText = MANTRA_TEXT.repeat(40);
             mLeft.textContent = fullText;
@@ -236,7 +404,7 @@ Pháp, Daka, Dakini, Chư Thiên. Ta phát lên lời nguyện chân thật:</p>
             }
 
             const obs = new IntersectionObserver(es => {
-                es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+                es.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
             }, { threshold: 0.1 });
 
             window.onload = () => {
@@ -246,4 +414,5 @@ Pháp, Daka, Dakini, Chư Thiên. Ta phát lên lời nguyện chân thật:</p>
         })();
     </script>
 </body>
+
 </html>
