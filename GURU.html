@@ -7,104 +7,19 @@
     
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="css/narthang-style.css">
+
     <style>
         :root {
-            --kadampa-green-dark: #013220; /* Xanh Kadampa trầm mặc */
-            --kadampa-green-light: #0a2417;
+            --narthang-dark: #0a2417; /* Kadampa Green */
             --narthang-gold: #c5a059;
-            --narthang-white: #fdf5e6;
-            --tara-glow: rgba(0, 255, 204, 0.3);
-            --transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --super-glow: rgba(197, 160, 89, 0.4);
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body { 
-            font-family: 'EB Garamond', serif; 
-            background-color: var(--kadampa-green-dark);
-            color: var(--narthang-white); 
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            user-select: none;
-        }
-
-        /* DYNAMIC BACKGROUND ENGINE - HÌNH ẢNH ĐẠO SƯ NỀN */
         #main-bg-engine {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2; background-size: cover; background-position: center;
-            transition: background-image var(--transition), filter 1s ease;
-            filter: brightness(0.25) saturate(1.1);
             background-image: url('https://kadampavn.com/wp-content/uploads/2024/12/DSC05888-scaled.jpg');
         }
-
-        .bg-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.85) 100%);
-        }
-
-        /* MANTRA PILLARS - GURU MANTRA (TẠNG, PHẠN, LA TINH) */
-        .mantra-pillar {
-            position: fixed; top: 0; width: 65px; height: 100vh; z-index: 100; pointer-events: none; overflow: hidden;
-        }
-        .pillar-left { left: 0; border-right: 1px solid rgba(197, 160, 89, 0.15); }
-        .pillar-right { right: 0; border-left: 1px solid rgba(197, 160, 89, 0.15); }
-        .pillar-content {
-            writing-mode: vertical-rl; white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800;
-            letter-spacing: 12px; color: var(--narthang-gold);
-            text-shadow: 0 0 15px var(--narthang-gold);
-            position: absolute; top: 0;
-            opacity: 0.6;
-        }
-
-        /* BENTO GRID LAYOUT */
-        .container { 
-            max-width: 1400px; margin: 0 auto; padding: 80px 60px; 
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            position: relative; z-index: 10;
-        }
-
-        /* SELECTIVE FOCUS LOGIC */
-        .container.hover-active .item {
-            opacity: 0.15;
-            filter: blur(5px) grayscale(0.5);
-            transform: scale(0.97);
-        }
-
-        .container .item:hover {
-            opacity: 1 !important;
-            filter: blur(0) grayscale(0) !important;
-            transform: translateY(-12px) scale(1.03) !important;
-            border-color: var(--narthang-white);
-            background: rgba(197, 160, 89, 0.15);
-            box-shadow: 0 20px 70px rgba(0,0,0,0.8), 0 0 40px var(--super-glow);
-            z-index: 20;
-        }
-
-        .bento-item {
-            background: rgba(10, 36, 23, 0.85);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 35px;
-            backdrop-filter: blur(20px);
-            transition: all 0.7s var(--transition);
-            display: flex; flex-direction: column; justify-content: center;
-            cursor: pointer;
-        }
-
-        .header-box { grid-column: span 4; background: transparent !important; border: none !important; padding-bottom: 50px; text-align: left; }
-        .big-wish { grid-column: span 2; grid-row: span 2; border: 1.5px solid var(--narthang-gold); }
-        .span-2 { grid-column: span 2; }
-        .foot-box { grid-column: span 4; border: none !important; background: transparent !important; padding-top: 60px; text-align: center; }
-
-        h1 { font-family: 'Playfair Display', serif; font-size: 4.8em; letter-spacing: 10px; text-transform: uppercase; color: #fff; line-height: 1.1; margin-bottom: 20px; }
-        .info-title { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--narthang-gold); letter-spacing: 4px; margin-bottom: 20px; display: block; text-transform: uppercase; }
-        p { font-size: 1.15rem; line-height: 1.8; color: #efefef; font-weight: 300; }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1.5s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
 
         @media (max-width: 1100px) {
             .container { grid-template-columns: 1fr; padding: 40px 20px; }
