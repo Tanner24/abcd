@@ -163,14 +163,14 @@
 
     <script src="../js/mantra-engine.js"></script>
     <script>
-        const cont = document.getElementById('main-container');
+        const body = document.body;
         window.hub = (u, t) => {
             changeBg(u, t);
-            cont.classList.add('hover-active');
+            body.classList.add('hover-active');
         };
         window.res = (d) => {
             resetBg(d);
-            cont.classList.remove('hover-active');
+            body.classList.remove('hover-active');
         };
     </script>
 </body>

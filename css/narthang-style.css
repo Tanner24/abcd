@@ -97,9 +97,22 @@ body::after {
     opacity: 1 !important; filter: blur(0) grayscale(0) !important;
     transform: translateY(-12px) scale(1.03) !important;
     border-color: #fff; background: rgba(197, 160, 89, 0.15);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(197, 160, 89, 0.2);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(197, 160, 89, 0.4);
     z-index: 20;
 }
+
+/* SELECTIVE FOCUS LOGIC */
+body.hover-active .bento-item:not(:hover) {
+    opacity: 0.15;
+    filter: blur(8px) grayscale(0.8);
+    transform: scale(0.95);
+}
+
+body.hover-active .pillar-content {
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 20px var(--wisdom-gold));
+}
+
 
 .header-box { grid-column: span 4; text-align: center; padding: 60px 20px; }
 .header-box h1 { font-family: 'Playfair Display', serif; font-size: 5.5em; letter-spacing: 12px; margin-bottom: 10px; }
