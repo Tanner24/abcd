@@ -25,7 +25,7 @@
         if (bgBlur) {
             bgBlur.style.backgroundImage = 'none';
         }
-        updatePillars(defaultMantra || "OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ");
+        updatePillars(defaultMantra || "OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG • ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • ");
     };
 
     // 2. MANTRA PILLARS
@@ -82,7 +82,7 @@
         window.addEventListener('touchstart', createLotus, { passive: true });
         
         // Initial mantra
-        updatePillars("OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ");
+        updatePillars("OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG • ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • ");
     });
 
 })();
