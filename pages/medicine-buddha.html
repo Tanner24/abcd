@@ -1,45 +1,349 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicine Buddha | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Medicine Buddha - Đức Phật Dược Sư | Super Kadampa</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --med-blue: #0033ff;
+            --med-lapis: #001a66;
+            --med-gold: #d4af37;
+            --med-dark: #04060a;
+            --super-glow: rgba(0, 51, 255, 0.9);
+            --healing-light: rgba(135, 206, 250, 0.4);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--med-dark);
+            background-image: radial-gradient(circle at center, #0a1025 0%, var(--med-dark) 100%);
+            color: #e0e6ed;
+            margin: 0;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #healing-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* MANTRA PILLARS - TRIPLE LANGUAGE */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 65px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(0, 51, 255, 0.05), transparent);
+            border-left: 1px solid rgba(0, 191, 255, 0.2);
+            border-right: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 12px;
+            color: #3399ff;
+            text-shadow: 0 0 15px #0033ff, 0 0 5px #fff;
+            position: absolute;
+            top: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* SUPER GLOW LAPIS FRAME */
+        .buddha-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+            background: rgba(0, 51, 255, 0.1);
+            border: 2px solid var(--med-gold);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+            margin-bottom: 50px;
+            cursor: pointer;
+            transition: all 1s cubic-bezier(0.15, 0.85, 0.35, 1);
+        }
+
+        .buddha-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--med-blue);
+            filter: blur(35px);
+            z-index: -1;
+            opacity: 0.15;
+            transition: 0.8s ease;
+        }
+
+        .buddha-frame:hover {
+            transform: scale(1.04) translateY(-10px);
+            border-color: #fff;
+            box-shadow: 0 0 90px var(--super-glow);
+        }
+
+        .buddha-frame:hover::before {
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            opacity: 0.8;
+            filter: blur(65px);
+            background: radial-gradient(circle, #00bfff 0%, #0033ff 70%);
+        }
+
+        .buddha-image {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            filter: contrast(1.1) brightness(1.05);
+            transition: 0.8s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 3.5em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 0 25px #0033ff, 0 0 45px #001a66;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--med-gold);
+            font-size: 1em;
+            letter-spacing: 7px;
+            margin-bottom: 55px;
+            font-weight: 600;
+        }
+
+        .scripture-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 3px solid var(--med-gold);
+            border-bottom: 3px solid var(--med-gold);
+            padding: 55px;
+            text-align: justify;
+            line-height: 2.3;
+            font-size: 1.25em;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .info-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--med-gold);
+            font-weight: 800;
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .wisdom-quote {
+            font-style: italic;
+            color: #add8e6;
+            background: rgba(0, 51, 255, 0.15);
+            padding: 35px;
+            border-left: 5px solid var(--med-gold);
+            margin: 40px 0;
+            font-size: 1.3em;
+            text-shadow: 0 0 10px rgba(0, 51, 255, 0.5);
+        }
+
+        .lang-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            border: 1px solid var(--med-gold);
+            padding: 2px 6px;
+            margin-right: 10px;
+            color: var(--med-gold);
+            font-weight: 800;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 100px 0;
+            text-align: center;
+            color: var(--med-gold);
+            letter-spacing: 5px;
+        }
+
+        .tibetan-footer {
+            font-size: 2.2em;
+            display: block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 25px #0033ff;
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
-    <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Dược Sư Lưu Ly Quang</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://norbulingka.org/cdn/shop/products/thangka-medicine-buddha-865611.jpg?v=1658402513&width=1445');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đức Dược Sư</div>
-                    <h2 class="mahasiddha-name">MEDICINE BUDDHA</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Dược Sư Lưu Ly Quang Vương Phật - Vị Phật cứu khổ ban vui, chữa lành mọi thân bệnh và tâm bệnh của chúng sinh bằng ánh sáng xanh lưu ly huyền diệu.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: #666; letter-spacing: 2px;">
-                        Mantra: TADYATHA OM BHEKANDZE BHEKANDZE MAHA BHEKANDZE RADZA SAMUNGATE SVAHA
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
-        </div>
+
+    <canvas id="healing-canvas"></canvas>
+
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg"
+                alt="Medicine Buddha Thangka" class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Medicine Buddha</h1>
+        <div class="subtitle reveal">DƯỢC SƯ LƯU LY QUANG VƯƠNG PHẬT</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Chữa Lành Tối Thượng</span>
+                <p><span class="lang-tag">VI</span> <strong>Đức Phật Dược Sư</strong> (Bhaisajyaguru) là hiện thân của
+                    lòng từ bi cứu khổ, chuyên chữa trị những căn bệnh về thân thể và tâm trí. Sắc thân xanh Lưu ly
+                    (Lapis Lazuli) của Ngài tượng trưng cho sự thanh tịnh tuyệt đối, có khả năng tịnh hóa mọi ô nhiễm,
+                    nghiệp chướng và xua tan bóng tối của vô minh - căn nguyên của mọi nỗi đau khổ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng & Pháp Khí</span>
+                <p>Ngài an tọa trên bảo tòa sen, tay trái kết ấn Thiền Định nâng <strong>Bát Thuốc Cam Lồ</strong>, tay
+                    phải kết ấn Thí Nguyện cầm nhành thảo dược <strong>Myrobalan</strong> (Hoàng liên). Đây là biểu
+                    tượng của sự gia trì không giới hạn, giúp chúng sinh đạt được sức khỏe, trường thọ và sự tỉnh thức
+                    tâm linh.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Tinh Hoa Trí Tuệ Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཏ​དྱ་ཐཱ།
+                    ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་མ་ཧཱ་བྷཻ་ཥ་ಜ್ಯེ་རཱ་ཛ་ས་མུདྒ་ཏེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 藥師佛：南无薄伽伐帝。鞞杀社。窭噜薜琉璃。</p>
+                <p><span class="lang-tag">EN</span> The King of Lapis Lazuli Radiance, who heals all mental and physical
+                    ailments.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ།</span>
+            MEDICINE BUDDHA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://norbulingka.org/cdn/shop/products/thangka-medicine-buddha-865611.jpg?v=1658402513&width=1445', 'TADYATHA OM BHEKANDZE BHEKANDZE MAHA BHEKANDZE RADZA SAMUNGATE SVAHA');
-        });
+        (function () {
+            "use strict";
+            const MANTRA = "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA • ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ། • ";
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(40));
+
+            function animatePillars() {
+                pillars.forEach(p => {
+                    p.pos -= 1.0;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const canvas = document.getElementById('healing-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class HealingSpark {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.3 + 0.1;
+                    this.alpha = Math.random() * 0.5;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(135, 206, 250, ${this.alpha})`;
+                    ctx.shadowBlur = 10; ctx.shadowColor = "#0033ff";
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if (el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize(); animatePillars();
+                for (let i = 0; i < 80; i++) particles.push(new HealingSpark());
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(render);
+                }
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
+
 </html>

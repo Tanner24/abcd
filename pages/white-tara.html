@@ -1,45 +1,395 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Tara | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>White Tara - Biểu Tượng Của Sự Trường Thọ & Trí Tuệ</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --tara-white: #ffffff;
+            --tara-pink: #fff5f7;
+            --tara-gold: #d4af37;
+            --tara-dark: #090b0e;
+            --super-glow: rgba(255, 255, 255, 0.9);
+            --aura-subtle: rgba(255, 182, 193, 0.3);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--tara-dark);
+            background-image: radial-gradient(circle at center, #151b23 0%, var(--tara-dark) 100%);
+            color: #eceff4;
+            margin: 0;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #healing-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* MANTRA PILLARS */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+            border-left: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 12px;
+            color: var(--tara-white);
+            text-shadow: 0 0 15px #fff;
+            position: absolute;
+            top: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* SUPER GLOW FRAME (TARA STYLE) */
+        .tara-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            margin-bottom: 50px;
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.15, 0.85, 0.35, 1);
+        }
+
+        .tara-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            filter: blur(30px);
+            z-index: -1;
+            opacity: 0.1;
+            transition: 0.8s ease;
+        }
+
+        .tara-frame:hover {
+            transform: scale(1.04) translateY(-8px);
+            border-color: #fff;
+            box-shadow: 0 0 80px var(--super-glow);
+        }
+
+        .tara-frame:hover::before {
+            top: -45px;
+            left: -45px;
+            right: -45px;
+            bottom: -45px;
+            opacity: 0.7;
+            filter: blur(55px);
+            background: radial-gradient(circle, #fff 0%, var(--tara-pink) 70%);
+        }
+
+        .tara-image {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            transition: 0.8s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 3.8em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 0 25px var(--super-glow);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--tara-gold);
+            font-size: 1em;
+            letter-spacing: 8px;
+            margin-bottom: 55px;
+            font-weight: 600;
+        }
+
+        /* NỘI DUNG CHI TIẾT */
+        .scripture-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 3px solid var(--tara-white);
+            border-bottom: 3px solid var(--tara-white);
+            padding: 55px;
+            text-align: justify;
+            line-height: 2.2;
+            font-size: 1.2em;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .info-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--tara-gold);
+            font-weight: 800;
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .wisdom-quote {
+            font-style: italic;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-left: 5px solid var(--tara-gold);
+            margin: 40px 0;
+            font-size: 1.3em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .icon-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .lang-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            border: 1px solid var(--tara-gold);
+            padding: 2px 6px;
+            margin-right: 10px;
+            vertical-align: middle;
+            color: var(--tara-gold);
+        }
+
+        .speed-panel {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--tara-gold);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .speed-panel label {
+            font-size: 9px;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 100px 0;
+            text-align: center;
+            color: var(--tara-gold);
+            letter-spacing: 5px;
+        }
+
+        .tibetan-footer {
+            font-size: 2.2em;
+            display: block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 20px #fff;
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
+
+    <canvas id="healing-canvas"></canvas>
+
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
+    </div>
+
+    <div class="speed-panel">
+        <label>HEALING FREQUENCY</label>
+        <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1.2">
+    </div>
+
     <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Bạch Độ Phật Mẫu</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://norbulingka.org/cdn/shop/files/THPWTBL18-1.webp?v=1718816911&width=2048');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đức Bạch Độ Mẫu</div>
-                    <h2 class="mahasiddha-name">WHITE TARA</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Bạch Độ Mẫu Tara - Hiện thân của sự trường thọ và trí tuệ tịnh hóa. Với bảy con mắt trí tuệ, Ngài quan sát và ban gia trì cho tất cả chúng sinh hữu duyên.
+        <div class="tara-frame reveal">
+            <img src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg" alt="White Tara" class="tara-image">
+        </div>
+
+        <h1 class="reveal">Sitatara</h1>
+        <div class="subtitle reveal">BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Nguồn Gốc & Thệ Nguyện</span>
+                <p><span class="lang-tag">VI</span> <strong>White Tara</strong> (Sitatara), hay Drolkar trong tiếng
+                    Tạng, kết tinh từ giọt lệ bi mẫn của Đức Quán Thế Âm. Ngài hiện thân để xua tan nỗi sợ hãi về cái
+                    chết bất đắc kỳ tử và ban tặng thọ mạng trường tồn để hành giả đủ thời gian tu tập đạt đến giác ngộ.
+                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học (Iconography)</span>
+                <p>Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu <strong>Thất
+                        Nhãn</strong> (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.</p>
+                <div class="icon-section">
+                    <div>
+                        <strong style="color:var(--tara-gold)">Hoa Sen Utpala:</strong> Tay trái cầm nhành sen trắng với
+                        3 đóa, đại diện cho chư Phật ba đời (Quá khứ, Hiện tại, Vị lai).
                     </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: #666; letter-spacing: 2px;">
-                        Mantra: OM TARE TUTTARE TURE MAMA AYUH PUNYA JNANA PUSTIM KURU SVAHA
+                    <div>
+                        <strong style="color:var(--tara-gold)">Thí Nguyện Ấn:</strong> Tay phải kết ấn ban phước, sẵn
+                        sàng cứu độ mọi tâm hồn tìm đến sự nương tựa.
                     </div>
                 </div>
             </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
+                <p><span class="lang-tag">BO</span> སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)</p>
+                <p><span class="lang-tag">ZH</span> 白度母：具有七隻眼，故又稱七眼佛母。</p>
+                <p><span class="lang-tag">EN</span> The Mother of Longevity, who purifies the obstacles of life and
+                    health.</p>
+            </div>
         </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།</span>
+            WHITE TARA • OLD KADAMPA VN • 2026
+        </footer>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://norbulingka.org/cdn/shop/files/THPWTBL18-1.webp?v=1718816911&width=2048', 'OM TARE TUTTARE TURE MAMA AYUH PUNYA JNANA PUSTIM KURU SVAHA');
-        });
+        (function () {
+            "use strict";
+            const MANTRA = "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA • ";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(50));
+
+            function animatePillars() {
+                const speed = parseFloat(speedSlider.value);
+                pillars.forEach(p => {
+                    p.pos -= speed;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const canvas = document.getElementById('healing-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class HealingLight {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2;
+                    this.speedY = Math.random() * 0.2 + 0.1;
+                    this.alpha = Math.random() * 0.4;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if (el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize(); animatePillars();
+                for (let i = 0; i < 60; i++) particles.push(new HealingLight());
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(render);
+                }
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
+
 </html>

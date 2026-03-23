@@ -1,45 +1,411 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambhala | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hoàng Thần Tài Bồ Tát - Zambhala | Super Kadampa</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --zam-gold: #ffd700;
+            --zam-amber: #ffbf00;
+            --zam-orange: #ff8c00;
+            --zam-dark: #0a0804;
+            --zam-ivory: #fdf5e6;
+            --super-glow: rgba(255, 215, 0, 0.85);
+            --wealth-aura: rgba(255, 191, 0, 0.4);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--zam-dark);
+            background-image: radial-gradient(circle at center, #1a150a 0%, var(--zam-dark) 100%);
+            color: var(--zam-ivory);
+            margin: 0;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #wealth-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 1. MANTRA PILLARS (NĂNG LƯỢNG TĂNG TRƯỞNG) */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 55px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(255, 215, 0, 0.05), transparent);
+            border-left: 1px solid rgba(255, 215, 0, 0.15);
+            border-right: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 12px;
+            color: var(--zam-gold);
+            text-shadow: 0 0 12px var(--zam-gold), 0 0 5px var(--zam-amber);
+            position: absolute;
+            top: 0;
+        }
+
+        /* 2. GOLDEN GLOW THANGKA FRAME */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .zam-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+            background: #2a2010;
+            border: 4px double var(--zam-gold);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            margin-bottom: 50px;
+            cursor: crosshair;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* Hào quang Zambhala */
+        .zam-frame::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            right: -25px;
+            bottom: -25px;
+            background: radial-gradient(circle, var(--zam-gold) 0%, var(--zam-orange) 50%, transparent 80%);
+            filter: blur(45px);
+            z-index: -1;
+            opacity: 0.4;
+            transition: all 1s ease;
+            animation: auraBreath 4s infinite ease-in-out;
+        }
+
+        @keyframes auraBreath {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+                filter: blur(45px);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+                filter: blur(55px);
+            }
+        }
+
+        .zam-frame:hover {
+            transform: scale(1.03) translateY(-8px);
+            border-color: #fff;
+            box-shadow: 0 0 80px var(--super-glow);
+        }
+
+        .zam-frame:hover::before {
+            top: -60px;
+            left: -60px;
+            right: -60px;
+            bottom: -60px;
+            opacity: 0.9;
+            filter: blur(60px);
+            background: radial-gradient(circle, #fff 0%, var(--zam-gold) 50%, var(--zam-orange) 100%);
+        }
+
+        .zam-image {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            filter: brightness(1.08) contrast(1.05);
+            transition: 1s ease;
+        }
+
+        /* 3. TYPOGRAPHY (GLOW STYLE) */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--zam-gold);
+            font-size: 3.5em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px var(--super-glow), 0 0 40px var(--zam-orange);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--zam-gold);
+            font-size: 1em;
+            letter-spacing: 6px;
+            margin-bottom: 55px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .scripture-box {
+            background: rgba(10, 8, 4, 0.96);
+            border-top: 2px solid var(--zam-gold);
+            border-bottom: 2px solid var(--zam-gold);
+            padding: 55px;
+            text-align: justify;
+            line-height: 2.3;
+            font-size: 1.25em;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .wisdom-quote {
+            font-style: italic;
+            color: #fff;
+            background: rgba(255, 215, 0, 0.05);
+            padding: 35px;
+            border-left: 5px solid var(--zam-gold);
+            margin: 40px 0;
+            font-size: 1.3em;
+            text-shadow: 0 0 10px var(--zam-gold);
+        }
+
+        .icon-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .lang-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            border: 1px solid var(--zam-gold);
+            padding: 2px 8px;
+            margin-right: 12px;
+            vertical-align: middle;
+            font-weight: 800;
+            color: var(--zam-gold);
+        }
+
+        /* 4. SPEED CONTROL */
+        .speed-panel {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            background: rgba(10, 8, 4, 0.9);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--zam-gold);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 0 15px var(--zam-amber);
+        }
+
+        .speed-panel label {
+            font-size: 9px;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s ease cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 100px 0;
+            text-align: center;
+            color: var(--zam-gold);
+            letter-spacing: 5px;
+            font-family: 'Montserrat', sans-serif;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 60px;
+        }
+
+        .tibetan-footer {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 15px var(--zam-gold);
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
+
+    <canvas id="wealth-canvas"></canvas>
+
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
+    </div>
+
+    <div class="speed-panel">
+        <label>ZAMBHALA FLOW</label>
+        <input type="range" id="speed-slider" min="0.1" max="8" step="0.1" value="1.8">
+    </div>
+
     <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Hoàng Thần Tài Zambhala</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://norbulingka.org/cdn/shop/files/THPYZGO18-1.webp?v=1718816568&width=2048');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đức Yellow Zambhala</div>
-                    <h2 class="mahasiddha-name">ZAMBHALA</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Hoàng Thần Tài Zambhala - Vị Hộ pháp ban trải sự thịnh vượng và sung túc. Ngài giúp chúng sanh thoát khỏi nghèo khó để có đủ điều kiện thuận lợi trên con đường tu tập và hành thiện.
+        <div class="zam-frame reveal">
+            <img src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg" alt="Yellow Zambhala"
+                class="zam-image">
+        </div>
+
+        <h1 class="reveal">Zambhala Serpo</h1>
+        <div class="subtitle reveal">HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">Hộ Pháp Tài Bảo - Đấng Tăng
+                    Trưởng</span>
+                <p><span class="lang-tag">VI</span> <strong>Hoàng Thần Tài Bồ Tát</strong> (Yellow Zambhala) là một
+                    trong 5 vị Thần Tài (Ngũ Bộ Zambhala) tối cao của Mật giáo Tây Tạng. Ngài là hóa thân của Bồ Tát
+                    Quán Thế Âm, hiện thân để cứu độ chúng sinh khỏi cảnh nghèo khó, thiếu thốn, ban tặng thọ mạng, trí
+                    tuệ và sự sung túc để hành giả có đủ điều kiện tu học và hành thiện tích đức. Sự thực hành về Ngài
+                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM ZAMBHALA DZALENDRAYE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học Zambhala</span>
+                <p>Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
+                    mãn.</p>
+                <div class="icon-section">
+                    <div>
+                        <strong style="color:var(--zam-gold)">Chuột Nakula:</strong> Tay trái Ngài ôm một con chuột báu
+                        (con mang), đang nhả ra vô số ngọc báu, biểu thị kho tàng không bao giờ vơi.
                     </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: OM ZAMBHALA JALENDRAYE SVAHA
+                    <div>
+                        <strong style="color:var(--zam-gold)">Quả Bijapura:</strong> Tay phải Ngài cầm quả chanh (hoặc
+                        quả báu) tượng trưng cho hạt giống công đức đã viên mãn.
                     </div>
                 </div>
             </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
+                <p><span class="lang-tag">BO</span> ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.</p>
+                <p><span class="lang-tag">EN</span> The Bodhisattva of Wealth, whose golden light purifies the karma of
+                    poverty and grants boundless merit.</p>
+            </div>
         </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</span>
+            HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
+        </footer>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://norbulingka.org/cdn/shop/files/THPYZGO18-1.webp?v=1719206263&width=2048', 'OM ZAMBHALA DZALENDRAYE SVAHA');
-        });
+        (function () {
+            "use strict";
+            const MANTRA = "OM ZAMBHALA DZALENDRAYE SVAHA • ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ། • 嗡藏巴拉乍冷乍耶梭哈 • ";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(50));
+
+            function animatePillars() {
+                const speed = parseFloat(speedSlider.value) || 1.8;
+                pillars.forEach(p => {
+                    p.pos -= speed;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const canvas = document.getElementById('wealth-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class WealthRain {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.4 + 0.1;
+                    this.alpha = Math.random() * 0.5;
+                }
+                update() {
+                    this.y += this.speedY; // Rơi xuống (Mưa)
+                    if (this.y > canvas.height + 10) this.y = -10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(255, 215, 0, ${this.alpha})`;
+                    ctx.shadowBlur = 10; ctx.shadowColor = "#ffbf00";
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if (el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize(); animatePillars();
+                for (let i = 0; i < 80; i++) particles.push(new WealthRain());
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(render);
+                }
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
+
 </html>

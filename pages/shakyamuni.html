@@ -1,45 +1,403 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shakyamuni | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+                   img-src 'self' https://rinchenshop.com data:; 
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+                   font-src https://fonts.gstatic.com; 
+                   script-src 'self' 'unsafe-inline';">
+
+    <title>Thích Ca Mâu Ni Phật - Old Kadampa VN</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --shakya-gold: #ffb300;
+            --shakya-amber: #ff8f00;
+            --atisha-dark: #0a0805;
+            --atisha-ivory: #fdf5e6;
+            --glow-aura: rgba(255, 179, 0, 0.7);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--atisha-dark);
+            background-image: radial-gradient(circle at center, rgba(82, 46, 0, 0.3) 0%, var(--atisha-dark) 100%);
+            color: var(--atisha-ivory);
+            margin: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* 1. KINH LUÂN BIÊN (MANTRA PILLARS) */
+        .lineage-pillar {
+            position: fixed;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(255, 179, 0, 0.1), transparent);
+            border-left: 1px solid rgba(255, 179, 0, 0.2);
+            border-right: 1px solid rgba(255, 179, 0, 0.2);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 15px;
+            color: var(--shakya-gold);
+            text-shadow: 0 0 15px var(--shakya-amber), 0 0 5px #000;
+            position: absolute;
+            top: 0;
+            will-change: transform;
+        }
+
+        /* 2. KHUNG TÔN TƯỢNG SUPER GLOW */
+        .main-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .buddha-frame {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            background: #2a1a05;
+            border: 5px double var(--shakya-gold);
+            box-shadow: 0 0 50px rgba(255, 143, 0, 0.5), 0 30px 100px rgba(0, 0, 0, 0.9);
+            margin-bottom: 50px;
+            cursor: zoom-in;
+        }
+
+        .buddha-frame::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            right: -40px;
+            bottom: -40px;
+            background: radial-gradient(circle, var(--shakya-gold) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .buddha-image {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            filter: brightness(1.05) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.15, 0, 0.15, 1);
+        }
+
+        /* ZOOM QUÁN CHIẾU */
+        .buddha-frame.active-zoom .buddha-image {
+            transform: scale(2.2);
+            cursor: zoom-out;
+        }
+
+        /* 3. TYPOGRAPHY: THÍCH CA MÂU NI PHẬT */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--shakya-gold);
+            font-size: 3.5em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            /* Đa tầng shadow tạo hiệu ứng ánh sáng hoàng kim */
+            text-shadow: 0 0 20px rgba(255, 179, 0, 0.8),
+                0 0 40px var(--shakya-amber),
+                2px 2px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        .mantra-display {
+            font-size: 1.7em;
+            color: var(--atisha-ivory);
+            margin-bottom: 40px;
+            font-style: italic;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px var(--shakya-gold);
+        }
+
+        .scripture-box {
+            background: rgba(10, 8, 5, 0.96);
+            padding: 50px;
+            border-left: 3px solid var(--shakya-gold);
+            border-right: 3px solid var(--shakya-gold);
+            text-align: justify;
+            line-height: 2.2;
+            margin: 50px 0;
+            font-size: 1.25em;
+            box-shadow: inset 0 0 40px rgba(255, 179, 0, 0.2);
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 179, 0, 0.05);
+            padding: 30px;
+            border: 1px solid rgba(255, 179, 0, 0.2);
+            transition: all 0.5s;
+        }
+
+        .card:hover {
+            background: rgba(255, 179, 0, 0.15);
+            border-color: var(--shakya-gold);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--shakya-gold);
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .speed-control {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            background: #2a1a05;
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 1px solid var(--shakya-gold);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .speed-control label {
+            color: var(--shakya-gold);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        /* FOOTER OLD KADAMPA VN */
+        footer {
+            padding: 80px 20px;
+            border-top: 1px solid var(--shakya-gold);
+            margin-top: 80px;
+            color: var(--shakya-gold);
+            text-shadow: 0 0 15px var(--shakya-amber);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .tibetan-footer {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: block;
+            text-shadow: 0 0 10px var(--shakya-gold);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
-    <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Đức Phật Thích Ca Mâu Ni</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://www.craftyhandnepal.com/7698-thickbox_default/20x16-shakyamuni-buddha-gautam-buddha-thangka-painting.jpg');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Bậc Đạo Sư Gốc</div>
-                    <h2 class="mahasiddha-name">SHAKYAMUNI</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Phật Thích Ca Mâu Ni - Bậc Đạo sư của nhân loại trong thời đại này. Ngài đã thị hiện sự giác ngộ dưới cội bồ đề và chuyển bánh xe pháp để dẫn dắt chúng sanh thoát khỏi sinh tử luân hồi.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: TADYATHA OM MUNI MUNI MAHA MUNIYE SVAHA
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
-        </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="lineage-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="lineage-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
+    <div class="speed-control">
+        <label>BÁNH XE PHÁP LUÂN</label>
+        <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1.2">
+    </div>
+
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg" alt="Shakyamuni Buddha"
+                    class="buddha-image">
+            </div>
+
+            <h1 class="reveal">Thích Ca Mâu Ni Phật - Shakyamuni</h1>
+            <div class="mantra-display reveal">OM MUNI MUNI MAHA MUNAYE SVAHA</div>
+
+            <div class="scripture-box reveal">
+                "Thân ta như bọt nước, tâm ta như huyễn thuật. Thế gian không có gì là thật, hãy tìm về bản tâm thanh
+                tịnh vốn có. Khi mọi dính mắc tan biến, trí tuệ tự nhiên chiếu soi rạng ngời."
+                <br><br><strong style="color: var(--shakya-gold)">— Lời Dạy Từ Đức Thế Tôn</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Giáo Pháp Giải Thoát</h3>
+                    <p>Con đường Trung Đạo giúp chúng sinh lìa bỏ hai cực đoan, trực nhận bản chất vô ngã và vô thường
+                        của vạn pháp.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Ấn Chuyển Pháp Luân</h3>
+                    <p>Ngài đã chuyển vận bánh xe Chánh Pháp, đem ánh sáng chân lý xua tan bóng tối vô minh cho khắp
+                        muôn loài hữu tình.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Trí Tuệ Toàn Giác</h3>
+                    <p>Bậc Chánh Biến Tri thấu suốt mọi duyên sinh trong tam giới, là bến bờ nương tựa tối thượng cho
+                        những ai tìm cầu giác ngộ.</p>
+                </div>
+            </div>
+
+            <footer>
+                <span class="tibetan-footer">ཨོཾ་མུ་ནི་མུ་ནི་མ་ཧཱ་མུ་ནི་ཡེ་སྭཱ་ཧཱ།</span>
+                Om Muni Muni Maha Munaye Svaha • Old Kadampa VN
+            </footer>
+        </main>
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://www.craftyhandnepal.com/7698-thickbox_default/20x16-shakyamuni-buddha-gautam-buddha-thangka-painting.jpg', 'TADYATHA OM MUNI MUNI MAHA MUNIYE SVAHA');
-        });
+        (function () {
+            "use strict";
+            const MANTRA_TEXT = "OM MUNI MUNI MAHA MUNAYE SVAHA • ཨོཾ་མུ་ནི་མུ་ནི་མ་ཧཱ་མུ་ནི་ཡེ་སྭཱ་ཧཱ། • OLD KADAMPA VN • ";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [
+                { el: document.getElementById('mantra-l'), pos: 0 },
+                { el: document.getElementById('mantra-r'), pos: 0 }
+            ];
+
+            function initMantra() {
+                const repeatCount = Math.ceil(window.innerHeight / 20) + 30;
+                const fullText = MANTRA_TEXT.repeat(repeatCount);
+                pillars.forEach(p => { p.el.textContent = fullText; });
+            }
+
+            function updateMantra() {
+                const speed = parseFloat(speedSlider.value);
+                pillars.forEach(p => {
+                    p.pos -= speed;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) { p.pos = 0; }
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(updateMantra);
+            }
+
+            // HÀO QUANG BỒ ĐỀ
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class WisdomParticle {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.2;
+                    this.speedY = Math.random() * 0.2 + 0.1;
+                    this.alpha = Math.random() * 0.6;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.save(); ctx.beginPath();
+                    ctx.fillStyle = `rgba(255, 179, 0, ${this.alpha})`;
+                    ctx.shadowBlur = 12; ctx.shadowColor = "#ffb300";
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            // ZOOM QUÁN CHIẾU
+            const frame = document.querySelector('.buddha-frame');
+            const img = document.querySelector('.buddha-image');
+            frame.addEventListener('click', (e) => {
+                frame.classList.toggle('active-zoom');
+                if (frame.classList.contains('active-zoom')) {
+                    const rect = frame.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    img.style.transformOrigin = `${x}% ${y}%`;
+                } else {
+                    img.style.transformOrigin = 'center';
+                }
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(render);
+            }
+
+            window.addEventListener('resize', () => { resize(); initMantra(); });
+            window.onload = () => {
+                resize(); initMantra(); updateMantra();
+                for (let i = 0; i < 90; i++) particles.push(new WisdomParticle());
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                render();
+            };
+        })();
     </script>
 </body>
+
 </html>

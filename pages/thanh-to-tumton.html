@@ -1,60 +1,423 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tumton Lodro Drakpa | Narthang Kadampa 2026</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Core Styles -->
-    <link rel="stylesheet" href="../css/narthang-style.css">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 
-    <!-- Page Specific Theme -->
+    <title>Super Kadampa - Tumton Looro Drakpa</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-            --narthang-dark: #3a1a0a; /* Deep Wood */
-            --narthang-gold: #c5a059; /* Traditional Gold */
-            --super-glow: rgba(197, 160, 89, 0.4);
+            --narthang-ink: #0d0b0a;
+            /* Đen mun sâu thẳm */
+            --narthang-red: #cc0000;
+            /* Đỏ rực rỡ của hào quang */
+            --atisha-gold: #ffcc66;
+            /* Vàng kim sáng */
+            --paper-aged: #e0d7c6;
+            --super-glow: rgba(204, 0, 0, 0.6);
         }
-        #main-bg-engine {
-            background-image: url('https://kadampavn.com/wp-content/uploads/2026/01/tumton-lodro-drakpa.jpg');
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--narthang-ink);
+            background-image: radial-gradient(circle at center, rgba(139, 0, 0, 0.2) 0%, var(--narthang-ink) 100%);
+            color: var(--paper-aged);
+            margin: 0;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* 1. KINH LUÂN BIÊN PHÁT SÁNG */
+        .lineage-pillar {
+            position: fixed;
+            top: 0;
+            width: 45px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(204, 0, 0, 0.1), transparent);
+            border-left: 1px solid rgba(255, 204, 102, 0.15);
+            border-right: 1px solid rgba(255, 204, 102, 0.15);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 12px;
+            color: var(--atisha-gold);
+            text-shadow: 0 0 15px var(--narthang-red);
+            animation: mantraScroll 70s linear infinite;
+        }
+
+        @keyframes mantraScroll {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-50%);
+            }
+        }
+
+        /* 2. SUPER GLOW FRAME (TARA EDITION STYLE) */
+        .main-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .buddha-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+            background: #200000;
+            border: 4px double var(--atisha-gold);
+            /* Đa tầng bóng đổ để tạo hiệu ứng phát sáng rực rỡ */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1),
+                0 0 40px rgba(204, 0, 0, 0.3),
+                0 0 60px rgba(204, 0, 0, 0.2);
+            margin-bottom: 50px;
+            transition: all 0.8s cubic-bezier(0.15, 0.85, 0.35, 1);
+            cursor: zoom-in;
+            overflow: visible;
+            /* Cho phép hào quang lan ra ngoài */
+        }
+
+        /* Lớp hào quang nền - Đây là chìa khóa của Tara Edition */
+        .buddha-frame::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            background: var(--narthang-red);
+            filter: blur(50px);
+            z-index: -1;
+            opacity: 0.1;
+            /* Sáng nhẹ mặc định */
+            transition: all 1s ease;
+        }
+
+        .buddha-frame:hover {
+            transform: scale(1.03) translateY(-15px);
+            box-shadow: 0 0 50px var(--super-glow), 0 0 100px rgba(204, 0, 0, 0.3);
+            border-color: #fff;
+        }
+
+        .buddha-frame:hover::before {
+            opacity: 0.8;
+            /* Phát rực rỡ khi rê chuột */
+            filter: blur(70px);
+            transform: scale(1.2);
+        }
+
+        .buddha-image {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            filter: sepia(20%) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.15, 0, 0.15, 1);
+            transform-origin: center;
+        }
+
+        /* 3. CHẾ ĐỘ QUÁN CHIẾU (MEDITATION MODE) */
+        .buddha-frame.meditation-mode .buddha-image {
+            transform: scale(2.2);
+            filter: sepia(0%) contrast(1.2) brightness(1.1);
+        }
+
+        .buddha-frame.meditation-mode::before {
+            animation: superPulse 2s infinite ease-in-out;
+            opacity: 0.9;
+        }
+
+        @keyframes superPulse {
+            0% {
+                filter: blur(50px);
+                transform: scale(1.1);
+            }
+
+            50% {
+                filter: blur(80px);
+                transform: scale(1.3);
+                opacity: 1;
+            }
+
+            100% {
+                filter: blur(50px);
+                transform: scale(1.1);
+            }
+        }
+
+        /* 4. TYPOGRAPHY */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--atisha-gold);
+            font-size: 3.5em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px var(--narthang-red);
+        }
+
+        .mantra-display {
+            font-size: 1.6em;
+            color: var(--atisha-gold);
+            margin-bottom: 40px;
+            font-style: italic;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px var(--narthang-red);
+        }
+
+        .scripture-box {
+            background: rgba(13, 11, 10, 0.9);
+            padding: 50px;
+            border-top: 2px solid var(--narthang-red);
+            border-bottom: 2px solid var(--narthang-red);
+            text-align: justify;
+            line-height: 2.2;
+            margin: 50px 0;
+            font-size: 1.3em;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(204, 0, 0, 0.1);
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(204, 0, 0, 0.05);
+            padding: 30px;
+            border: 1px solid rgba(255, 204, 102, 0.15);
+            text-align: left;
+            transition: all 0.5s;
+        }
+
+        .card:hover {
+            background: rgba(204, 0, 0, 0.15);
+            border-color: var(--atisha-gold);
+            box-shadow: 0 0 20px rgba(204, 0, 0, 0.2);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1.2s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .speed-control {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            background: rgba(32, 0, 0, 0.9);
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: 1px solid var(--atisha-gold);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 0 20px var(--narthang-red);
+        }
+
+        .speed-control label {
+            color: var(--atisha-gold);
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        footer {
+            padding: 80px 20px;
+            opacity: 0.7;
+            font-size: 0.9em;
+            letter-spacing: 6px;
+            border-top: 1px solid var(--narthang-red);
+            margin-top: 80px;
+            color: var(--atisha-gold);
         }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
 
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
 
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-
-    <div class="container">
-        <header class="bento-item header-box reveal">
-            <h1>TUMTON LODRO DRAKPA</h1>
-            <div class="subtitle">Thánh Tổ Sáng Lập Tu Viện Narthang</div>
-        </header>
-
-        <div class="bento-item reveal">
-            <span class="info-title">Thế Hệ Vàng Kadampa</span>
-            <p>Thánh Tổ Tumton Lodro Drakpa là đệ tử lừng danh của Ngài Potowa, một trong ba người con tâm yếu của Tổ sư Atisha. Ngài là người đã xây dựng tu viện Narthang, nơi lưu giữ niềm tự hào của dòng truyền thừa Kadampa.</p>
-        </div>
-
-        <div class="bento-item reveal">
-            <span class="info-title">Di Sản</span>
-            <p>Tu viện Narthang dưới sự dẫn dắt của Ngài đã trở thành trung tâm in ấn kinh điển và tu học lớn nhất của Kadampa thời bấy giờ.</p>
-        </div>
-
-        <footer class="bento-item footer-box reveal">
-             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Quay về Trang chủ</a>
-             <span class="tibetan-footer">ཨོཾ་ཨཱཿ་ཧཱུྃ།</span>
-             <div class="footer-text">NARTHANG KADAMPA HERITAGE • 2026</div>
-        </footer>
+    <div class="lineage-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="lineage-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <!-- Core Engine -->
-    <script src="../js/mantra-engine.js"></script>
+    <div class="speed-control">
+        <label>MANTRA VELOCITY</label>
+        <input type="range" id="speed-slider" min="0.1" max="4" step="0.1" value="1.0">
+    </div>
+
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
+                    alt="Narthang Monastery" class="buddha-image">
+            </div>
+
+            <h1 class="reveal">Tumton Lodro Drakpa</h1>
+            <div class="mantra-display reveal">OM MANI PADME HUM</div>
+
+            <div class="scripture-box reveal">
+                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
+                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
+                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Khai Sáng Narthang</h3>
+                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Mộc Bản Vĩ Đại</h3>
+                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Hạnh Nguyện Kadampa</h3>
+                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.</p>
+                </div>
+            </div>
+
+            <footer>NARTHANG HERITAGE • OM MANI PADME HUM</footer>
+        </main>
+    </div>
+
+    <script>
+        (function () {
+            "use strict";
+            const MANTRA_TEXT = "OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ • ";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [document.getElementById('mantra-l'), document.getElementById('mantra-r')];
+
+            function initMantra() {
+                const content = MANTRA_TEXT.repeat(60);
+                pillars.forEach(p => { p.textContent = content; });
+            }
+
+            speedSlider.addEventListener('input', () => {
+                const duration = 120 / parseFloat(speedSlider.value);
+                pillars.forEach(p => { p.style.animationDuration = `${duration}s`; });
+            });
+
+            // ZOOM LOGIC
+            const frame = document.querySelector('.buddha-frame');
+            const img = document.querySelector('.buddha-image');
+            frame.addEventListener('click', (e) => {
+                frame.classList.toggle('meditation-mode');
+                if (frame.classList.contains('meditation-mode')) {
+                    const rect = frame.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    img.style.transformOrigin = `${x}% ${y}%`;
+                } else {
+                    img.style.transformOrigin = 'center';
+                }
+            });
+
+            // PARTICLES
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class GlowParticle {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.2 + 0.1;
+                    this.alpha = Math.random() * 0.6;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.save(); ctx.beginPath();
+                    ctx.fillStyle = `rgba(255, 204, 102, ${this.alpha})`;
+                    ctx.shadowBlur = 15; ctx.shadowColor = "#cc0000";
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(render);
+            }
+
+            window.addEventListener('resize', resize);
+            window.onload = () => {
+                resize(); initMantra();
+                for (let i = 0; i < 80; i++) particles.push(new GlowParticle());
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                render();
+            };
+        })();
+    </script>
 </body>
+
 </html>

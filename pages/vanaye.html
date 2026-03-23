@@ -1,45 +1,348 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanaye | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vaishravana - Tài Bảo Thiên Vương | Super Kadampa</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --vai-gold: #ffcc00;
+            --vai-lion: #ffffff;
+            --vai-armor: #b8860b;
+            --vai-dark: #080705;
+            --super-glow: rgba(255, 204, 0, 0.9);
+            --wealth-sparkle: rgba(255, 215, 0, 0.6);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--vai-dark);
+            background-image: radial-gradient(circle at center, #1a140a 0%, var(--vai-dark) 100%);
+            color: #f5f0e1;
+            margin: 0;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #gold-dust {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* MANTRA PILLARS */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 60px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.05), transparent);
+            border-left: 1px solid rgba(255, 204, 0, 0.2);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+            border-left: none;
+            border-right: 1px solid rgba(255, 204, 0, 0.2);
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 12px;
+            color: var(--vai-gold);
+            text-shadow: 0 0 15px #ffcc00, 0 0 5px #fff;
+            position: absolute;
+            top: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* SUPER GLOW WARRIOR FRAME */
+        .vaishravana-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+            background: rgba(184, 134, 11, 0.1);
+            border: 3px solid var(--vai-gold);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            margin-bottom: 50px;
+            cursor: pointer;
+            transition: all 1s cubic-bezier(0.15, 0.85, 0.35, 1);
+        }
+
+        .vaishravana-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--vai-gold);
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.1;
+            transition: 0.8s ease;
+        }
+
+        .vaishravana-frame:hover {
+            transform: scale(1.04) translateY(-10px);
+            box-shadow: 0 0 100px var(--super-glow);
+        }
+
+        .vaishravana-frame:hover::before {
+            top: -60px;
+            left: -60px;
+            right: -60px;
+            bottom: -60px;
+            opacity: 0.8;
+            filter: blur(75px);
+            background: radial-gradient(circle, #fff 0%, var(--vai-gold) 70%);
+        }
+
+        .thangka-image {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            filter: contrast(1.1);
+            transition: 0.8s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 3.2em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 30px var(--vai-gold);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--vai-gold);
+            font-size: 1em;
+            letter-spacing: 7px;
+            margin-bottom: 55px;
+            font-weight: 600;
+        }
+
+        .scripture-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 3px solid var(--vai-gold);
+            border-bottom: 3px solid var(--vai-gold);
+            padding: 55px;
+            text-align: justify;
+            line-height: 2.3;
+            font-size: 1.25em;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+        }
+
+        .info-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--vai-gold);
+            font-weight: 800;
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .wisdom-quote {
+            font-style: italic;
+            color: #fff;
+            background: rgba(255, 204, 0, 0.1);
+            padding: 35px;
+            border-left: 5px solid var(--vai-gold);
+            margin: 40px 0;
+            font-size: 1.3em;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        .lang-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            border: 1px solid var(--vai-gold);
+            padding: 2px 6px;
+            margin-right: 10px;
+            color: var(--vai-gold);
+            font-weight: 800;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 100px 0;
+            text-align: center;
+            color: var(--vai-gold);
+            letter-spacing: 5px;
+        }
+
+        .tibetan-footer {
+            font-size: 2.2em;
+            display: block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 25px var(--vai-gold);
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
-    <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Hộ Pháp Tài Bảo</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vaisravana_-_Tibetan_Thangka.jpg/800px-Vaisravana_-_Tibetan_Thangka.jpg');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đức Vanaye</div>
-                    <h2 class="mahasiddha-name">VANAYE</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Vanaye - Tài Bảo Thiên Vương, vị hộ pháp bảo hộ kho tàng và sự hưng thịnh của giáo pháp. Ngài đảm bảo các điều kiện thuận lợi cho sự tu tập viên mãn của các hành giả.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: OM VAISRAVANA YE SVAHA
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
-        </div>
+
+    <canvas id="gold-dust"></canvas>
+
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
+    <div class="container">
+        <div class="vaishravana-frame reveal">
+            <img src="https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg" alt="Vaishravana Thangka"
+                class="thangka-image">
+        </div>
+
+        <h1 class="reveal">Vaishravana</h1>
+        <div class="subtitle reveal">TÀI BẢO THIÊN VƯƠNG • ĐA VĂN THIÊN VƯƠNG</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Hộ Pháp Phương Bắc & Chủ Tẻ Tài Bảo</span>
+                <p><span class="lang-tag">VI</span> <strong>Tài Bảo Thiên Vương</strong> (Vaishravana) là vị Thiên vương
+                    tối cao trong Tứ Đại Thiên Vương, cư ngụ tại phương Bắc của núi Tu Di. Ngài không chỉ ban tặng sự
+                    sung túc về vật chất mà còn là vị Hộ Pháp mạnh mẽ bảo vệ giáo pháp. Ngài hiện thân để tịnh hóa lòng
+                    tham, chuyển hóa sự nghèo khó thành sự giàu có của công đức và trí tuệ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM VAISHRAVANA YE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Uy Dũng</span>
+                <p>Ngài cưỡi trên mình <strong>Sư Tử Tuyết</strong> trắng, biểu thị sức mạnh vượt lên trên mọi nỗi sợ
+                    hãi. Tay phải Ngài trì giữ <strong>Cờ Chiến Thắng</strong> – biểu tượng cho sự thành tựu mọi tâm
+                    nguyện thiện lành. Tay trái ôm <strong>Chuột Nakula</strong> nhả ngọc, tượng trưng cho dòng chảy
+                    thịnh vượng không bao giờ cạn.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> རྣམ་ཐོས་སྲས། (Namthöse - Vaishravana)</p>
+                <p><span class="lang-tag">ZH</span> 多聞天王：護 trì thế giới, ban tặng tài bảo hữu lậu và vô lậu.</p>
+                <p><span class="lang-tag">EN</span> The Great King of the North, Protector of the Dharma and Grantor of
+                    Prosperity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ།</span>
+            VAISHRAVANA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vaisravana_-_Tibetan_Thangka.jpg/800px-Vaisravana_-_Tibetan_Thangka.jpg', 'OM VAISRAVANA YE SVAHA');
-        });
+        (function () {
+            "use strict";
+            const MANTRA = "OM VAISHRAVANA YE SVAHA • ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ། • ";
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(40));
+
+            function animatePillars() {
+                pillars.forEach(p => {
+                    p.pos -= 0.9;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const canvas = document.getElementById('gold-dust');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class GoldSpark {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.3 + 0.1;
+                    this.alpha = Math.random() * 0.6;
+                }
+                update() {
+                    this.y += this.speedY; // Mưa vàng rơi xuống
+                    if (this.y > canvas.height + 10) this.y = -10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(255, 215, 0, ${this.alpha})`;
+                    ctx.shadowBlur = 10; ctx.shadowColor = "#ffcc00";
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if (el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize(); animatePillars();
+                for (let i = 0; i < 85; i++) particles.push(new GoldSpark());
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(render);
+                }
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
+
 </html>

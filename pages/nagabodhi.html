@@ -1,45 +1,355 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nagabodhi | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Đại Thành Tựu Giả Long Trí - Super Kadampa</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --nag-red: #5d1a1a;
+            --nag-gold: #c5a059;
+            --nag-dark: #070605;
+            --nag-ivory: #d1c4b2;
+            --super-glow: rgba(197, 160, 89, 0.8);
+            --aura-active: rgba(255, 215, 0, 0.6);
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: var(--nag-dark);
+            background-image: radial-gradient(circle at center, rgba(93, 26, 26, 0.3) 0%, var(--nag-dark) 100%);
+            color: var(--nag-ivory);
+            margin: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 1. MANTRA PILLARS */
+        .mantra-pillar {
+            position: fixed;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(93, 26, 26, 0.2), transparent);
+            border-left: 1px solid rgba(197, 160, 89, 0.2);
+            border-right: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .pillar-left {
+            left: 0;
+        }
+
+        .pillar-right {
+            right: 0;
+        }
+
+        .pillar-content {
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: 15px;
+            color: var(--nag-gold);
+            text-shadow: 0 0 15px var(--nag-gold);
+            position: absolute;
+            top: 0;
+        }
+
+        /* 2. SUPER GLOW THANGKA FRAME */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .buddha-frame {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            background: var(--nag-red);
+            border: 4px double var(--nag-gold);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            margin-bottom: 50px;
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        /* Hào quang ẩn dưới khung ảnh */
+        .buddha-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--nag-gold);
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.2;
+            transition: all 0.8s ease;
+        }
+
+        /* Hiệu ứng khi TRỎ CHUỘT (Hover) */
+        .buddha-frame:hover {
+            transform: scale(1.03) translateY(-10px);
+            border-color: #fff;
+            box-shadow: 0 0 60px var(--super-glow);
+        }
+
+        .buddha-frame:hover::before {
+            top: -40px;
+            left: -40px;
+            right: -40px;
+            bottom: -40px;
+            opacity: 0.7;
+            filter: blur(60px);
+            background: radial-gradient(circle, #fff 0%, var(--nag-gold) 50%, var(--nag-red) 100%);
+        }
+
+        .buddha-image {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            filter: sepia(10%) contrast(1.1);
+            transition: all 0.8s ease;
+        }
+
+        .buddha-frame:hover .buddha-image {
+            filter: sepia(0%) contrast(1.2) brightness(1.1);
+        }
+
+        /* 3. TYPOGRAPHY */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--nag-gold);
+            font-size: 3.2em;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 15px var(--super-glow), 2px 2px 4px #000;
+        }
+
+        .kadampa-sub {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--nag-gold);
+            font-size: 1.1em;
+            letter-spacing: 8px;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        .scripture-box {
+            background: rgba(10, 8, 6, 0.95);
+            border-top: 2px solid var(--nag-gold);
+            border-bottom: 2px solid var(--nag-gold);
+            padding: 50px;
+            text-align: justify;
+            line-height: 2.2;
+            font-size: 1.25em;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .wisdom-quote {
+            font-style: italic;
+            color: var(--nag-gold);
+            background: rgba(93, 26, 26, 0.15);
+            padding: 35px;
+            border-left: 4px solid var(--nag-gold);
+            margin: 35px 0;
+            font-size: 1.2em;
+        }
+
+        /* 4. SPEED CONTROL */
+        .speed-panel {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            background: var(--nag-red);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--nag-gold);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .speed-panel label {
+            font-size: 9px;
+            color: var(--nag-gold);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1.2s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--nag-gold);
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            margin-top: 60px;
+        }
+
+        .tibetan-footer {
+            font-size: 1.8em;
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
+
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
-    <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Thánh Giả Nagabodhi</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0D_J0S0T0S0T0S0T0S0T0S0T0S0T0S0T0S0&s');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đại Thành Tựu Giả</div>
-                    <h2 class="mahasiddha-name">NAGABODHI</h2>
-                    <div class="mahasiddha-bio">
-                        Nagabodhi - Đệ tử tâm truyền của Đức Long Thọ (Nagarjuna). Ngài đã đạt được sự thành tựu thông qua sự sùng mộ và thực hành pháp môn Mật tông sâu sắc.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: OM AH GURU NAGABODHI SIDDHI HUM
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
-        </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="mantra-pillar pillar-left">
+        <div id="mantra-l" class="pillar-content"></div>
+    </div>
+    <div class="mantra-pillar pillar-right">
+        <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
+    <div class="speed-panel">
+        <label>MANJUSHRI POWER</label>
+        <input type="range" id="speed-slider" min="0.1" max="10" step="0.1" value="1.5">
+    </div>
+
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg" alt="Nagabodhi Mahasiddha"
+                class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Đại Thành Tựu Giả Long Trí (Nagabodhi)</h1>
+        <div class="kadampa-sub reveal">OLD KADAMPA VN</div>
+
+        <div class="scripture-box reveal">
+            <span style="color: var(--nag-gold); font-weight: bold; font-family: 'Montserrat';">TIỂU SỬ ĐẠI SƯ LONG
+                TRÍ</span>
+            <p><strong>Nagabodhi</strong> là đệ tử tâm truyền của Bồ Tát Long Thọ. Ngài nổi tiếng với khả năng trì giữ
+                giáo pháp Guhyasamaja (Bí Mật Tập Hội) và đã chứng đắc quả vị Đại Thành Tựu Giả với thọ mạng kéo dài
+                hàng trăm năm để truyền bá Chánh Pháp.</p>
+
+            <div class="wisdom-quote">
+                "Khi hành giả thấu suốt rằng mọi hiện tượng đều không có tự tánh, tâm sẽ tự nhiên an trú trong Đại Lạc
+                vô biên."
+            </div>
+
+            <p>Ngài được coi là một trong những cột trụ của dòng truyền thừa Trung Quán Mật Tông, kết nối trí tuệ của
+                Long Thọ với thực hành mật điển tối cao.</p>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ</span>
+            OM AH RA PA TSA NA DHIH • OLD KADAMPA VN
+        </footer>
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://www.himalayanart.org/images/items/resized/535px/5/2/5/52548536.jpg', 'OM AH MAHA GURU NAGABODHI SIDDHI HUNG');
-        });
+        (function () {
+            "use strict";
+            const MANTRA = "OM AH RA PA TSA NA DHIH • ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ • NAGABODHI • ";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+
+            // Init Mantras
+            const text = MANTRA.repeat(60);
+            pillars.forEach(p => p.el.textContent = text);
+
+            function flow() {
+                const speed = parseFloat(speedSlider.value);
+                pillars.forEach(p => {
+                    p.pos -= speed;
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(flow);
+            }
+
+            // Canvas Particles
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class Particle {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.5 + 0.2;
+                    this.alpha = Math.random() * 0.5;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(197, 160, 89, ${this.alpha})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(render);
+            }
+
+            // Observer for scroll reveal
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if (el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize();
+                flow();
+                for (let i = 0; i < 100; i++) particles.push(new Particle());
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
+
 </html>
