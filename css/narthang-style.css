@@ -99,6 +99,23 @@ body.hover-active #main-bg-engine {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 10;
 }
 
+.footage-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 100px !important;
+}
+
+@media (max-width: 1100px) {
+    .container { grid-template-columns: repeat(2, 1fr); }
+    .footage-container { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .footage-container { grid-template-columns: 1fr !important; }
+}
+
 .bento-item {
     background: rgba(10, 36, 23, 0.85); border: 1px solid rgba(197, 160, 89, 0.15);
     padding: 35px; backdrop-filter: blur(20px); transition: 0.8s var(--transition);
