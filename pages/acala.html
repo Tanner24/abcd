@@ -2,44 +2,311 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acala | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   img-src 'self' https://img.myshopline.com data:; 
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+                   font-src https://fonts.gstatic.com; 
+                   script-src 'self' 'unsafe-inline';">
+    
+    <title>Super Kadampa - Acala (Bất Động Minh Vương)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --acala-fire: #ff3c00;      /* Đỏ lửa tam muội */
+            --acala-gold: #ffcc00;      /* Vàng kim phẫn nộ */
+            --acala-dark: #0a0807;      /* Đen mun kim cương */
+            --acala-ember: rgba(255, 60, 0, 0.5);
+            --atisha-ivory: #e0d7c6;    
+        }
+
+        body { 
+            font-family: 'EB Garamond', serif; 
+            background-color: var(--acala-dark);
+            background-image: radial-gradient(circle at center, rgba(139, 0, 0, 0.25) 0%, var(--acala-dark) 100%);
+            color: var(--atisha-ivory); 
+            margin: 0; overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+        }
+
+        #particle-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none; opacity: 0.7;
+        }
+
+        /* 1. KINH LUÂN BIÊN (FIRE PILLARS) */
+        .lineage-pillar {
+            position: fixed; top: 0; width: 45px; height: 100vh;
+            z-index: 10000; pointer-events: none; overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(255, 60, 0, 0.15), transparent);
+            border-left: 1px solid rgba(255, 60, 0, 0.2);
+            border-right: 1px solid rgba(255, 60, 0, 0.2);
+        }
+        .pillar-left { left: 0; }
+        .pillar-right { right: 0; }
+
+        .pillar-content {
+            writing-mode: vertical-rl; 
+            white-space: nowrap;
+            font-size: 18px; font-weight: bold; letter-spacing: 12px;
+            color: var(--acala-fire);
+            text-shadow: 0 0 15px var(--acala-ember);
+            will-change: transform;
+            animation: mantraScroll 60s linear infinite; /* Tốc độ nhanh hơn thể hiện năng lượng mạnh */
+        }
+
+        @keyframes mantraScroll {
+            from { transform: translateY(0); }
+            to { transform: translateY(-50%); }
+        }
+
+        /* 2. TÔN TƯỢNG VÀ HÀO QUANG (SAMADHI FIRE HALO) */
+        .main-wrapper { position: relative; z-index: 10; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+        
+        .buddha-frame {
+            position: relative; display: inline-block; padding: 18px;
+            background: #200000;
+            border: 4px double var(--acala-fire);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            margin-bottom: 50px;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .buddha-frame::after {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: var(--acala-fire);
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .buddha-frame:hover { 
+            transform: scale(1.02) translateY(-10px); 
+            box-shadow: 0 0 60px rgba(255, 60, 0, 0.4);
+            border-color: var(--acala-gold);
+        }
+        .buddha-frame:hover::after { opacity: 0.5; }
+
+        .buddha-image { 
+            display: block; width: 100%; max-width: 500px; 
+            filter: grayscale(20%) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.15, 0, 0.15, 1), filter 0.6s ease;
+            transform-origin: center;
+        }
+
+        /* 3. TÂM ĐIỂM QUÁN CHIẾU */
+        .buddha-frame.meditation-mode .buddha-image {
+            transform: scale(2.5);
+            filter: grayscale(0%) contrast(1.2);
+            cursor: zoom-out;
+        }
+
+        .buddha-frame.meditation-mode::after {
+            animation: firePulse 2s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        @keyframes firePulse {
+            0% { filter: blur(40px); transform: scale(1); }
+            50% { filter: blur(60px); transform: scale(1.1); }
+            100% { filter: blur(40px); transform: scale(1); }
+        }
+
+        /* 4. TYPOGRAPHY */
+        h1 { 
+            font-family: 'Playfair Display', serif;
+            color: var(--acala-fire); 
+            font-size: 3.8em; margin: 15px 0; 
+            text-transform: uppercase; letter-spacing: 10px;
+            text-shadow: 0 0 25px var(--acala-fire), 0 0 45px rgba(255, 60, 0, 0.4);
+        }
+        }
+
+        .mantra-display {
+            font-size: 1.4em; color: var(--acala-gold);
+            margin-bottom: 40px; font-weight: bold; letter-spacing: 4px;
+        }
+
+        .scripture-box {
+            background: rgba(10, 8, 7, 0.9); 
+            padding: 50px;
+            border-top: 1px solid var(--acala-fire);
+            border-bottom: 1px solid var(--acala-fire);
+            text-align: justify; line-height: 2.1; margin: 50px 0;
+            font-size: 1.25em; border-radius: 4px;
+        }
+
+        .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .card {
+            background: rgba(255, 60, 0, 0.05); 
+            padding: 30px; border: 1px solid rgba(255, 60, 0, 0.1);
+            text-align: left; transition: all 0.5s;
+        }
+        
+        .card:hover { 
+            background: rgba(255, 60, 0, 0.15); 
+            border-color: var(--acala-fire);
+            transform: translateY(-5px);
+        }
+        .card h3 { color: var(--acala-gold); margin-bottom: 15px; font-family: 'Playfair Display', serif; text-transform: uppercase; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.5s cubic-bezier(0.1, 0.1, 0.1, 1.0); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .speed-control {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            z-index: 10001; background: rgba(32, 0, 0, 0.9); padding: 10px 30px;
+            border-radius: 4px; border: 1px solid var(--acala-fire);
+            display: flex; align-items: center; gap: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .speed-control label { color: var(--acala-gold); font-size: 10px; font-weight: 900; letter-spacing: 2px; }
+
+        footer { padding: 80px 20px; opacity: 0.6; font-size: 0.85em; letter-spacing: 5px; border-top: 1px solid var(--acala-fire); margin-top: 80px; color: var(--acala-gold); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+        }
+    </style>
 </head>
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
-    <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Hộ Pháp Kadampa</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://img.myshopline.com/image/store/1743433870073/--7.jpeg?w=1220&h=1512');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Bất Động Minh Vương</div>
-                    <h2 class="mahasiddha-name">ACALA</h2>
-                    <div class="mahasiddha-bio">
-                        Bất Động Minh Vương - Hoá thân phẫn nộ của Đại Nhật Như Lai. Ngài là vị Hộ pháp dũng mãnh bảo hộ các hành giả Kadampa khỏi mọi chướng ngại và tà kiến.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: OM TSANDA MAHA ROSANA HUM PHAT
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
-        </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="lineage-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
+    <div class="lineage-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+
+    <div class="speed-control">
+        <label>WRATHFUL VELOCITY</label>
+        <input type="range" id="speed-slider" min="0.5" max="8" step="0.1" value="1.5">
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://img.myshopline.com/image/store/1743433870073/--7.jpeg" 
+                     alt="Acala Thangka" class="buddha-image">
+            </div>
+            
+            <h1 class="reveal">Acala</h1>
+            <div class="mantra-display reveal">Om Canda Maha Roshana Hum Phet</div>
+
+            <div class="scripture-box reveal">
+                "Kẻ nào thấy thân Ta thì phát tâm Bồ Đề, nghe danh Ta thì chặt đứt mọi nghi hoặc, nghe lời Ta dạy thì được đại trí tuệ, biết tâm Ta thì tức thân thành Phật. Bất Động Minh Vương dùng lửa Đại Tam Muội thiêu rụi mọi chướng ngại của chúng sinh."
+                <br><br><strong style="color: var(--acala-fire)">— Bất Động Sứ Giả Đà La Ni Kinh</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Kiếm Trí Tuệ</h3>
+                    <p>Tay phải cầm kiếm sắc bén để chặt đứt Tham - Sân - Si, dẹp tan mọi ma quân nội ngoại.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Sợi Dây Từ Bi</h3>
+                    <p>Tay trái cầm dây (Kensaku) để trói buộc những tâm hồn bướng bỉnh, dẫn dắt họ về nẻo chánh.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Bất Động Tâm</h3>
+                    <p>Ngài ngồi trên đá kim cương, biểu tượng cho định lực kiên cố không gì lay chuyển được trước cám dỗ.</p>
+                </div>
+            </div>
+
+            <footer>KADAMPA NARTHANG HERITAGE • ACALA MANTRA</footer>
+        </main>
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://img.myshopline.com/image/store/1743433870073/--7.jpeg?w=1220&h=1512', 'OM TSANDA MAHA ROSANA HUM PHAT');
-        });
+        (function() {
+            "use strict";
+            const MANTRA_TEXT = "Om Canda Maha Roshana Hum Phet • ཨོཾ་ཙཎྜ་མ་ཧཱ་རོ་ཥ་ཎ་ཧཱུྃ་ཕཊ།• 战捺摩诃路杀捺吽泮";
+            const speedSlider = document.getElementById('speed-slider');
+            const pillars = [document.getElementById('mantra-l'), document.getElementById('mantra-r')];
+
+            function initMantra() {
+                const content = MANTRA_TEXT.repeat(40);
+                pillars.forEach(p => { p.textContent = content; });
+            }
+
+            speedSlider.addEventListener('input', () => {
+                const duration = 120 / parseFloat(speedSlider.value);
+                pillars.forEach(p => { p.style.animationDuration = `${duration}s`; });
+            });
+
+            const frame = document.querySelector('.buddha-frame');
+            const img = document.querySelector('.buddha-image');
+            frame.addEventListener('click', (e) => {
+                frame.classList.toggle('meditation-mode');
+                if (frame.classList.contains('meditation-mode')) {
+                    const rect = frame.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    img.style.transformOrigin = `${x}% ${y}%`;
+                } else {
+                    img.style.transformOrigin = 'center';
+                }
+            });
+
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class FireParticle {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height + 10;
+                    this.size = Math.random() * 3;
+                    this.speedY = Math.random() * 2 + 1; // Bay lên nhanh hơn
+                    this.speedX = (Math.random() - 0.5) * 1;
+                    this.alpha = Math.random() * 0.6;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    this.x += this.speedX;
+                    if (this.y < -10) this.init();
+                }
+                draw() {
+                    ctx.save(); ctx.beginPath();
+                    ctx.fillStyle = `rgba(255, 60, 0, ${this.alpha})`;
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#ff3c00';
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(render);
+            }
+
+            window.addEventListener('resize', resize);
+            window.onload = () => {
+                resize(); initMantra();
+                for(let i=0; i<100; i++) particles.push(new FireParticle());
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                render();
+            };
+        })();
     </script>
 </body>
 </html>

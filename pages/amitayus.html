@@ -2,44 +2,229 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amitayus | Narthang Kadampa 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Amitayus - Vô Lượng Thọ Phật | Super Kadampa</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ami-red: #9e1a1a;
+            --ami-gold: #c5a059;
+            --ami-ruby: #ff0000;
+            --ami-dark: #070303;
+            --super-glow: rgba(255, 0, 0, 0.8);
+        }
+
+        body { 
+            font-family: 'EB Garamond', serif; 
+            background-color: var(--ami-dark);
+            background-image: radial-gradient(circle at center, #1a0505 0%, var(--ami-dark) 100%);
+            color: #fcece3; margin: 0; overflow-x: hidden;
+            user-select: none; -webkit-font-smoothing: antialiased;
+        }
+
+        #ruby-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+
+        /* MANTRA PILLARS - MULTI-LANGUAGE */
+        .mantra-pillar {
+            position: fixed; top: 0; width: 65px; height: 100vh;
+            z-index: 10000; pointer-events: none; overflow: hidden;
+            background: linear-gradient(to right, transparent, rgba(158, 26, 26, 0.1), transparent);
+            border-left: 1px solid rgba(197, 160, 89, 0.2);
+            border-right: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .pillar-left { left: 0; } .pillar-right { right: 0; }
+        .pillar-content {
+            writing-mode: vertical-rl; white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800;
+            letter-spacing: 10px; color: #ff3333;
+            text-shadow: 0 0 12px #ff0000;
+            position: absolute; top: 0; line-height: 1.5;
+        }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; text-align: center; position: relative; z-index: 10; }
+        
+        /* SUPER GLOW RUBY FRAME */
+        .amitayus-frame {
+            position: relative; display: inline-block; padding: 15px;
+            background: rgba(158, 26, 26, 0.2);
+            border: 2px solid var(--ami-gold);
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            margin-bottom: 50px; cursor: pointer;
+            transition: all 1s cubic-bezier(0.15, 0.85, 0.35, 1);
+        }
+
+        .amitayus-frame::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--ami-ruby); filter: blur(40px); z-index: -1; opacity: 0.1;
+            transition: 0.8s ease;
+        }
+
+        .amitayus-frame:hover {
+            transform: scale(1.04) translateY(-8px);
+            box-shadow: 0 0 90px var(--super-glow);
+        }
+
+        .amitayus-frame:hover::before {
+            top: -60px; left: -60px; right: -60px; bottom: -60px;
+            opacity: 0.8; filter: blur(70px);
+            background: radial-gradient(circle, #ff0000 0%, #7c0000 70%);
+        }
+
+        .tara-image { display: block; width: 100%; max-width: 480px; filter: contrast(1.15); transition: 0.8s ease; }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; color: #fff; font-size: 3.5em; margin: 15px 0;
+            text-transform: uppercase; letter-spacing: 6px;
+            text-shadow: 0 0 25px #ff0000;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif; color: var(--ami-gold);
+            font-size: 1em; letter-spacing: 6px; margin-bottom: 55px; font-weight: 600;
+        }
+
+        .scripture-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 3px solid var(--ami-gold);
+            border-bottom: 3px solid var(--ami-gold);
+            padding: 55px; text-align: justify; line-height: 2.3;
+            font-size: 1.25em; box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+        }
+
+        .info-title {
+            display: block; font-family: 'Montserrat', sans-serif;
+            color: var(--ami-gold); font-weight: 800; font-size: 1.1em;
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 25px; border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .wisdom-quote {
+            font-style: italic; color: #ffcccc; background: rgba(158, 26, 26, 0.2);
+            padding: 35px; border-left: 5px solid var(--ami-gold);
+            margin: 40px 0; font-size: 1.3em;
+            text-shadow: 0 0 10px rgba(255,0,0,0.4);
+        }
+
+        .lang-tag {
+            font-family: 'Montserrat', sans-serif; font-size: 10px;
+            border: 1px solid var(--ami-gold); padding: 2px 6px;
+            margin-right: 10px; color: var(--ami-gold); font-weight: 800;
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.5s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer { padding: 100px 0; text-align: center; color: var(--ami-gold); letter-spacing: 5px; }
+        .tibetan-footer { font-size: 2.2em; display: block; margin-bottom: 20px; color: #fff; text-shadow: 0 0 20px #ff0000; }
+    </style>
 </head>
 <body oncontextmenu="return false;">
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
+
+    <canvas id="ruby-canvas"></canvas>
+
     <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
     <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-    
+
     <div class="container">
-        <div class="mahasiddha-detail-card reveal">
-            <div class="mahasiddha-header">Trường Thọ Như Lai</div>
-            <div class="mahasiddha-content">
-                <div class="mahasiddha-image" style="background-image: url('https://norbulingka.org/cdn/shop/files/THPAMBL18-1.webp?v=1718814041&width=2048');"></div>
-                <div class="mahasiddha-info">
-                    <div class="mahasiddha-num">Đức Vô Lượng Thọ</div>
-                    <h2 class="mahasiddha-name">AMITAYUS</h2>
-                    <div class="mahasiddha-bio">
-                        Đức Vô Lượng Thọ Phật - Bậc chủ tể của sự trường thọ và cam lộ tịnh hóa. Ngài ban gia trì để hành giả kéo dài tuổi thọ, tích lũy công đức và đạt đến cõi tịnh độ Cực Lạc.
-                    </div>
-                    <div style="font-family: 'Montserrat'; font-size: 0.8rem; color: var(--narthang-gold); letter-spacing: 2px; text-transform: uppercase;">
-                        Mantra: OM AMARANI JIVANTIYE SVAHA
-                    </div>
-                </div>
-            </div>
-            <footer style="text-align: center; padding: 25px; border-top: 1px solid rgba(0,0,0,0.05); background: #f9f9f9;">
-                <a href="oldkadampavn.html" style="text-decoration: none; color: var(--narthang-red); font-weight: bold; letter-spacing: 3px; font-family: 'Montserrat'; font-size: 0.9rem;">← QUAY LẠI</a>
-            </footer>
+        <div class="amitayus-frame reveal">
+            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
+                 alt="Amitayus Thangka" class="tara-image">
         </div>
+
+        <h1 class="reveal">Amitayus</h1>
+        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
+                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM AMARANI JIWEN TIYE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
+                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
+                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
+            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
     </div>
 
-    <script src="../js/mantra-engine.js"></script>
     <script>
-        window.addEventListener('load', () => {
-            changeBg('https://norbulingka.org/cdn/shop/files/THPAMBL18-1.webp?v=1718814041&width=2048', 'OM AMARANI JIVANTIYE SVAHA');
-        });
+        (function() {
+            "use strict";
+            // Mantra 3 ngôn ngữ: Anh - Tạng - Trung
+            const MANTRA = "OM AMARANI JIWEN TIYE SVAHA • ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ། • 嗡阿嘛惹尼際文帝耶梭哈 • ";
+            const pillars = [{ el: document.getElementById('mantra-l'), pos: 0 }, { el: document.getElementById('mantra-r'), pos: 0 }];
+            pillars.forEach(p => p.el.textContent = MANTRA.repeat(40));
+
+            function animatePillars() {
+                pillars.forEach(p => {
+                    p.pos -= 1.0; 
+                    if (Math.abs(p.pos) >= p.el.scrollHeight / 2) p.pos = 0;
+                    p.el.style.transform = `translateY(${p.pos}px)`;
+                });
+                requestAnimationFrame(animatePillars);
+            }
+
+            const canvas = document.getElementById('ruby-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            class RubyParticle {
+                constructor() { this.init(); }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5;
+                    this.speedY = Math.random() * 0.4 + 0.1;
+                    this.alpha = Math.random() * 0.6;
+                }
+                update() {
+                    this.y -= this.speedY;
+                    if (this.y < -10) this.y = canvas.height + 10;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(255, 51, 51, ${this.alpha})`;
+                    ctx.shadowBlur = 8; ctx.shadowColor = "#ff0000";
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+
+            const observer = new IntersectionObserver(els => {
+                els.forEach(el => { if(el.isIntersecting) el.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            window.onload = () => {
+                resize(); animatePillars();
+                for(let i=0; i<80; i++) particles.push(new RubyParticle());
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(render);
+                }
+                render();
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            };
+            window.onresize = resize;
+        })();
     </script>
 </body>
 </html>
