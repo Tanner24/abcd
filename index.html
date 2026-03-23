@@ -3,23 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Narthang Kadampa - Heritage | 2026</title>
-
-    <!-- Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLD KADAMPA | Narthang 2026</title>
+    <link rel="stylesheet" href="css/narthang-style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
+    <style>
+        .span-2 {
+            grid-column: span 2;
+        }
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/narthang-style.css">
+        .big {
+            grid-column: span 2;
+            grid-row: span 2;
+            border: 1px solid var(--wisdom-gold) !important;
+        }
+    </style>
 </head>
 
 <body oncontextmenu="return false;">
-
     <div id="main-bg-engine"></div>
     <div class="bg-overlay"></div>
-
     <div class="mantra-pillar pillar-left">
         <div id="mantra-l" class="pillar-content"></div>
     </div>
@@ -27,43 +32,147 @@
         <div id="mantra-r" class="pillar-content"></div>
     </div>
 
-    <div class="container">
+    <div class="container" id="main-container">
         <header class="bento-item header-box reveal">
-            <h1>Narthang</h1>
-            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
+            <h1><a href="https://kadampa.vn" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Old Kadampa VN</a></h1>
+            <div class="subtitle">NARTHANG KADAMPA</div>
         </header>
 
-        <a href="pages/portal-narthang.html" class="bento-item reveal"
-            onmouseenter="changeBg('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIWFRUXFx0aFxcXFhYYGhcXIBsaGR8XFRgfICggHRslGxcdITEhJSorLi4uGiAzODMtNygtLisBCgoKDg0OGhAQGi0lICUrLS0tLS0tLy0tLS0tLi0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAJMBVgMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAgMEBQYHAQj/xABQEAABAwIEAwQECgUICQMFAAABAgMRACEEBRIxBkFREyJhcQcygZEUFSNCUlOSocHRFjNisfAkQ1Ryk8LS4Qg0RGNzgoOjwzVV8ReisrPT/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QANBEAAgECBAEJCAIDAQAAAAAAAAECAxEEEiExUQUTFEFhgaGx8BUyUnGRwdHhIjNCYnI0/9oADAMBAAIRAxAPwCvRXYowFdCa988QIBXYo+muxQSE013TR4rsUAJ6aNFGijaaACRQijxQigAkUNNKaaEUCCaa7FHihFAmEihFKaaEUwCRQijxXYoAT013TR4oRQAUpi3l94n8a5FKvNBKynUlVkq7s21IBgyTcGQfKixWdGpzkFLiaVqfNzcQkV3TR4oRWhmJxQ00pFCKAE9NDTSkUIoAS00NNKRQigBOKEUpFCKAE4oRSkUIoATihFHihFABIrkUeKEUAJ6aBTSoFdgUDsIaaARTkBNGAFJsqxefRCiDivJr/y0KX9FIvifJr/y0K8jFf2vu8j1cMrU13+ZmkV2KPpowTXrnlCYFd00eK7FAggTXYo8V2KACRQilNNd00AJxXdNHiuxQITihFKRQigAkUIpQChFAgkUNNHiuxTAT00hiMW03ZbiEHopSU/cTTzTUTnuJ0aQENq1BQlaAogQBCTy394B5CsMRVdODkjowtHnaigxc5lh9/hDP9qj86KvM8PBjEsz/XSb+U3qIGcLvKGRJJPyTfPfcbXjyAHIU8wGMeW420rs0B0jvKZbgglKdVxcHswOhgjmZ82XKEra+vE9aPJcU/3+gmHxzDZ1HFMkFIshATfnqgSY2FOvj3CTHwhP2XD+5NO+Li7hX0NMPBepKT3m2QpKvUEmByFiYi/nUGvPMWCQpcGSD3GxcFcj1eSlq8ifKsqOMcYJR2NKmAVSeaW5IjPcKY0ulRJizTu5MC5TFzUlFVs55iVwlbpIUQCNKbjVPIdST7atCkECSLTE+PSvRwuIdRNyZ5uNwnNSiorfhdicUIo1BRAuSB5kV1c7DivqcfM1Phf0YWK5FKhNDRVmYlFDTSuihpoAS00NNKaaGmgBPTQilIoRSAT01zTSsUIpjEtNc00sE13TSuAhpoaKWrhFAxIJoUrFcIoGi+eic3xPk1/5aFD0Ub4nya/8tCvIxX9r7vI9XDf1Lv8AMz+K6E1GfpHhPrj/AGTv+GjK4iwnJ4nyadv70139KpcTh6NV4ElFDTUWeJcN9JZ8ml/lXBxNhv8enyaVR0qlxH0Wtw8iX00IqJVxPh+QeV5NfmaL+lDH1eIPk2n/HS6XS4+YdDrfD5EzFCKiP0lagK7DE6TMHs0AGOh11wcUNfU4j7Lf+OjplHiPoFbgTcUIqEPFCT6uFei260D8KSXxSqbYNZHi8kX8O599LptLiNcn1/hLDFCKr44ocO2Djzfn9yKS/SR/+jJj/iH/AA0un0ilybXfV5/gfcQqCQkl15v1gOyCTJgRq1EW8upqHS80T/rOM5/NZEXVE97pp9urwFDMMxdeACmEWNvlD+VcyzL3XlaUton/AIpE+A7hmvNxFaM5uS2PXw2FnCmoyTv3nVOt/wBJxm/Rkc089W8ah5x4iprhng17MEqcYfJ0EJX8IOkzpBlAQFWnVuem9JJ4RxRj5Ef2jhv0szVl4WczDL0LQzhWlBagVa1vnvARaGhyrHOnubOnOOsU7jjKfRni2XkOl1g6CSIUuZgges3G5pzj/RviXHUOh5oFAAhVx3TIAS222ABt49RTpXFOb/0XC+P+smDe3q32o+H4gzdZIUMG2eXyeIVPvUms6lSjBZ5Oy7wUcQ3ohHMPR5isQ+l9/EMqUmLIbWjUEmRJJVB5TG3KlM59Hj2K068QlBTN+87OqJtCIuAZk/fRsVneboiF4RXMkMPAJ2F++bSd5FNG86zpaZC2ACJBThnTbwvB99TTq4ednB+Yc3iF6RG5n6LCyy48rFaw0hThQlooKgkFRSles6SYjVBiZg1ns4fYsOq6zilXsn9jwP2/AVp+Iezp1Cm1vN6VpUFAYNd0kEESSNx5G9V5XAuJMeqPLCq28NTlvbWjqRW3k/wNUpy9/wA1+SofBsKqf5IfMvuWsRa3Uz7BykUVIwwUCnBpSZt8q6dJlRBubxI3+gmd1an3E2CxODKNTYKVHTrUwttIPL5xk+7ao4h482/7P7rmmpve45UYPRRd/XaaApNciqScdjbfyn3IT+X8eFdTj8ZP+tK/s2/yr0/aMeB4/sipx9fUu1AiqUrG4vf4Uv7KPyoicViv6U7vPL8qlcoq2qKfI876Py/Jd65VJOJxX9Lf+1RTiMSd8ZiPY4ofjT9pL4fH9B7Hnx9fUvFd0HpVE1Pj/a8T/bLrmp3+k4j+2XS9o/6j9kS4l97M9D7qHZK+ifcaiOIOEvg+GDwxzyz3dSS4qFah/Nmbx+7pVUGHndxw+bivzrOPKimrxQ1yT2mg9ir6J9xpF8qT/NOn+q2tXvgVQlYQG5Us+JWr86mMFwiVth/EOfBsPydeWvveDLc6nT4JEeNN8oTeiRfsqMdZPT5/om3seRthsUYF/kHN+o7u1I/Gxj/V8R/Z/mar+Z4TAFIRhWHAlJu86pXaO2OzYOltA5C6j1EVGnL2x82s3jKi0zeCNI8nQavl8WW744UTHwV/2pQn966DmarG7Ch/WWyn7y5VSOAb+gK58Cb+gPdS6ZU+Ir2dBdS8Tc/QzjS4cXKAmAzbW2s37XfQoxtzrlRX+j40lKsdpAFmNv8Ar0Klzc/5MzlTVN5UZelJ6CjhJ6VtuZ5KlSYaaw4UVHUVNhXdVINpTewEzYG1NRlWMTdK8OCNvkBa0D5/IG3trncbHesS31GNKSRuI84FFkxaI8xFbA/k2NWIU5hoIj/VxttHr9KDeSY1M6X2UkxJGHF4sJh3lalYfPvs+pkCTOxT09ZP50qhhRiIPkpJn2TWrt5JmKbJxjKRtbC+ED+c6W8qe5K3jm3w284y6z2YkpaKFJI9UJ7x7oPummoomWIkuBSszx7r2DawoYKSkJkxbuDdNrE2J8DzqsuZW8L6FfZV1iNutbng8avtC0tKdQQFSkGFAqUDY33E+2mmZ4PEuLJRiAhBghJbkg9ZmlGjGC0JjiZcDEzhVi5QrafVVsLE7bA86P8AF7th2bkmYHZuSY3+by59JrXfinGbDGAAAizR2O/PnQVlOMO+NJ/5BN/ZRlL6RLsMpbyt8pkMuEQDPZO3BMAju7EmJpQZBivqHd4js3AZiYjT0vWoHI8R/TXBaLBsAAbRLZ2pJXDb0f8AqOInyw//APGjKh9Jn2Gcp4cxekKGHcKSAoEJkFJ2NKJ4YxRt2Lk33THq77nlWx5L2iWG0urLjgSApcAaiOfK8U91+c+zb+Iq+bRk8XNGLP8ACGLSJ7FZgEkAJmBvbV1MWq8ejXJV4dL6nUKQ4VhEKAnSkTaCRBKzcdKuBc6TPs/jes+454wxuHxAYwyWdMCVrStSpIBtFudNQSehM8VOccrNDLlv48aTdfCRJMAbnpfnWLZdxFnr2spfSdITA7JsJGpSUc0T87x3pzhMDnOYIR8IxZQ1vKQEXSo3KUhJUZBPegd0n5pi7Mw0NgQ7JPSf8IqNz5XdbPif3VmGVP56HXcNhsSh0NEgF5CUnSlWmxUNySDcnb39xOb5w3iQ3jFpUiJ0BLekEj6SEkgA2uTXNi6Lq0ZQXWjWhUUKikzRcsy5DqFlRWZVEajEAA7c79ZqaYSEJSkbAADyECsjfzzIXXxhsEtLaQDqhLYlU3IUtMQIAt4+zj2L4hZdabexDQ7QgJswQOVyEQLnnuRadqnCYdUqUVbW2pWIrZ5vXQ1fEYmB/HQUzOM7yR1kfcazfPX86aR2hxTY2hIDRmSNk6CTzFvoq6GovNMTnLCGlqxadSi4kwlBgo0pI/V7wf31rKE29whUppaovvpEwgdwbkp1aYVEkTpUFGCPCarLXo/xZAUUIAImz3KAY/V7mT7j4TWXs+zUpCTiErCkEKSpKDOrUk/MB2MVu+UPBTLRPNpB9ukVUYcROu17hmp9HGJEzo5x8oYsQPoDeZ8h1gUZv0bYiwJQJm+s2gxPqbG0ffFalrHh510KFVkQuk1OJlj/AKOXgLKR6uq7lyfoxosfbHjSB9HuI5LaNk7uEXO49T5vM+6tEzLIMO8suOpKiUhO5iBPKN738h0pkeEcHcdj52H5eNS4rgWq0/iKj/8AThUXxDYPtifPp4xPhSA4AUL/AAhod2YIMz9Ed+J9seNXY8I4PbsPIaR+VFPB2ANzhG1eKm0E/wD40rLgHOz+IqDfAUAleIZsJslRBPQErFhzJA8JriOBG1LCEYtgzb1Vkk3Jg+6m+ZcEYdhgHcay0sju60lIJ52K5gX538KvuPYPwnDugGwcbMJmAsBc+HebF7cvCj5m7hmtLr5bRAKUqcUlFiR3RJG5SKrKjNVJcTK2BhcKr5N/AvuFcJddWQ2wBB1dlqUFrN4B20eNobiFpLmOwq3swGLDivlHAbNDUBYXATBBgAbEeNbCM+wESMTho69u3/i8D7qrHFGY4NeJwbiXWFpbcPaFLiFBKdSD8oQTAsTfoal3SOmjHnp5b9T8E3xIlWR5YdsaQOoQkkjrEG/KPbPKmoyDAymcY4RCtWhhE6p7umUG0bz7K0EcU5af9rwvtdb/OiL4syzY4vC/2iDRlZlzna/XeUF/JMAnSS9iwIOspwwX5aT2UADnP3VYsBwBg1NtuHELUC3KiAlIUogCKSNPdAudJnl0NTLvFGVnUlWJwwOxCtI/eOlT+C0LaT2Sk9kRCdAGnTtAi0copqJMqnBiXo7yHD4ZK14dwuB1DcqkFKo1kKRHI6zzO1Cn/AASwpGHQhQIKUJTBuQBIEnnYUKtGLd2V/jDHvs4ZTmFQFuhSYSpC1AyRNkGdqynGelTMm1FJbwxMTZt23LmvwrcbXNh1vvXmrCrnEgkgerckADvE70norlRV3YsLXpZzJRCUs4ckmAA27JNrfrN6d5t6Sczw6w2pGFUopCiEocOgn5qu/v8AnT9vFtoLa0vIBDjdw4k21pkm+0Az4TUnxpnmFdZGh9nV2jUpS6kk/KoKlQOQEmpzIrK7lPb9LOYqIARh5J37Nfh+3tV+9H2Z5hinVOYlCEtJbOhTaHAFkkCApUpIGnleqTmTzJYVodSVkiwUDbUmbA9JrTvR2sKy9nb5/wD+xYqlZkyuifOGHaB0atQQU7iCklJv4yn7zWVcdYvNsK+vssSewJ7ilp0iSCrQIGkkC3jF61r+OdUT0wvxhmh/vFH3NqH96nYm5l+G9JmaiwfCv6zTZP7pp6j0oZtt3DH+5/fFK8JOYcMgPrQkgpsomfVT7eVSTeMwZcd1vICNQ07wR2bYJHtSRes8y4GuRkI96Q85WTC9M8k4du3gJSTUhkXEmd4lzsxiVJcJ7qFYdgarEndIjY1J5bnOCbeWtTiCnu6Jm/dEwY21DztvvK+XZo05mjDjRBQVIRI2mFJ8OavvpxlfqFKNjTchQ6nDtB8gvaZcMBI1GSRAJFpi1PwfL3muf+P8ez310/d5VZmD3VReOsuZOJwhLKFLcfBWSASoJLaRPsNXk+P7qpXHiz8JwfVB1Dz1o5dO7TQFM4TRpdxiUgWS0QNh3cUzHIwPYfKhjsvzNhzFjDFLjL2peoKSkN6lFZ7IKWNC7gn/AJVbpSQm/wATvNYpLRQx2K3Utuo+DMQporGpJOmSCL3JuAais54gcYxL7Iw2C+SecQknBYaQErISR3d4ANCAjcoz3FZc6vQAhxQAWl1EmNxYwob8jfxtRM04qffxDeIdUguN6SiEJCRpVqAI5jVe5NT/AAtxViHcbh2XlNqacdShSPg+GCYV3bQ2IuRUY/xhjEKUhtbbISoghnD4dsSCQSYRMk0XCwxwvFb7eKXjEOIDy51HSgpOqJ7psJjcX36ml814lxGYrbQ8pCyJCAlKEXVytvJA3PKrBwhxNinnnEOuhcYZ9SCWWJStLZUlQIRNiNtvA1F/ptj/AOlK8fk2B9wR/EUXCwuMuxLq2FYrFstpRCUlx5sqZAI9ZGoSZCRclUATZNpL0hYlDuFDiXUOpTjVJC0lMaVsIImCQDLRkfcNh3g3izFvPuIXiCQMM+sJAbQApLaiFQlIuCKrg44xyiAcYsjoSgj3EUXCxauE0Nn4vcKEFSFKbKtKSf1pIEx0dF62VIsBtbpt4WrI38SYwDq1SShtaja57QyRFpsBboK11YP8GgApJJvsPCugnqY8qA/i9cHLp5+6gCiek7JXVJOLS+pttpsBSUuOpUo64sEnT84ffWOpw+KcKj8JWEhZCQXHCdx4/tCtz9KDsZc6BbUtsC/7YV/dNZTwo+lsla2luBKye7FzCLb+AOx3qZSsXBXIBWWYpKtPbKE2kLVc9+0TyDat+nlXRw7ilLSkKKlKkzqJNtI6zspPv8K0FjMx8JUsYUkBpACSpsQdTpKul5I62NdezVXwtlxOFUIbdASFIJUVFoSIHK1uc1z88zbmkZ3juE32SntUwkqjvAp2BVA53AP3da0z0UcGJQpOOOhSVNqCEnUVJWFgBXS2g38RTLjbGuOpSHG9CkFRUnWhSkEtqACwn1FEX0m9rgSJuvouWTlrXgpwf9xR/Gt4yvcxlGyTLZB5TVY494TGYtNo1JQW1lWpSNZiCCkXEcj/AMoqze4Vn/EmcYFGJdSttQWEKSpaCpILpAKSSlQJtYny3pyllNKFF1W0r6K+iv8AdGSYXhVb5SW1ICVA/SkRFyAPH7qfMZKnDJW28o6lGO6FgEQIBsJHrX2pzwviHi6Qj6JnT2bZt2dydMH1tvyqR4laxCtKlIUo2SLoUY1CSSgcp6VzTnK9mz1MHSw7mmuD3vvb11lfxXA7rfruBFgRqSoEgkJFvFRj3VzH8HFowXZBTqStKZSoaSqxnoI9oq0Zti8T+teQFqlLYnSGwkLQLRPe1+65vEUjjc0LoDaG0obSjupC0GO4e8YTJME/wBWVN859Gj2XNL6pS+pTeoLSllKUlKiEpSlSipXfAnVAAmNVZmqSeYI7S68L8JsYx5xl1RChpUkIkwtKbyDbvCt7b0AaU6YTCYSHu7CBAb8Ae7FZX6OnlDMSgGQtt1Aje6ri0+6tW4bdSh9Y164WBOkSdUzAkeueXWtr7HHJKrLoMtwv1f8AeUK6Y8P9X+KhTUEPofI8yZpgy6y6ykgBSHEpCiSQFpImOgzWcj0cYrWoDMFpsLMyRzJBJH7N69AcT5I5iG0OMshSihY0mBcgSInlWZZX6McclShmDclP6twHe9ge6Z696666UnexvC0ldshWfRxiyD/6kg7/ADRzn6zeZHtpxmHAbzTLjr2ZoWhCCqEpSJ8InYVPD0Z4wH/08yBfUpNuZid5P9X9pSAnOnuE8yxhSl9TiG0KBy5WvVpSJJT60vYm3OonS7S5W60VDh7L0Y/DtOox+mG06idIJ6SU7W61pvB9AnAYcMEOEKWSe0F/BPM9PGeu9Msk9G7mFw7bi8G0uEKCkkBJSrYAmI26DTr9Vp08f5O7mWGw7TKChYdSpSChOnWkgAaxcT/P8A90K57V6o5pPYnPDx8DTAAnqfN69f460m+1CTp7pi8K3336mqmODsfP8AI77fI8vO1O08GZgSScK3YfIjsue9v6v99W0V3/v7Nq/D8FZZ9GrLzZdfWpBcClqAnYHe6iZPXmSByNSPEHDDeYPIxSXFpUhoNhS9REatWhAm/pE+Z61YGeHM1FvgyN9/kbx13vVfxvBedpXisOwwtYdXqWhSFBIUog6UKUBqA/DwqZ00XGpt6/IsOQ8NpwWGLDqgtC9RUVzI7S0JEm4/dI51C5pwa09iHsUpaw4t9ayXHEpSQpRUG0gXVYjz0jrVhynhnMe0UvGEIZUAlLSFAiSTIKUnTMTz28ZpDMeCMU7iXsSxCErI1XUhXdBUNSUpv1B94oUEnYmUr/X9Fh4b4daYwXwbEBKk6yokKNo9W9/m/vPnVP8ASVwhp7N1jENltK0pCFFOqQJ7oF7GZnrU9xhwrmWMLZwxSghvSghSgBIsSAbm37Ptqh5xwTmi8QpCAnshIdW7J1SbjvXUOfLwrfWxnZXfIunotZKsC6uSSX1IDZVI0NidXmNRP/JVZ4v4QdfxFqbaabSUhxxtSyoqUEJS3qUEk6iBaOnUVceCOE38I0pGKQnS2sKBSVSreL7R/f8A79P+IuEsVjX3HmVoDTqAgN9m6VpInUhQ0wXCD3T6tyL96YSuE6drFv8ARvw+3hGndLi1BSu7rXIBBvAG8mqVxJw8zjX38WlyHFr7NKnXENyW0iW06SdTajfX3R7TTheBznMUI+EYsoZ56NCSid6mNMTI5XmKls89H6X8K/27CHVpQAnSkoMAkqCQN9XU9fCiV7WRvSaSyyY44K4dwOEw5TiFmXdSVN60q0qHeSlIAuCD7Yp3l7qMO0X8OApKCpCkE98qTqKUp67G/WvPbeT44uBv4G7p+YAmBOclKTMg86v3AmT5xh30uFwtspUNfajTqST7RbeonFu/E7adWMErK77S2cT4BfEuA+DPshOIKitCkq09nSUnSTeLg9RU96OMiGCw68FqdSpDyitLgVOpUalJUbEKIm0eNPce80632iF9m6FESN5AnveNjZJ57c66nOH/AOjYzH8+f+T8vChpbnIpuXvF9uPDwrPuOfR/isc+hjCpZ0CS4867Cgoi0p3At6v+d6uIx/7E+3N5+6iLzoDfA9vInmPfRdbk3T3KPwzwFnOEYOH+EMBC7yUhSgo2MKAuDe3+HSR9HPDvxdjAnDqXpKCh5a0mVkTpHI6z84be6p+8+w0WfxmPZ+VMP6TqR6uFei49f8AfF6l7Atv8fE0nEqBQkkjVB67/ALWl4lQKEkkaoPXf/CstS8ruNoX6Mgz/ACh+/wD98+PdDlPMvytLCiQ44qREtcdR3AVrSD4iunCcS4C6NOf9H2IFnNMBvN9v+9f4Arv6D8Ti6NPv9fz8qV+v6+RWWXZ+Po5hfG967Xf0fS+D6/fR0fX7PEedB8/D866Bp9f7+vjRPR9vw8+niKMOnp5fXnXOn0/HzpABv4/vXfV+H7+G/n5UHv7fP9/wB/CidOnTr9OnSgwO/7vz8ff57V3+OunTz/AC++k7Px9Pr5UbtOn2+Pr7aAC9vX5V0X9fC/t8T50Ht8fOnf8DffnQIdPrv08vbXOnn6+n49fOk/Hz8PzrtvHx9PLzoEOnTp+f5dd/Hau6OnTry6uXU9fOkOnl59enj99K9fP69PD76DMPp8enIefXxrnj9unIefX9+uwvHh/w69f7t67Y7dfLp5dfOgA8Pv9fz67+G6f5vz9Onn4+PXR+O35dPLrXcO9p6ffSlfoHT60/Oidnr5+Hl09XypToPy/L7vCm/Hz8Pz9/XxoFzh0+vx86D5+H5V39H2/XfyoP7HjffyoAMOn0X8/LrtvSdPr6ff7fdR+3p9fXofb7/fSe76fPr7ffSAd+3w/d5eHnR9On+r6786Ts9Onl8fHp69uOnp6ffQg6dPr5+PXR/A9v+zo/Yfh9vr09fyoP0XW+PXrv48vPwpO3+Oun8ed6AClvx+Pl133v7PF0/ZdfG/j9e/3URR729vv6ed6MOn0ePtI38vCh3GAXp06+Pl132qPzX9WkftC6edPrPx8/L7/KmWbeogftCvP5Vv8ABVf+X4NfAnT2T9vOOnIDfT0++lfS/XfyoWf9/wAt576On0/Hzq10HMDp9H4+fRE+D9N8/HzoOn1+PnxovTp08vL8vDxoE6fb49fGhQP0X8/LrtvQrS9vUA9h8H9V738f7L0p0++hXG7W9fg68O7v29fC6/D++u0KFccvdPTh0/IdPn7/wDfr6On0f4X48vOu0KoqXR9fP8A87fXf8f8KFChQIdN+P5dfz/Dau0KFAmG8eX16+XvXf46+fn08q7QoB9H9j+OvjSnTr4fX8eY8a7QoB9Xy+R3+Ovp5+FKfn19/30KFAmGj/X99d69P4+/p79NCugxD6en4fd9X83I++hQoAYdPov5+XXberf4Ph5+f5UKFIqXSHVv8Afv7PCu+2fv8AzrtCgAMdPh+fh4+FHzp8K7Qpk9XyX6On3vXp89H/AAH/AG/b7vPh9b/X8+fRUKFCEyMfrP66+R6U++j61/f7vGueA/v99ChREOgX7en3edN9fp/HyoUKskP06/h19vl99P2eH40KFAmRj2ZffXNf8eO/wBfKhQpMTAx86Dq8K7QpR6vkv0Of8vtfP6ef10X7f4rtCk9gA+vx8rU6e2f4+vOndnxH2/Xn4U/h+X3UKFI6un7IenT56ffSXTp18vL8vDxoUKp9BzS')">
-            <span class="info-title">Heritage</span>
-            <p>Ghé thăm tu viện Narthang - Kadampa</p>
-        </a>
-
-        <a href="pages/GURU.html" class="bento-item reveal"
-            onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-33c66959214-1.jpg')"
-            onmouseleave="resetBg()">
+        <!-- DONGCHEN RINPOCHE — BIG HERO -->
+        <div class="bento-item big reveal" onclick="location.href='pages/dongchen-rinpoche.html'"
+            onmouseenter="hub('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')"
+            onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
             <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-            <p>Hóa Thân thành tựu sự nghiệp của Bậc Đại Thành Tựu Giả Tumton Londro Drakpa – Tu viện trưởng đầu tiên
-                thành lập nên Tu Viện Narthang Gompa.</p>
-        </a>
+            <p>Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang
+                Gompa.</p>
+        </div>
 
-        <a href="pages/oldkadampavn.html" class="bento-item reveal"
-            onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')"
-            onmouseleave="resetBg()">
-            <span class="info-title">Old Kadampa Lineage</span>
-            <p>Bổn tôn của Dòng truyền thừa Kadampa</p>
-        </a>
+        <!-- ATISHA DIPAMKARA -->
+        <div class="bento-item reveal" onclick="location.href='pages/atisha-dipamkara.html'"
+            onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Atisha Dipamkara</span>
+            <p>Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.</p>
+        </div>
+
+        <!-- TUMTON LODRO DRAKPA -->
+        <div class="bento-item reveal" onclick="location.href='pages/thanh-to-tumton.html'"
+            onmouseenter="hub('https://kadampavn.com/wp-content/uploads/2024/12/DSC05888-scaled.jpg', 'NAMO GURU TUMTON LODRO DRAKPAYA')"
+            onmouseleave="res()">
+            <span class="info-title">Tumton Lodro Drakpa</span>
+            <p>Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.</p>
+        </div>
+
+        <!-- SHAKYAMUNI -->
+        <div class="bento-item reveal" onclick="location.href='pages/shakyamuni.html'"
+            onmouseenter="hub('https://www.craftyhandnepal.com/7698-thickbox_default/20x16-shakyamuni-buddha-gautam-buddha-thangka-painting.jpg', 'TADYATHA OM MUNI MUNI MAHA MUNIYE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Shakyamuni</span>
+            <p>Đức Phật Thích Ca Mâu Ni — Cội nguồn đạo sư của mọi giáo pháp.</p>
+        </div>
+
+        <!-- AVALOKITESVARA -->
+        <div class="bento-item reveal" onclick="location.href='pages/avalokitesvara.html'"
+            onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPFAAB18-1.webp?v=1718814329&width=2048', 'OM MANI PADME HUM')"
+            onmouseleave="res()">
+            <span class="info-title">Avalokitesvara</span>
+            <p>Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.</p>
+        </div>
+
+        <!-- MANJUSHRI -->
+        <div class="bento-item reveal" onclick="location.href='pages/manjushri.html'"
+            onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPFMAB18-1_1024x1024.webp', 'OM ARA PATSA NA DHI')"
+            onmouseleave="res()">
+            <span class="info-title">Manjushri</span>
+            <p>Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.</p>
+        </div>
+
+        <!-- GREEN TARA -->
+        <div class="bento-item reveal" onclick="location.href='pages/tara.html'"
+            onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPGTBO18-1.webp?v=1718816651&width=2048', 'OM TARE TUTTARE TURE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Green Tara</span>
+            <p>Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
+        </div>
+
+        <!-- WHITE TARA -->
+        <div class="bento-item reveal" onclick="location.href='pages/white-tara.html'"
+            onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/White_Tara_Thangka.jpg/800px-White_Tara_Thangka.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">White Tara</span>
+            <p>Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.</p>
+        </div>
+
+        <!-- MEDICINE BUDDHA -->
+        <div class="bento-item reveal" onclick="location.href='pages/medicine-buddha.html'"
+            onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPMEBO18-1_1024x1024.webp', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUNGATE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Medicine Buddha</span>
+            <p>Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.</p>
+        </div>
+
+        <!-- AMITAYUS -->
+        <div class="bento-item reveal" onclick="location.href='pages/amitayus.html'"
+            onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Amitayus_Buddha.jpg/800px-Amitayus_Buddha.jpg', 'OM AMARANI JIVANTIYE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Amitayus</span>
+            <p>Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.</p>
+        </div>
+
+        <!-- ACALA -->
+        <div class="bento-item reveal" onclick="location.href='pages/acala.html'"
+            onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'NAMAH SAMANTA VAJRANAM CHANDA MAHAROSHANA SPHOTAYA HUM TRAT HAM MAM')"
+            onmouseleave="res()">
+            <span class="info-title">Acala </span>
+            <p>Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác ngộ.
+            </p>
+        </div>
+
+        <!-- ZAMBHALA -->
+        <div class="bento-item reveal" onclick="location.href='pages/zambhala.html'"
+            onmouseenter="hub('https://norbulingka.org/cdn/shop/files/THPYZBO18-1_1024x1024.webp', 'OM ZAMBHALA ZALENDRAYE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Zambhala</span>
+            <p>Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.</p>
+        </div>
+
+        <!-- NAGABODHI -->
+        <div class="bento-item reveal" onclick="location.href='pages/nagabodhi.html'"
+            onmouseenter="hub('https://kadampavn.com/wp-content/uploads/2024/12/DSC05888-scaled.jpg', 'NAMO GURU NAGABODHIYA')"
+            onmouseleave="res()">
+            <span class="info-title">Nagabodhi</span>
+            <p>Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.</p>
+        </div>
+
+        <!-- VANAYE -->
+        <div class="bento-item reveal" onclick="location.href='pages/vanaye.html'"
+            onmouseenter="hub('https://kadampavn.com/wp-content/uploads/2024/12/DSC05888-scaled.jpg', 'OM VANAIYE SVAHA')"
+            onmouseleave="res()">
+            <span class="info-title">Vanaye</span>
+            <p>Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương </p>
+        </div>
 
         <footer class="bento-item footer-box reveal">
+            <a href="https://kadampa.vn" class="subtitle"
+                style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">←
+                Trang chủ</a>
             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
-            <div class="footer-text">
-                NARTHANG.COM • 2026
-            </div>
+            <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
         </footer>
     </div>
 
-    <!-- Core Engine -->
     <script src="js/mantra-engine.js"></script>
+    <script>
+        const cont = document.getElementById('main-container');
+        window.hub = (u, t) => {
+            changeBg(u, t);
+            cont.classList.add('hover-active');
+        };
+        window.res = (d) => {
+            resetBg(d);
+            cont.classList.remove('hover-active');
+        };
+    </script>
 </body>
 
 </html>
