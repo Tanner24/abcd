@@ -225,6 +225,72 @@
             color: #fff;
             text-shadow: 0 0 25px var(--vai-gold);
         }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -239,6 +305,24 @@
         <div id="mantra-r" class="pillar-content"></div>
     </div>
 
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="container">
         <div class="vaishravana-frame reveal">
             <img src="https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg" alt="Vaishravana Thangka"
@@ -284,7 +368,165 @@
         </footer>
     </div>
 
-    <script>
+    </div>
+<div id="en" class="lang-page">
+    <div class="container">
+        <div class="vaishravana-frame reveal">
+            <img src="https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg" alt="Vaishravana Thangka"
+                class="thangka-image">
+        </div>
+
+        <h1 class="reveal">Vaishravana</h1>
+        <div class="subtitle reveal">TÀI BẢO THIÊN VƯƠNG • ĐA VĂN THIÊN VƯƠNG</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Hộ Pháp Phương Bắc & Chủ Tẻ Tài Bảo</span>
+                <p><span class="lang-tag">VI</span> <strong>Tài Bảo Thiên Vương</strong> (Vaishravana) là vị Thiên vương
+                    tối cao trong Tứ Đại Thiên Vương, cư ngụ tại phương Bắc của núi Tu Di. Ngài không chỉ ban tặng sự
+                    sung túc về vật chất mà còn là vị Hộ Pháp mạnh mẽ bảo vệ giáo pháp. Ngài hiện thân để tịnh hóa lòng
+                    tham, chuyển hóa sự nghèo khó thành sự giàu có của công đức và trí tuệ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM VAISHRAVANA YE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Uy Dũng</span>
+                <p>Ngài cưỡi trên mình <strong>Sư Tử Tuyết</strong> trắng, biểu thị sức mạnh vượt lên trên mọi nỗi sợ
+                    hãi. Tay phải Ngài trì giữ <strong>Cờ Chiến Thắng</strong> – biểu tượng cho sự thành tựu mọi tâm
+                    nguyện thiện lành. Tay trái ôm <strong>Chuột Nakula</strong> nhả ngọc, tượng trưng cho dòng chảy
+                    thịnh vượng không bao giờ cạn.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> རྣམ་ཐོས་སྲས། (Namthöse - Vaishravana)</p>
+                <p><span class="lang-tag">ZH</span> 多聞天王：護 trì thế giới, ban tặng tài bảo hữu lậu và vô lậu.</p>
+                <p><span class="lang-tag">EN</span> The Great King of the North, Protector of the Dharma and Grantor of
+                    Prosperity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ།</span>
+            VAISHRAVANA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="zh" class="lang-page">
+    <div class="container">
+        <div class="vaishravana-frame reveal">
+            <img src="https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg" alt="Vaishravana Thangka"
+                class="thangka-image">
+        </div>
+
+        <h1 class="reveal">Vaishravana</h1>
+        <div class="subtitle reveal">TÀI BẢO THIÊN VƯƠNG • ĐA VĂN THIÊN VƯƠNG</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Hộ Pháp Phương Bắc & Chủ Tẻ Tài Bảo</span>
+                <p><span class="lang-tag">VI</span> <strong>Tài Bảo Thiên Vương</strong> (Vaishravana) là vị Thiên vương
+                    tối cao trong Tứ Đại Thiên Vương, cư ngụ tại phương Bắc của núi Tu Di. Ngài không chỉ ban tặng sự
+                    sung túc về vật chất mà còn là vị Hộ Pháp mạnh mẽ bảo vệ giáo pháp. Ngài hiện thân để tịnh hóa lòng
+                    tham, chuyển hóa sự nghèo khó thành sự giàu có của công đức và trí tuệ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM VAISHRAVANA YE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Uy Dũng</span>
+                <p>Ngài cưỡi trên mình <strong>Sư Tử Tuyết</strong> trắng, biểu thị sức mạnh vượt lên trên mọi nỗi sợ
+                    hãi. Tay phải Ngài trì giữ <strong>Cờ Chiến Thắng</strong> – biểu tượng cho sự thành tựu mọi tâm
+                    nguyện thiện lành. Tay trái ôm <strong>Chuột Nakula</strong> nhả ngọc, tượng trưng cho dòng chảy
+                    thịnh vượng không bao giờ cạn.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> རྣམ་ཐོས་སྲས། (Namthöse - Vaishravana)</p>
+                <p><span class="lang-tag">ZH</span> 多聞天王：護 trì thế giới, ban tặng tài bảo hữu lậu và vô lậu.</p>
+                <p><span class="lang-tag">EN</span> The Great King of the North, Protector of the Dharma and Grantor of
+                    Prosperity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ།</span>
+            VAISHRAVANA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="bo" class="lang-page">
+    <div class="container">
+        <div class="vaishravana-frame reveal">
+            <img src="https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg" alt="Vaishravana Thangka"
+                class="thangka-image">
+        </div>
+
+        <h1 class="reveal">Vaishravana</h1>
+        <div class="subtitle reveal">TÀI BẢO THIÊN VƯƠNG • ĐA VĂN THIÊN VƯƠNG</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Hộ Pháp Phương Bắc & Chủ Tẻ Tài Bảo</span>
+                <p><span class="lang-tag">VI</span> <strong>Tài Bảo Thiên Vương</strong> (Vaishravana) là vị Thiên vương
+                    tối cao trong Tứ Đại Thiên Vương, cư ngụ tại phương Bắc của núi Tu Di. Ngài không chỉ ban tặng sự
+                    sung túc về vật chất mà còn là vị Hộ Pháp mạnh mẽ bảo vệ giáo pháp. Ngài hiện thân để tịnh hóa lòng
+                    tham, chuyển hóa sự nghèo khó thành sự giàu có của công đức và trí tuệ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM VAISHRAVANA YE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Uy Dũng</span>
+                <p>Ngài cưỡi trên mình <strong>Sư Tử Tuyết</strong> trắng, biểu thị sức mạnh vượt lên trên mọi nỗi sợ
+                    hãi. Tay phải Ngài trì giữ <strong>Cờ Chiến Thắng</strong> – biểu tượng cho sự thành tựu mọi tâm
+                    nguyện thiện lành. Tay trái ôm <strong>Chuột Nakula</strong> nhả ngọc, tượng trưng cho dòng chảy
+                    thịnh vượng không bao giờ cạn.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> རྣམ་ཐོས་སྲས། (Namthöse - Vaishravana)</p>
+                <p><span class="lang-tag">ZH</span> 多聞天王：護 trì thế giới, ban tặng tài bảo hữu lậu và vô lậu.</p>
+                <p><span class="lang-tag">EN</span> The Great King of the North, Protector of the Dharma and Grantor of
+                    Prosperity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ།</span>
+            VAISHRAVANA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         (function () {
             "use strict";
             const MANTRA = "OM VAISHRAVANA YE SVAHA • ཨོཾ་བཻ་ཤྲ་བ་ཎ་ཡེ་སྭཱ་ཧཱ། • ";

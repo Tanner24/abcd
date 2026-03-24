@@ -119,6 +119,72 @@
 
         footer { padding: 100px 0; text-align: center; color: var(--ami-gold); letter-spacing: 5px; }
         .tibetan-footer { font-size: 2.2em; display: block; margin-bottom: 20px; color: #fff; text-shadow: 0 0 20px #ff0000; }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -128,6 +194,24 @@
     <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
     <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
 
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="container">
         <div class="amitayus-frame reveal">
             <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
@@ -166,7 +250,144 @@
         </footer>
     </div>
 
-    <script>
+    </div>
+<div id="en" class="lang-page">
+    <div class="container">
+        <div class="amitayus-frame reveal">
+            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
+                 alt="Amitayus Thangka" class="tara-image">
+        </div>
+
+        <h1 class="reveal">Amitayus</h1>
+        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
+                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM AMARANI JIWEN TIYE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
+                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
+                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
+            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="zh" class="lang-page">
+    <div class="container">
+        <div class="amitayus-frame reveal">
+            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
+                 alt="Amitayus Thangka" class="tara-image">
+        </div>
+
+        <h1 class="reveal">Amitayus</h1>
+        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
+                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM AMARANI JIWEN TIYE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
+                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
+                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
+            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="bo" class="lang-page">
+    <div class="container">
+        <div class="amitayus-frame reveal">
+            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
+                 alt="Amitayus Thangka" class="tara-image">
+        </div>
+
+        <h1 class="reveal">Amitayus</h1>
+        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
+                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "OM AMARANI JIWEN TIYE SVAHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
+                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
+                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
+            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         (function() {
             "use strict";
             // Mantra 3 ngôn ngữ: Anh - Tạng - Trung

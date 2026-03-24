@@ -231,6 +231,72 @@
             display: block;
             margin-bottom: 15px;
         }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -250,6 +316,24 @@
         <input type="range" id="speed-slider" min="0.1" max="10" step="0.1" value="1.5">
     </div>
 
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="container">
         <div class="buddha-frame reveal">
             <img src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg" alt="Nagabodhi Mahasiddha"
@@ -281,7 +365,123 @@
         </footer>
     </div>
 
-    <script>
+    </div>
+<div id="en" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg" alt="Nagabodhi Mahasiddha"
+                class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Đại Thành Tựu Giả Long Trí (Nagabodhi)</h1>
+        <div class="kadampa-sub reveal">OLD KADAMPA VN</div>
+
+        <div class="scripture-box reveal">
+            <span style="color: var(--nag-gold); font-weight: bold; font-family: 'Montserrat';">TIỂU SỬ ĐẠI SƯ LONG
+                TRÍ</span>
+            <p><strong>Nagabodhi</strong> là đệ tử tâm truyền của Bồ Tát Long Thọ. Ngài nổi tiếng với khả năng trì giữ
+                giáo pháp Guhyasamaja (Bí Mật Tập Hội) và đã chứng đắc quả vị Đại Thành Tựu Giả với thọ mạng kéo dài
+                hàng trăm năm để truyền bá Chánh Pháp.</p>
+
+            <div class="wisdom-quote">
+                "Khi hành giả thấu suốt rằng mọi hiện tượng đều không có tự tánh, tâm sẽ tự nhiên an trú trong Đại Lạc
+                vô biên."
+            </div>
+
+            <p>Ngài được coi là một trong những cột trụ của dòng truyền thừa Trung Quán Mật Tông, kết nối trí tuệ của
+                Long Thọ với thực hành mật điển tối cao.</p>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ</span>
+            OM AH RA PA TSA NA DHIH • OLD KADAMPA VN
+        </footer>
+    </div>
+
+    </div>
+<div id="zh" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg" alt="Nagabodhi Mahasiddha"
+                class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Đại Thành Tựu Giả Long Trí (Nagabodhi)</h1>
+        <div class="kadampa-sub reveal">OLD KADAMPA VN</div>
+
+        <div class="scripture-box reveal">
+            <span style="color: var(--nag-gold); font-weight: bold; font-family: 'Montserrat';">TIỂU SỬ ĐẠI SƯ LONG
+                TRÍ</span>
+            <p><strong>Nagabodhi</strong> là đệ tử tâm truyền của Bồ Tát Long Thọ. Ngài nổi tiếng với khả năng trì giữ
+                giáo pháp Guhyasamaja (Bí Mật Tập Hội) và đã chứng đắc quả vị Đại Thành Tựu Giả với thọ mạng kéo dài
+                hàng trăm năm để truyền bá Chánh Pháp.</p>
+
+            <div class="wisdom-quote">
+                "Khi hành giả thấu suốt rằng mọi hiện tượng đều không có tự tánh, tâm sẽ tự nhiên an trú trong Đại Lạc
+                vô biên."
+            </div>
+
+            <p>Ngài được coi là một trong những cột trụ của dòng truyền thừa Trung Quán Mật Tông, kết nối trí tuệ của
+                Long Thọ với thực hành mật điển tối cao.</p>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ</span>
+            OM AH RA PA TSA NA DHIH • OLD KADAMPA VN
+        </footer>
+    </div>
+
+    </div>
+<div id="bo" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg" alt="Nagabodhi Mahasiddha"
+                class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Đại Thành Tựu Giả Long Trí (Nagabodhi)</h1>
+        <div class="kadampa-sub reveal">OLD KADAMPA VN</div>
+
+        <div class="scripture-box reveal">
+            <span style="color: var(--nag-gold); font-weight: bold; font-family: 'Montserrat';">TIỂU SỬ ĐẠI SƯ LONG
+                TRÍ</span>
+            <p><strong>Nagabodhi</strong> là đệ tử tâm truyền của Bồ Tát Long Thọ. Ngài nổi tiếng với khả năng trì giữ
+                giáo pháp Guhyasamaja (Bí Mật Tập Hội) và đã chứng đắc quả vị Đại Thành Tựu Giả với thọ mạng kéo dài
+                hàng trăm năm để truyền bá Chánh Pháp.</p>
+
+            <div class="wisdom-quote">
+                "Khi hành giả thấu suốt rằng mọi hiện tượng đều không có tự tánh, tâm sẽ tự nhiên an trú trong Đại Lạc
+                vô biên."
+            </div>
+
+            <p>Ngài được coi là một trong những cột trụ của dòng truyền thừa Trung Quán Mật Tông, kết nối trí tuệ của
+                Long Thọ với thực hành mật điển tối cao.</p>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ</span>
+            OM AH RA PA TSA NA DHIH • OLD KADAMPA VN
+        </footer>
+    </div>
+
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         (function () {
             "use strict";
             const MANTRA = "OM AH RA PA TSA NA DHIH • ཨོཾ་ཨ་ར་པ་ཙ་ན་དྷཱིཿ • NAGABODHI • ";

@@ -19,6 +19,72 @@
             grid-row: span 2;
             border: 1px solid var(--wisdom-gold) !important;
         }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 
@@ -210,6 +276,27 @@
 
     <script src="js/mantra-engine.js"></script>
     <script>
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            
+            // Handle subtitles in hover if necessary.
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         const body = document.body;
         window.hub = (u, t) => {
             changeBg(u, t);

@@ -225,6 +225,72 @@
             color: #fff;
             text-shadow: 0 0 25px #0033ff;
         }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -239,6 +305,24 @@
         <div id="mantra-r" class="pillar-content"></div>
     </div>
 
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="container">
         <div class="buddha-frame reveal">
             <img src="https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg"
@@ -285,7 +369,168 @@
         </footer>
     </div>
 
-    <script>
+    </div>
+<div id="en" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg"
+                alt="Medicine Buddha Thangka" class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Medicine Buddha</h1>
+        <div class="subtitle reveal">DƯỢC SƯ LƯU LY QUANG VƯƠNG PHẬT</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Chữa Lành Tối Thượng</span>
+                <p><span class="lang-tag">VI</span> <strong>Đức Phật Dược Sư</strong> (Bhaisajyaguru) là hiện thân của
+                    lòng từ bi cứu khổ, chuyên chữa trị những căn bệnh về thân thể và tâm trí. Sắc thân xanh Lưu ly
+                    (Lapis Lazuli) của Ngài tượng trưng cho sự thanh tịnh tuyệt đối, có khả năng tịnh hóa mọi ô nhiễm,
+                    nghiệp chướng và xua tan bóng tối của vô minh - căn nguyên của mọi nỗi đau khổ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng & Pháp Khí</span>
+                <p>Ngài an tọa trên bảo tòa sen, tay trái kết ấn Thiền Định nâng <strong>Bát Thuốc Cam Lồ</strong>, tay
+                    phải kết ấn Thí Nguyện cầm nhành thảo dược <strong>Myrobalan</strong> (Hoàng liên). Đây là biểu
+                    tượng của sự gia trì không giới hạn, giúp chúng sinh đạt được sức khỏe, trường thọ và sự tỉnh thức
+                    tâm linh.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Tinh Hoa Trí Tuệ Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཏ​དྱ་ཐཱ།
+                    ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་མ་ཧཱ་བྷཻ་ཥ་ಜ್ಯེ་རཱ་ཛ་ས་མུདྒ་ཏེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 藥師佛：南无薄伽伐帝。鞞杀社。窭噜薜琉璃。</p>
+                <p><span class="lang-tag">EN</span> The King of Lapis Lazuli Radiance, who heals all mental and physical
+                    ailments.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ།</span>
+            MEDICINE BUDDHA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="zh" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg"
+                alt="Medicine Buddha Thangka" class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Medicine Buddha</h1>
+        <div class="subtitle reveal">DƯỢC SƯ LƯU LY QUANG VƯƠNG PHẬT</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Chữa Lành Tối Thượng</span>
+                <p><span class="lang-tag">VI</span> <strong>Đức Phật Dược Sư</strong> (Bhaisajyaguru) là hiện thân của
+                    lòng từ bi cứu khổ, chuyên chữa trị những căn bệnh về thân thể và tâm trí. Sắc thân xanh Lưu ly
+                    (Lapis Lazuli) của Ngài tượng trưng cho sự thanh tịnh tuyệt đối, có khả năng tịnh hóa mọi ô nhiễm,
+                    nghiệp chướng và xua tan bóng tối của vô minh - căn nguyên của mọi nỗi đau khổ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng & Pháp Khí</span>
+                <p>Ngài an tọa trên bảo tòa sen, tay trái kết ấn Thiền Định nâng <strong>Bát Thuốc Cam Lồ</strong>, tay
+                    phải kết ấn Thí Nguyện cầm nhành thảo dược <strong>Myrobalan</strong> (Hoàng liên). Đây là biểu
+                    tượng của sự gia trì không giới hạn, giúp chúng sinh đạt được sức khỏe, trường thọ và sự tỉnh thức
+                    tâm linh.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Tinh Hoa Trí Tuệ Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཏ​དྱ་ཐཱ།
+                    ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་མ་ཧཱ་བྷཻ་ཥ་ಜ್ಯེ་རཱ་ཛ་ས་མུདྒ་ཏེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 藥師佛：南无薄伽伐帝。鞞杀社。窭噜薜琉璃。</p>
+                <p><span class="lang-tag">EN</span> The King of Lapis Lazuli Radiance, who heals all mental and physical
+                    ailments.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ།</span>
+            MEDICINE BUDDHA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<div id="bo" class="lang-page">
+    <div class="container">
+        <div class="buddha-frame reveal">
+            <img src="https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg"
+                alt="Medicine Buddha Thangka" class="buddha-image">
+        </div>
+
+        <h1 class="reveal">Medicine Buddha</h1>
+        <div class="subtitle reveal">DƯỢC SƯ LƯU LY QUANG VƯƠNG PHẬT</div>
+
+        <div class="scripture-box reveal">
+            <div class="info-section">
+                <span class="info-title">Năng Lượng Chữa Lành Tối Thượng</span>
+                <p><span class="lang-tag">VI</span> <strong>Đức Phật Dược Sư</strong> (Bhaisajyaguru) là hiện thân của
+                    lòng từ bi cứu khổ, chuyên chữa trị những căn bệnh về thân thể và tâm trí. Sắc thân xanh Lưu ly
+                    (Lapis Lazuli) của Ngài tượng trưng cho sự thanh tịnh tuyệt đối, có khả năng tịnh hóa mọi ô nhiễm,
+                    nghiệp chướng và xua tan bóng tối của vô minh - căn nguyên của mọi nỗi đau khổ.</p>
+            </div>
+
+            <div class="wisdom-quote">
+                "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA"
+            </div>
+
+            <div class="info-section">
+                <span class="info-title">Biểu Tượng & Pháp Khí</span>
+                <p>Ngài an tọa trên bảo tòa sen, tay trái kết ấn Thiền Định nâng <strong>Bát Thuốc Cam Lồ</strong>, tay
+                    phải kết ấn Thí Nguyện cầm nhành thảo dược <strong>Myrobalan</strong> (Hoàng liên). Đây là biểu
+                    tượng của sự gia trì không giới hạn, giúp chúng sinh đạt được sức khỏe, trường thọ và sự tỉnh thức
+                    tâm linh.</p>
+            </div>
+
+            <div class="info-section" style="margin-top:40px;">
+                <span class="info-title">Tinh Hoa Trí Tuệ Kadampa</span>
+                <p><span class="lang-tag">BO</span> ཏ​དྱ་ཐཱ།
+                    ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་མ་ཧཱ་བྷཻ་ཥ་ಜ್ಯེ་རཱ་ཛ་ས་མུདྒ་ཏེ་སྭཱ་ཧཱ།</p>
+                <p><span class="lang-tag">ZH</span> 藥師佛：南无薄伽伐帝。鞞杀社。窭噜薜琉璃。</p>
+                <p><span class="lang-tag">EN</span> The King of Lapis Lazuli Radiance, who heals all mental and physical
+                    ailments.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="tibetan-footer">ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ།</span>
+            MEDICINE BUDDHA • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+        </footer>
+    </div>
+
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         (function () {
             "use strict";
             const MANTRA = "TAYATHA OM BEKHANDZE BEKHANDZE MAHA BEKHANDZE RADZA SAMUDGATE SOHA • ཏ​དྱ་ཐཱ། ཨོཾ་བྷཻ་ཥ་ಜ್ಯེ་བྷཻ་ཥ་ಜ್ಯེ་སྭཱ་ཧཱ། • ";

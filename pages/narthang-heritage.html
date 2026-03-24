@@ -33,6 +33,72 @@
             filter: grayscale(0);
             transform: scale(1.05);
         }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -40,6 +106,24 @@
     <div class="bg-overlay"></div>
     <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
     <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="container">
         <header class="bento-item header-box reveal">
             <h1>NARTHANG HERITAGE</h1>
@@ -66,6 +150,110 @@
              <div class="footer-text">NARTHANG HERITAGE • 2026</div>
         </footer>
     </div>
+    </div>
+<div id="en" class="lang-page">
+    <div class="container">
+        <header class="bento-item header-box reveal">
+            <h1>NARTHANG HERITAGE</h1>
+            <div class="subtitle">Di Sản Tu Viện Narthang Gompa</div>
+        </header>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Lịch Sử Hào Hùng</span>
+            <p>Narthang là một trong những tu viện quan trọng nhất của dòng Kadampa, nổi tiếng với xưởng in kinh đồ sộ và những bậc thầy uyên bác. Di sản của Narthang vẫn còn sống mãi trong tâm thức của các hành giả ngày nay.</p>
+        </div>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Kiến Trúc & Phục Dựng</span>
+            <p>Những hình ảnh phục dựng và tư liệu quý báu về tu viện được lưu giữ nhằm bảo tồn tinh hoa văn hóa Kadampa qua hàng thế kỷ.</p>
+        </div>
+        
+        <div class="heritage-gallery bento-item reveal" style="background: transparent; border: none;">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona1.jpg" class="heritage-img" alt="Narthang 1">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona2.jpg" class="heritage-img" alt="Narthang 2">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona3.jpg" class="heritage-img" alt="Narthang 3">
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Quay về Trang chủ</a>
+             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+             <div class="footer-text">NARTHANG HERITAGE • 2026</div>
+        </footer>
+    </div>
+    </div>
+<div id="zh" class="lang-page">
+    <div class="container">
+        <header class="bento-item header-box reveal">
+            <h1>NARTHANG HERITAGE</h1>
+            <div class="subtitle">Di Sản Tu Viện Narthang Gompa</div>
+        </header>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Lịch Sử Hào Hùng</span>
+            <p>Narthang là một trong những tu viện quan trọng nhất của dòng Kadampa, nổi tiếng với xưởng in kinh đồ sộ và những bậc thầy uyên bác. Di sản của Narthang vẫn còn sống mãi trong tâm thức của các hành giả ngày nay.</p>
+        </div>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Kiến Trúc & Phục Dựng</span>
+            <p>Những hình ảnh phục dựng và tư liệu quý báu về tu viện được lưu giữ nhằm bảo tồn tinh hoa văn hóa Kadampa qua hàng thế kỷ.</p>
+        </div>
+        
+        <div class="heritage-gallery bento-item reveal" style="background: transparent; border: none;">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona1.jpg" class="heritage-img" alt="Narthang 1">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona2.jpg" class="heritage-img" alt="Narthang 2">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona3.jpg" class="heritage-img" alt="Narthang 3">
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Quay về Trang chủ</a>
+             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+             <div class="footer-text">NARTHANG HERITAGE • 2026</div>
+        </footer>
+    </div>
+    </div>
+<div id="bo" class="lang-page">
+    <div class="container">
+        <header class="bento-item header-box reveal">
+            <h1>NARTHANG HERITAGE</h1>
+            <div class="subtitle">Di Sản Tu Viện Narthang Gompa</div>
+        </header>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Lịch Sử Hào Hùng</span>
+            <p>Narthang là một trong những tu viện quan trọng nhất của dòng Kadampa, nổi tiếng với xưởng in kinh đồ sộ và những bậc thầy uyên bác. Di sản của Narthang vẫn còn sống mãi trong tâm thức của các hành giả ngày nay.</p>
+        </div>
+        <div class="bento-item reveal" style="grid-column: span 2;">
+            <span class="info-title">Kiến Trúc & Phục Dựng</span>
+            <p>Những hình ảnh phục dựng và tư liệu quý báu về tu viện được lưu giữ nhằm bảo tồn tinh hoa văn hóa Kadampa qua hàng thế kỷ.</p>
+        </div>
+        
+        <div class="heritage-gallery bento-item reveal" style="background: transparent; border: none;">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona1.jpg" class="heritage-img" alt="Narthang 1">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona2.jpg" class="heritage-img" alt="Narthang 2">
+             <img src="https://kadampavn.com/wp-content/uploads/2026/01/mona3.jpg" class="heritage-img" alt="Narthang 3">
+        </div>
+
+        <footer class="bento-item footer-box reveal">
+             <a href="../index.html" class="subtitle" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">← Quay về Trang chủ</a>
+             <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
+             <div class="footer-text">NARTHANG HERITAGE • 2026</div>
+        </footer>
+    </div>
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
+</script>
+
     <script src="../js/mantra-engine.js"></script>
 </body>
 </html>

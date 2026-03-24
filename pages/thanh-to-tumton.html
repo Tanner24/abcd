@@ -282,6 +282,72 @@
             margin-top: 80px;
             color: var(--atisha-gold);
         }
+    
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(139, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--wisdom-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .flag-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--narthang-gold);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--lotus-white, #fdf5e6);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .flag-btn:hover,
+        .flag-btn.active-btn {
+            background: var(--wisdom-gold, #c5a059);
+            color: #000;
+            box-shadow: 0 0 15px var(--wisdom-gold, #c5a059);
+            transform: translateY(-2px);
+        }
+
+        .flag-btn img {
+            width: 20px;
+            height: 14px;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-page {
+            display: none;
+            width: 100%;
+        }
+
+        .lang-page.active-page {
+            display: contents;
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .flag-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -301,6 +367,24 @@
         <input type="range" id="speed-slider" min="0.1" max="4" step="0.1" value="1.0">
     </div>
 
+
+    <div class="nav-sticky">
+        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
+        </button>
+        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
+        </button>
+        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
+        </button>
+        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
+                alt="BO"> བོད་སྐད།
+        </button>
+    </div>
+
+<div id="vi" class="lang-page active-page">
     <div class="main-wrapper">
         <main class="container">
             <div class="buddha-frame reveal">
@@ -339,7 +423,144 @@
         </main>
     </div>
 
-    <script>
+    </div>
+<div id="en" class="lang-page">
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
+                    alt="Narthang Monastery" class="buddha-image">
+            </div>
+
+            <h1 class="reveal">Tumton Lodro Drakpa</h1>
+            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
+
+            <div class="scripture-box reveal">
+                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
+                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
+                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Khai Sáng Narthang</h3>
+                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Mộc Bản Vĩ Đại</h3>
+                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Hạnh Nguyện Kadampa</h3>
+                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.</p>
+                </div>
+            </div>
+
+            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
+        </main>
+    </div>
+
+    </div>
+<div id="zh" class="lang-page">
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
+                    alt="Narthang Monastery" class="buddha-image">
+            </div>
+
+            <h1 class="reveal">Tumton Lodro Drakpa</h1>
+            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
+
+            <div class="scripture-box reveal">
+                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
+                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
+                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Khai Sáng Narthang</h3>
+                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Mộc Bản Vĩ Đại</h3>
+                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Hạnh Nguyện Kadampa</h3>
+                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.</p>
+                </div>
+            </div>
+
+            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
+        </main>
+    </div>
+
+    </div>
+<div id="bo" class="lang-page">
+    <div class="main-wrapper">
+        <main class="container">
+            <div class="buddha-frame reveal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
+                    alt="Narthang Monastery" class="buddha-image">
+            </div>
+
+            <h1 class="reveal">Tumton Lodro Drakpa</h1>
+            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
+
+            <div class="scripture-box reveal">
+                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
+                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
+                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
+            </div>
+
+            <div class="grid-info">
+                <div class="card reveal">
+                    <h3>Khai Sáng Narthang</h3>
+                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Mộc Bản Vĩ Đại</h3>
+                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Hạnh Nguyện Kadampa</h3>
+                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.</p>
+                </div>
+            </div>
+
+            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
+        </main>
+    </div>
+
+    </div>
+<script>
+
+        function setLang(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
+            const targetPage = document.getElementById(langId);
+            if (targetPage) targetPage.classList.add('active-page');
+            document.querySelectorAll('.flag-btn').forEach(btn => btn.classList.remove('active-btn'));
+            const activeBtn = document.getElementById('btn-' + langId);
+            if (activeBtn) activeBtn.classList.add('active-btn');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
+            setLang(savedLang);
+        });
+
         (function () {
             "use strict";
             const MANTRA_TEXT = "OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG • ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ། • ";
