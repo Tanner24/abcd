@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche </title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --kadampa-green-dark: #013220;
             /* Xanh Kadampa trầm mặc */
             --kadampa-green-light: #0a2417;
@@ -285,562 +282,785 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-
-    <div class="mantra-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
-    </div>
-    <div class="mantra-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="container" id="main-container-vi">
-        <header class="bento-item header-box reveal">
-            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI
-                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
-            <h1>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</h1>
-            <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;"></div>
-        </header>
-
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Nhất</span>
-            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <div id="main-bg-engine">
+  </div>
+  <div class="bg-overlay">
+  </div>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">
+      17 LỜI
+                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH
+     </span>
+     <h1>
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </h1>
+     <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;">
+     </div>
+    </header>
+    <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Nhất
+     </span>
+     <p>
+      Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
                 phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những
-                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Hai</span>
-            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
-                tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Ba</span>
-            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
-                thiện hạnh làm lợi lạc cho chúng sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tư</span>
-            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
-                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Năm</span>
-            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
-                tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Sáu</span>
-            <p>Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Bảy</span>
-            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
-                não và đạt được Phật Quả.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tám</span>
-            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
-                mà tịnh hóa nó.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Chín</span>
-            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
-                thanh tịnh mà nhanh thành tựu Phật Quả.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười</span>
-            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
+                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Hai
+     </span>
+     <p>
+      Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
+                tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Ba
+     </span>
+     <p>
+      Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
+                thiện hạnh làm lợi lạc cho chúng sanh.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Tư
+     </span>
+     <p>
+      Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
+                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Năm
+     </span>
+     <p>
+      Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
+                tu hành một cách tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Sáu
+     </span>
+     <p>
+      Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Bảy
+     </span>
+     <p>
+      Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
+                não và đạt được Phật Quả.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Tám
+     </span>
+     <p>
+      Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
+                mà tịnh hóa nó.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Chín
+     </span>
+     <p>
+      Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
+                thanh tịnh mà nhanh thành tựu Phật Quả.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười
+     </span>
+     <p>
+      Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
                 vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để
                 lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên
                 ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước
-                nguyện.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Một</span>
-            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
+                nguyện.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Một
+     </span>
+     <p>
+      Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
                 đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền
                 tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ
                 thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi
-                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Hai</span>
-            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
-                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Ba</span>
-            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
+                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Hai
+     </span>
+     <p>
+      Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
+                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Ba
+     </span>
+     <p>
+      Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
                 sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy
-                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bốn</span>
-            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
+                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Bốn
+     </span>
+     <p>
+      Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
                 tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà
                 phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an
-                lạc.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Lăm</span>
-            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
-                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Sáu</span>
-            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
+                lạc.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Lăm
+     </span>
+     <p>
+      Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
+                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Sáu
+     </span>
+     <p>
+      Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
                 chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của
-                họ.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bảy</span>
-            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
-                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
-        </div>
-
-        <footer class="bento-item foot-box reveal">
-            <span
-                style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
-                NARTHANG.COM • OLD KADAMPA VN • 2026</p>
-        </footer>
+                họ.
+     </p>
     </div>
-
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Bảy
+     </span>
+     <p>
+      Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
+                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.
+     </p>
     </div>
-<div id="en" class="lang-page">
-    <div class="container" id="main-container-en">
-        <header class="bento-item header-box reveal">
-            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI
-                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
-            <h1>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</h1>
-            <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;"></div>
-        </header>
-
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Nhất</span>
-            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
+    <footer class="bento-item foot-box reveal">
+     <span style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </p>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">
+      17 WORDS
+                PRAYING THE POWERFUL DIAMOND FOR THE BENEFIT OF SENTIMENT
+     </span>
+     <h1>
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </h1>
+     <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;">
+     </div>
+    </header>
+    <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      First Prayer
+     </span>
+     <p>
+      When you believe in me with true devotion and pure faith in taking refuge in me, you will receive blessings
+                the blessings of all the Masters, Deities, and Dharma Protectors. I vow to bear all that for your Buddhahood
+                Your karma over many lifetimes will help you have the best conditions to practice.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Monday Prayer
+     </span>
+     <p>
+      I vow to bear the hardships you encounter for your sake, to help you practice in a way
+                best.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Tuesday Prayer
+     </span>
+     <p>
+      I vow not to own any private property, but all belong to the Three Jewels to be able to carry out the tasks
+                Good deeds benefit sentient beings.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Wednesday Prayer
+     </span>
+     <p>
+      I vow to make no distinction between rich and poor and fulfill your wishes through the practice of hypnosis
+                my secret. And fulfill your wishes with all the merits I have.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Thursday Prayer
+     </span>
+     <p>
+      I vow to benefit you with all my ability without tiring, to help you have the conditions
+                practice in the best way.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Friday Prayer
+     </span>
+     <p>
+      I vow to accompany you until you attain Buddhahood without getting tired.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Saturday Prayer
+     </span>
+     <p>
+      I vow that in all my lives I will manifest many means for you to help you escape suffering
+                brain and attain Buddhahood.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Eighth Prayer
+     </span>
+     <p>
+      I vow to eliminate all diseases for you. Even though I have to bear bad karma, I still do it for you
+                which purifies it.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Ninth Prayer
+     </span>
+     <p>
+      I pray for you to receive the karma of hundreds of thousands of lifetimes to help your mind be pure
+                pure and quick to achieve Buddhahood.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Tenth Prayer
+     </span>
+     <p>
+      I vow that no matter what the circumstances, when you recite my mantra, I will sleep under the porch to protect you
+                protect your child. If you recite my mantra during the day, I will carry out the power and compassion of the Buddhas
+                Listen and help me achieve my wishes. If you recite my mantra at night, I will protect you
+                okay from sleep. Whenever you recite my mantra, I bless you to fulfill all your wishes
+                wish.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Eleventh Prayer
+     </span>
+     <p>
+      If you develop devotion to me, I will make great offerings for you. Just need the kids
+                If you have enough devotion to me, even if your sins are serious and endless, I will still purify them for you. I will pass it on
+                all the achievements that I have for you and will always bless you wherever and whenever. All evil spirits and demons
+                Gods must also stay away without daring to cause harm. In return for your righteous devotion, I will ride
+                Five-colored clouds come to you, bringing blessings and achievements to you.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Twelfth Prayer
+     </span>
+     <p>
+      I vow to shoulder all your heavy and light tasks and subdue all obstacles
+                Everything is peaceful and peaceful, and achievements arise from that.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Thirteenth Prayer
+     </span>
+     <p>
+      Those who have faith in me, even once, bow or worship my image with faith in
+                clean, I vow for that person to receive the retribution of the five innocent sins, poverty and all
+                suffering for them. For their sake, may I dedicate all my merits to benefit them.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Fourteenth Prayer
+     </span>
+     <p>
+      I vow to dedicate all the merit that I have accumulated, even the smallest, to all sentient beings
+                Everyone who has taken refuge or not taken refuge or even just needs to admire and hear my name
+                If you develop a pure mind, you will immediately be freed from the three realms of suffering and will live forever in happiness and peace
+                lost.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Fifteenth Prayer
+     </span>
+     <p>
+      I vow to live a life of poverty and asceticism to bear all the suffering caused by poverty and financial hardship
+                sentient beings help sentient beings have favorable conditions to practice the Dharma.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Sixteenth Prayer
+     </span>
+     <p>
+      I vow to receive all the evil karma of sentient beings who fall into hell - those alive and dead
+                When I die, I vow to always bestow blessings and share all my merits towards the peace of mind
+                them.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Seventeenth Prayer
+     </span>
+     <p>
+      If any sentient being has even the slightest faith in the Buddha - Dharma - Sangha, I also pray for them
+                bless, bless and lead them to the pure Potala pure land.
+     </p>
+    </div>
+    <footer class="bento-item foot-box reveal">
+     <span style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </p>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">
+      17 字
+                祈求强大的钻石可以带来情感上的好处
+     </span>
+     <h1>
+      至尊噶当却杰东钦秋楚仁波切
+     </h1>
+     <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;">
+     </div>
+    </header>
+    <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第一个祷告
+     </span>
+     <p>
+      当你以真实的虔诚和清净的信心来皈依我时，你将获得加持
+                一切上师、本尊、护法的加持。我誓愿为你成佛承受这一切
+                你生生世世的业力将帮助你拥有最好的修行条件。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周一祈祷
+     </span>
+     <p>
+      我发誓我会为了你而承受你所遇到的磨难，帮助你修行
+                最好的。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周二祈祷
+     </span>
+     <p>
+      我发誓不拥有任何私人财产，但都属于三宝才能执行任务
+                多行善事，利益众生。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周三祈祷
+     </span>
+     <p>
+      我发誓不分贫富，通过催眠的练习来实现你的愿望
+                我的秘密。并以我所拥有的一切功德，满足您的愿望。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周四祈祷
+     </span>
+     <p>
+      我誓不遗余力地为你造福，帮助你具备条件
+                以最好的方式练习。
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周五祈祷
+     </span>
+     <p>
+      我发愿陪你直到成佛而不累。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      周六祈祷
+     </span>
+     <p>
+      我发誓，我这一生，会为你显出许多法门，让你脱离痛苦。
+                心智而成佛。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第八祷文
+     </span>
+     <p>
+      我发誓为你消除一切疾病。即使我要承受恶业，我还是为了你
+                这净化了它。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第九祷文
+     </span>
+     <p>
+      祈求你能受十万生的业力，使你的心清净。
+                清净快成佛。
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十个祷告
+     </span>
+     <p>
+      我发誓，无论什么情况，当你念我的心咒时，我都会睡在廊下保护你
+                保护你的孩子。若白天念我咒，我将施展诸佛威力慈悲。
+                倾听并帮助我实现我的愿望。如果你晚上念我的咒，我会保护你
+                睡着了还好。每当你念诵我的心咒时，我会加持你实现一切愿望
+                希望。
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十一个祈祷
+     </span>
+     <p>
+      如果你对我生起虔诚心，我将为你做伟大的供养。只需要孩子们
+                如果你对我有足够的忠诚，即使你的罪孽再深重、无穷无尽，我也会为你净化。我会把它传递下去
+                我为你取得的所有成就，无论何时何地，我都会永远祝福你。所有的邪灵和恶魔
+                诸神也必须远离，不敢伤人。为了回报你的正义奉献，我会骑行
+                五彩云来到你身边，给你带来祝福和成就。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十二祷文
+     </span>
+     <p>
+      我誓肩负你一切重任轻重，克服一切障碍
+                一切都平和祥和，成就由此产生。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十三祷文
+     </span>
+     <p>
+      那些对我有信心的人，哪怕只有一次，也会怀着对我的信心而鞠躬或崇拜我的肖像
+                清净，愿令其受五无罪、贫穷等果报。
+                为他们受苦。为了他们，愿我回向一切功德来利益他们。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十四祷文
+     </span>
+     <p>
+      我发愿将我所累积的一切功德，哪怕是最小的功德，回向给一切有情众生
+                所有皈依或未皈依的人，甚至只是需要仰慕和听到我的名字的人
+                若发清净心，即刻脱离三苦，永住安乐
+                丢失了。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十五祷文
+     </span>
+     <p>
+      我发誓要过清贫苦行的生活，承受一切因贫困和经济困难而带来的痛苦
+                帮助众生有修行佛法的有利条件。
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十六祷文
+     </span>
+     <p>
+      愿受一切堕地狱众生、生死众生的恶业
+                当我去世时，我发愿永远给予加持并分享我所有的功德以求内心的平静
+                他们。
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      第十七祷文
+     </span>
+     <p>
+      若有众生对佛法僧有哪怕一丝的信心，我也为他们祈愿。
+                保佑、保佑、带领他们到纯净的布达拉净土。
+     </p>
+    </div>
+    <footer class="bento-item foot-box reveal">
+     <span style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
+      NARTHANG.COM • 老噶当巴越南• 2026
+     </p>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">
+      17 LỜI
+                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH
+     </span>
+     <h1>
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </h1>
+     <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;">
+     </div>
+    </header>
+    <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Nhất
+     </span>
+     <p>
+      Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
                 phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những
-                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Hai</span>
-            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
-                tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Ba</span>
-            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
-                thiện hạnh làm lợi lạc cho chúng sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tư</span>
-            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
-                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Năm</span>
-            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
-                tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Sáu</span>
-            <p>Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Bảy</span>
-            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
-                não và đạt được Phật Quả.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tám</span>
-            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
-                mà tịnh hóa nó.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Chín</span>
-            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
-                thanh tịnh mà nhanh thành tựu Phật Quả.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười</span>
-            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
+                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Hai
+     </span>
+     <p>
+      Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
+                tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Ba
+     </span>
+     <p>
+      Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
+                thiện hạnh làm lợi lạc cho chúng sanh.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Tư
+     </span>
+     <p>
+      Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
+                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Năm
+     </span>
+     <p>
+      Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
+                tu hành một cách tốt nhất.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Sáu
+     </span>
+     <p>
+      Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Bảy
+     </span>
+     <p>
+      Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
+                não và đạt được Phật Quả.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Tám
+     </span>
+     <p>
+      Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
+                mà tịnh hóa nó.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Chín
+     </span>
+     <p>
+      Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
+                thanh tịnh mà nhanh thành tựu Phật Quả.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười
+     </span>
+     <p>
+      Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
                 vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để
                 lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên
                 ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước
-                nguyện.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Một</span>
-            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
+                nguyện.
+     </p>
+    </div>
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Một
+     </span>
+     <p>
+      Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
                 đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền
                 tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ
                 thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi
-                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Hai</span>
-            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
-                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Ba</span>
-            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
+                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Hai
+     </span>
+     <p>
+      Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
+                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Ba
+     </span>
+     <p>
+      Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
                 sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy
-                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bốn</span>
-            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
+                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Bốn
+     </span>
+     <p>
+      Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
                 tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà
                 phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an
-                lạc.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Lăm</span>
-            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
-                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Sáu</span>
-            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
+                lạc.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Lăm
+     </span>
+     <p>
+      Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
+                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.
+     </p>
+    </div>
+    <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Sáu
+     </span>
+     <p>
+      Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
                 chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của
-                họ.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bảy</span>
-            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
-                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
-        </div>
-
-        <footer class="bento-item foot-box reveal">
-            <span
-                style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
-                NARTHANG.COM • OLD KADAMPA VN • 2026</p>
-        </footer>
+                họ.
+     </p>
     </div>
-
+    <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
+     <span class="info-title">
+      Lời nguyện thứ Mười Bảy
+     </span>
+     <p>
+      Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
+                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.
+     </p>
     </div>
-<div id="zh" class="lang-page">
-    <div class="container" id="main-container-zh">
-        <header class="bento-item header-box reveal">
-            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI
-                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
-            <h1>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</h1>
-            <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;"></div>
-        </header>
-
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Nhất</span>
-            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
-                phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những
-                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Hai</span>
-            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
-                tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Ba</span>
-            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
-                thiện hạnh làm lợi lạc cho chúng sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tư</span>
-            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
-                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Năm</span>
-            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
-                tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Sáu</span>
-            <p>Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Bảy</span>
-            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
-                não và đạt được Phật Quả.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tám</span>
-            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
-                mà tịnh hóa nó.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Chín</span>
-            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
-                thanh tịnh mà nhanh thành tựu Phật Quả.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười</span>
-            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
-                vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để
-                lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên
-                ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước
-                nguyện.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Một</span>
-            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
-                đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền
-                tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ
-                thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi
-                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Hai</span>
-            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
-                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Ba</span>
-            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
-                sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy
-                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bốn</span>
-            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
-                tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà
-                phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an
-                lạc.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Lăm</span>
-            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
-                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Sáu</span>
-            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
-                chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của
-                họ.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bảy</span>
-            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
-                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
-        </div>
-
-        <footer class="bento-item foot-box reveal">
-            <span
-                style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
-                NARTHANG.COM • OLD KADAMPA VN • 2026</p>
-        </footer>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="container" id="main-container-bo">
-        <header class="bento-item header-box reveal">
-            <span style="font-size: 1.5em; color: var(--narthang-gold); display: block; margin-bottom: 15px;">17 LỜI
-                NGUYỆN KIM CƯƠNG MẠNH MẼ VÌ LỢI LẠC CHÚNG SANH</span>
-            <h1>H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</h1>
-            <div style="letter-spacing: 8px; color: var(--narthang-white); font-weight: 600;"></div>
-        </header>
-
-        <div class="bento-item big-wish reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Nhất</span>
-            <p>Khi tin ta bằng lòng sùng mộ chân chánh và niềm tin trong sạch quy y ta, con sẽ nhận được sự gia trì chúc
-                phúc của tất cả Chư Đạo Sư, Bổn Tôn, Hộ Pháp. Ta nguyện sẽ vì Phật Quả của con mà gánh lấy tất cả những
-                nghiệp lực của con trong nhiều đời kiếp để giúp con có điều kiện tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Hai</span>
-            <p>Ta nguyện sẽ vì con mà gánh lấy các khổ nạn mà con gặp phải, để giúp con có điều kiện tu hành một cách
-                tốt nhất.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Ba</span>
-            <p>Ta nguyện không sở hữu bất cứ tài sản riêng nào, mà hết thảy đều thuộc về Tam Bảo để có thể thực hiện các
-                thiện hạnh làm lợi lạc cho chúng sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tư</span>
-            <p>Ta nguyện không có sự phân biệt giàu, nghèo mà đáp ứng các nguyện ước của con bằng sự thực hành pháp miên
-                mật của ta. Và thực hiện những mong cầu của con bằng tất cả những công đức mà ta có được.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Năm</span>
-            <p>Ta nguyện sẽ làm lợi lạc cho con bằng tất cả khả năng của ta mà không mỏi mệt, để giúp con có điều kiện
-                tu hành một cách tốt nhất.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Sáu</span>
-            <p>Ta nguyện sẽ đi cùng con cho đến khi con viên thành Phật Quả mà không mỏi mệt.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Bảy</span>
-            <p>Ta nguyện trong tất cả các đời đều vì con mà hóa hiện nhiều phương tiện để giúp con thoát khỏi những khổ
-                não và đạt được Phật Quả.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Tám</span>
-            <p>Ta nguyện sẽ vì con mà tiêu trừ tất cả tật bệnh. Cho dù ta phải mang lãnh ác nghiệp nhưng ta vẫn vì con
-                mà tịnh hóa nó.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Chín</span>
-            <p>Ta nguyện vì con nhận lãnh những nghiệp lực trong hàng trăm nghìn kiếp để giúp tâm con có thể trong sạch
-                thanh tịnh mà nhanh thành tựu Phật Quả.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười</span>
-            <p>Ta nguyện dù trong bất kỳ hoàn cảnh nào, khi con trì niệm minh chú của ta, ta sẽ ngủ dưới hiên nhà để bảo
-                vệ con. Nếu ban ngày con trì niệm minh chú ta, ta sẽ thực hiện oai lực và lòng từ bi của chư Phật để
-                lắng nghe và giúp con thành tựu nguyện ước. Nếu ban đêm con trì niệm minh chú ta, ta sẽ bảo hộ con yên
-                ổn từ trong giấc ngủ. Bất kể khi nào con trì niệm minh chú ta, ta đều gia trì con thành tựu mọi ước
-                nguyện.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Một</span>
-            <p>Nếu con phát khởi lòng sùng mộ với ta thì ta sẽ vì con mà thực hiện sự cúng dường to lớn. Chỉ cần các con
-                đủ lòng sùng mộ với ta, thì cho dù tội nặng đến vô gián ta cũng sẽ vì con mà tịnh hóa. Ta sẽ trao truyền
-                tất cả những thành tựu mà ta có cho con và sẽ luôn gia trì cho con mọi lúc mọi nơi. Tất cả tà ma, quỷ
-                thần cũng đều phải tránh xa mà không dám gây hại. Để đáp lại lòng sùng mộ đúng đắn của con, ta sẽ cỡi
-                mây ngũ sắc đến bên con, mang lại sự gia trì và thành tựu đến với con.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Hai</span>
-            <p>Ta nguyện sẽ gánh vác tất cả công việc nặng, nhẹ của con và sẽ nhiếp phục tất cả chướng ngại, khiến cho
-                hết thảy đều an lạc, thành tựu vì đó mà khởi sanh.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Ba</span>
-            <p>Những ai có niềm tin đến ta, dù chỉ một lần lễ lạy hay chiêm bái tôn ảnh của ta với một niềm tin trong
-                sạch, ta nguyện vì người đó mà lãnh lấy quả báo của ngũ tội vô gián, lãnh lấy sự nghèo đói và hết thảy
-                khổ não cho họ. Nguyện vì họ dâng hiến tất cả các công đức của bản thân để làm lợi lạc cho họ.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bốn</span>
-            <p>Ta nguyện vì tất cả chúng sanh mà hồi hướng hết thảy công đức mà ta tích tập được dù chỉ là nhỏ nhất cho
-                tất cả nhưng ai đã quy y hay chưa quy y hay thậm chí chỉ cần chiêm ngưỡng, nghe đến danh hiệu của ta mà
-                phát tâm thanh tịnh, liền sẽ được thoát khỏi cõi tam đồ khổ, đời đời sẽ được sống trong hạnh phúc và an
-                lạc.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Lăm</span>
-            <p>Ta nguyện sống một đời khó nghèo, khổ hạnh để gánh hết thảy những khổ não vì đói nghèo, túng quẫn của
-                chúng sanh giúp cho chúng sanh có những thuận duyên để tu tập chánh pháp.</p>
-        </div>
-
-        <div class="bento-item reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Sáu</span>
-            <p>Ta nguyện nhận lãnh hết thảy những ác nghiệp đọa địa ngục của chúng sanh – những người còn sống hay đã
-                chết, nguyện luôn ban phước lành và chia sẻ hết thảy công đức của bản thân để hướng tới sự an nhiên của
-                họ.</p>
-        </div>
-
-        <div class="bento-item span-2 reveal" onmouseenter="activateHub()" onmouseleave="deactivateHub()">
-            <span class="info-title">Lời nguyện thứ Mười Bảy</span>
-            <p>Nếu bất kể chúng sinh nào khởi lên niềm tin dù là rất nhỏ vào Phật - Pháp - Tăng, ta cũng nguyện vì họ mà
-                gia trì, ban phước và dẫn dắt họ tới cõi tịnh độ Potala thanh tịnh.</p>
-        </div>
-
-        <footer class="bento-item foot-box reveal">
-            <span
-                style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
-                NARTHANG.COM • OLD KADAMPA VN • 2026</p>
-        </footer>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+    <footer class="bento-item foot-box reveal">
+     <span style="font-size: 2.5em; color: #fff; text-shadow: 0 0 20px var(--narthang-gold);">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷ་ྭཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--narthang-gold); margin-top: 10px;">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </p>
+    </footer>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -903,7 +1123,6 @@
                 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
             };
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

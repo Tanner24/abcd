@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>White Tara - Biểu Tượng Của Sự Trường Thọ & Trí Tuệ</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>
+   White Tara - Biểu Tượng Của Sự Trường Thọ &amp; Trí Tuệ
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --tara-white: #ffffff;
             --tara-pink: #fff5f7;
             --tara-gold: #d4af37;
@@ -323,262 +320,421 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <canvas id="healing-canvas"></canvas>
-
-    <div class="mantra-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="healing-canvas">
+  </canvas>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="speed-panel">
+   <label>
+    HEALING FREQUENCY
+   </label>
+   <input id="speed-slider" max="5" min="0.1" step="0.1" type="range" value="1.2"/>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container">
+    <div class="tara-frame reveal">
+     <img alt="White Tara" class="tara-image" src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg"/>
     </div>
-    <div class="mantra-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
+    <h1 class="reveal">
+     Sitatara
+    </h1>
+    <div class="subtitle reveal">
+     BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA
     </div>
-
-    <div class="speed-panel">
-        <label>HEALING FREQUENCY</label>
-        <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1.2">
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="container">
-        <div class="tara-frame reveal">
-            <img src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg" alt="White Tara" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Sitatara</h1>
-        <div class="subtitle reveal">BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Nguồn Gốc & Thệ Nguyện</span>
-                <p><span class="lang-tag">VI</span> <strong>White Tara</strong> (Sitatara), hay Drolkar trong tiếng
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Nguồn Gốc &amp; Thệ Nguyện
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        White Tara
+       </strong>
+       (Sitatara), hay Drolkar trong tiếng
                     Tạng, kết tinh từ giọt lệ bi mẫn của Đức Quán Thế Âm. Ngài hiện thân để xua tan nỗi sợ hãi về cái
                     chết bất đắc kỳ tử và ban tặng thọ mạng trường tồn để hành giả đủ thời gian tu tập đạt đến giác ngộ.
-                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học (Iconography)</span>
-                <p>Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu <strong>Thất
-                        Nhãn</strong> (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--tara-gold)">Hoa Sen Utpala:</strong> Tay trái cầm nhành sen trắng với
+                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học (Iconography)
+      </span>
+      <p>
+       Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu
+       <strong>
+        Thất
+                        Nhãn
+       </strong>
+       (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Hoa Sen Utpala:
+        </strong>
+        Tay trái cầm nhành sen trắng với
                         3 đóa, đại diện cho chư Phật ba đời (Quá khứ, Hiện tại, Vị lai).
-                    </div>
-                    <div>
-                        <strong style="color:var(--tara-gold)">Thí Nguyện Ấn:</strong> Tay phải kết ấn ban phước, sẵn
+       </div>
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Thí Nguyện Ấn:
+        </strong>
+        Tay phải kết ấn ban phước, sẵn
                         sàng cứu độ mọi tâm hồn tìm đến sự nương tựa.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)</p>
-                <p><span class="lang-tag">ZH</span> 白度母：具有七隻眼，故又稱七眼佛母。</p>
-                <p><span class="lang-tag">EN</span> The Mother of Longevity, who purifies the obstacles of life and
-                    health.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།</span>
-            WHITE TARA • OLD KADAMPA VN • 2026
-        </footer>
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Truyền Thừa Đa Ngôn Ngữ
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       白度母：具有七隻眼，故又稱七眼佛母。
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Mother of Longevity, who purifies the obstacles of life and
+                    health.
+      </p>
+     </div>
     </div>
-
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།
+     </span>
+     WHITE TARA • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container">
+    <div class="tara-frame reveal">
+     <img alt="White Tara" class="tara-image" src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg"/>
     </div>
-<div id="en" class="lang-page">
-    <div class="container">
-        <div class="tara-frame reveal">
-            <img src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg" alt="White Tara" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Sitatara</h1>
-        <div class="subtitle reveal">BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Nguồn Gốc & Thệ Nguyện</span>
-                <p><span class="lang-tag">VI</span> <strong>White Tara</strong> (Sitatara), hay Drolkar trong tiếng
+    <h1 class="reveal">
+     Sitatara
+    </h1>
+    <div class="subtitle reveal">
+     PATTERN OF THE BUDDHA MODEL • KADAMPA HERITAGE
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Origin &amp; Vows
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        White Tara
+       </strong>
+       (Sitatara), or Drolkar in English
+                    Organ, crystallized from the compassionate tears of Avalokiteshvara. He appeared to dispel fear of things
+                    sudden death and bestowing a long life so that the practitioner has enough time to practice and reach enlightenment.
+                    She is the "Mother of Buddhas", symbolizing absolute pure wisdom.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Iconography
+      </span>
+      <p>
+       His body is as white as the full moon, seated in Vajra posture. He owns
+       <strong>
+        That
+                        Label
+       </strong>
+       (7 eyes) - represents compassion without gaps, penetrating all things.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Utpala Lotus:
+        </strong>
+        The left hand holds a white lotus branch
+                        The 3 flowers represent the Buddhas of the three times (Past, Present, Future).
+       </div>
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Seal of Prayer:
+        </strong>
+        The right hand makes a blessing seal, ready
+                        ready to save every soul that seeks refuge.
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Multilingual Inheritance
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       白度母：具有七隻眼，故又稱七眼佛母。
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Mother of Longevity, who purifies the obstacles of life and
+                    health.
+      </p>
+     </div>
+    </div>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།
+     </span>
+     WHITE TARA • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container">
+    <div class="tara-frame reveal">
+     <img alt="White Tara" class="tara-image" src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg"/>
+    </div>
+    <h1 class="reveal">
+     西塔塔拉
+    </h1>
+    <div class="subtitle reveal">
+     佛像模型•噶当巴传承
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       起源与誓言
+      </span>
+      <p>
+       <span class="lang-tag">
+        六、
+       </span>
+       <strong>
+        白度母
+       </strong>
+       （Sitatara），或英语中的 Drolkar
+                    器官，是观世音菩萨慈悲泪水的结晶。他似乎消除了对事物的恐惧
+                    突然死亡并赐予长寿，使修行者有足够的时间修行并获得开悟。
+                    她是“诸佛之母”，象征着绝对清净的智慧。
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      “OM TARE TUTTARE TURE MAMA Ayur Punye Jnana PUSHTIM KURU SVAHA”
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       图像学
+      </span>
+      <p>
+       其身色洁白如满月，结金刚坐。他拥有
+       <strong>
+        那
+                        标签
+       </strong>
+       （7眼）——代表慈悲无隙，通透一切。
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--tara-gold)">
+         优婆罗莲：
+        </strong>
+        左手执白莲花枝
+                        三花代表三世诸佛（过去、现在、未来）。
+       </div>
+       <div>
+        <strong style="color:var(--tara-gold)">
+         祈祷印记：
+        </strong>
+        右手做出祝福印，准备好
+                        准备好拯救每一个寻求庇护的灵魂。
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       多语言继承
+      </span>
+      <p>
+       <span class="lang-tag">
+        博
+       </span>
+       སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       白度母：有七只眼，故名七眼佛母。
+      </p>
+      <p>
+       <span class="lang-tag">
+        CN
+       </span>
+       长寿之母，净化生命障碍，
+                    健康。
+      </p>
+     </div>
+    </div>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།
+     </span>
+     白度母 • 老噶当巴 VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container">
+    <div class="tara-frame reveal">
+     <img alt="White Tara" class="tara-image" src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg"/>
+    </div>
+    <h1 class="reveal">
+     Sitatara
+    </h1>
+    <div class="subtitle reveal">
+     BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Nguồn Gốc &amp; Thệ Nguyện
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        White Tara
+       </strong>
+       (Sitatara), hay Drolkar trong tiếng
                     Tạng, kết tinh từ giọt lệ bi mẫn của Đức Quán Thế Âm. Ngài hiện thân để xua tan nỗi sợ hãi về cái
                     chết bất đắc kỳ tử và ban tặng thọ mạng trường tồn để hành giả đủ thời gian tu tập đạt đến giác ngộ.
-                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học (Iconography)</span>
-                <p>Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu <strong>Thất
-                        Nhãn</strong> (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--tara-gold)">Hoa Sen Utpala:</strong> Tay trái cầm nhành sen trắng với
+                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học (Iconography)
+      </span>
+      <p>
+       Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu
+       <strong>
+        Thất
+                        Nhãn
+       </strong>
+       (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Hoa Sen Utpala:
+        </strong>
+        Tay trái cầm nhành sen trắng với
                         3 đóa, đại diện cho chư Phật ba đời (Quá khứ, Hiện tại, Vị lai).
-                    </div>
-                    <div>
-                        <strong style="color:var(--tara-gold)">Thí Nguyện Ấn:</strong> Tay phải kết ấn ban phước, sẵn
+       </div>
+       <div>
+        <strong style="color:var(--tara-gold)">
+         Thí Nguyện Ấn:
+        </strong>
+        Tay phải kết ấn ban phước, sẵn
                         sàng cứu độ mọi tâm hồn tìm đến sự nương tựa.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)</p>
-                <p><span class="lang-tag">ZH</span> 白度母：具有七隻眼，故又稱七眼佛母。</p>
-                <p><span class="lang-tag">EN</span> The Mother of Longevity, who purifies the obstacles of life and
-                    health.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།</span>
-            WHITE TARA • OLD KADAMPA VN • 2026
-        </footer>
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Truyền Thừa Đa Ngôn Ngữ
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       白度母：具有七隻眼，故又稱七眼佛母。
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Mother of Longevity, who purifies the obstacles of life and
+                    health.
+      </p>
+     </div>
     </div>
-
-    </div>
-<div id="zh" class="lang-page">
-    <div class="container">
-        <div class="tara-frame reveal">
-            <img src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg" alt="White Tara" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Sitatara</h1>
-        <div class="subtitle reveal">BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Nguồn Gốc & Thệ Nguyện</span>
-                <p><span class="lang-tag">VI</span> <strong>White Tara</strong> (Sitatara), hay Drolkar trong tiếng
-                    Tạng, kết tinh từ giọt lệ bi mẫn của Đức Quán Thế Âm. Ngài hiện thân để xua tan nỗi sợ hãi về cái
-                    chết bất đắc kỳ tử và ban tặng thọ mạng trường tồn để hành giả đủ thời gian tu tập đạt đến giác ngộ.
-                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học (Iconography)</span>
-                <p>Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu <strong>Thất
-                        Nhãn</strong> (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--tara-gold)">Hoa Sen Utpala:</strong> Tay trái cầm nhành sen trắng với
-                        3 đóa, đại diện cho chư Phật ba đời (Quá khứ, Hiện tại, Vị lai).
-                    </div>
-                    <div>
-                        <strong style="color:var(--tara-gold)">Thí Nguyện Ấn:</strong> Tay phải kết ấn ban phước, sẵn
-                        sàng cứu độ mọi tâm hồn tìm đến sự nương tựa.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)</p>
-                <p><span class="lang-tag">ZH</span> 白度母：具有七隻眼，故又稱七眼佛母。</p>
-                <p><span class="lang-tag">EN</span> The Mother of Longevity, who purifies the obstacles of life and
-                    health.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།</span>
-            WHITE TARA • OLD KADAMPA VN • 2026
-        </footer>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="container">
-        <div class="tara-frame reveal">
-            <img src="https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg" alt="White Tara" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Sitatara</h1>
-        <div class="subtitle reveal">BẠCH ĐỘ PHẬT MẪU • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Nguồn Gốc & Thệ Nguyện</span>
-                <p><span class="lang-tag">VI</span> <strong>White Tara</strong> (Sitatara), hay Drolkar trong tiếng
-                    Tạng, kết tinh từ giọt lệ bi mẫn của Đức Quán Thế Âm. Ngài hiện thân để xua tan nỗi sợ hãi về cái
-                    chết bất đắc kỳ tử và ban tặng thọ mạng trường tồn để hành giả đủ thời gian tu tập đạt đến giác ngộ.
-                    Ngài là "Mẹ của chư Phật", biểu trưng cho trí tuệ bát nhã thanh tịnh tuyệt đối.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSHTIM KURU SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học (Iconography)</span>
-                <p>Thân Ngài trắng muốt như trăng rằm, an tọa trong tư thế Kim Cương (Vajra). Ngài sở hữu <strong>Thất
-                        Nhãn</strong> (7 mắt) - biểu thị lòng bi mẫn không kẽ hở, thấu suốt vạn vật.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--tara-gold)">Hoa Sen Utpala:</strong> Tay trái cầm nhành sen trắng với
-                        3 đóa, đại diện cho chư Phật ba đời (Quá khứ, Hiện tại, Vị lai).
-                    </div>
-                    <div>
-                        <strong style="color:var(--tara-gold)">Thí Nguyện Ấn:</strong> Tay phải kết ấn ban phước, sẵn
-                        sàng cứu độ mọi tâm hồn tìm đến sự nương tựa.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> སྒྲོལ་དཀར་ཡིད་བཞིན་འཁོར་ལོ། (Độ Mẫu Trắng Bánh Xe Như Ý)</p>
-                <p><span class="lang-tag">ZH</span> 白度母：具有七隻眼，故又稱七眼佛母。</p>
-                <p><span class="lang-tag">EN</span> The Mother of Longevity, who purifies the obstacles of life and
-                    health.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།</span>
-            WHITE TARA • OLD KADAMPA VN • 2026
-        </footer>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཏཱ་རེ་ཏུཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ།
+     </span>
+     WHITE TARA • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -652,7 +808,6 @@
             };
             window.onresize = resize;
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

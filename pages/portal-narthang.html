@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Narthang Kadampa - Bento Heritage | 2026</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>
+   Narthang Kadampa - Bento Heritage | 2026
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --narthang-gold: #c5a059;
             --narthang-dark: #0a2417;
             /* Kadampa Green */
@@ -300,190 +297,217 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-
-    <div class="mantra-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <div id="main-bg-engine">
+  </div>
+  <div class="bg-overlay">
+  </div>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container">
+    <header class="bento-item header-box reveal">
+     <h1>
+      Narthang
+     </h1>
+     <div class="subtitle">
+      Tinh Hoa Trí Tuệ Kadampa
+     </div>
+    </header>
+    <div class="bento-item heritage-box reveal" onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Narthang Heritage
+     </span>
+     <p>
+      Chiêm bái tu viện Narthang Gompa
+     </p>
     </div>
-    <div class="mantra-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
+    <div class="bento-item guru-box reveal" onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa
+     </p>
     </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
+    <div class="bento-item lamrim-box reveal" onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Dòng truyền thừa Kadampa Cổ
+     </span>
+     <p>
+      Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara
+     </p>
     </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="container">
-        <header class="bento-item header-box reveal">
-            <h1>Narthang</h1>
-            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
-        </header>
-
-        <div class="bento-item heritage-box reveal"
-            onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
-            <span class="info-title">Narthang Heritage</span>
-            <p>Chiêm bái tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item guru-box reveal"
-            onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')"
-            onmouseleave="resetBg()">
-            <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-            <p>Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item lamrim-box reveal"
-            onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')"
-            onmouseleave="resetBg()">
-            <span class="info-title">Dòng truyền thừa Kadampa Cổ </span>
-            <p>Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara</p>
-        </div>
-
-        <footer class="bento-item footer-box reveal">
-            <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
-            <div
-                style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
-                OldKadampaVN - NARTHANG.COM • 2026
-            </div>
-        </footer>
+    <footer class="bento-item footer-box reveal">
+     <span class="tibetan-footer">
+      ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།
+     </span>
+     <div style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
+      OldKadampaVN - NARTHANG.COM • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container">
+    <header class="bento-item header-box reveal">
+     <h1>
+      Narthang
+     </h1>
+     <div class="subtitle">
+      Kadampa Wisdom Essence
+     </div>
+    </header>
+    <div class="bento-item heritage-box reveal" onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Narthang Heritage
+     </span>
+     <p>
+      Admire Narthang Gompa monastery
+     </p>
     </div>
-
+    <div class="bento-item guru-box reveal" onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      The reincarnation of the career achievements of the Holy Patriarch Tumton Lodro Drakpa - founder of Narthang Gompa monastery
+     </p>
     </div>
-<div id="en" class="lang-page">
-    <div class="container">
-        <header class="bento-item header-box reveal">
-            <h1>Narthang</h1>
-            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
-        </header>
-
-        <div class="bento-item heritage-box reveal"
-            onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
-            <span class="info-title">Narthang Heritage</span>
-            <p>Chiêm bái tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item guru-box reveal"
-            onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')"
-            onmouseleave="resetBg()">
-            <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-            <p>Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item lamrim-box reveal"
-            onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')"
-            onmouseleave="resetBg()">
-            <span class="info-title">Dòng truyền thừa Kadampa Cổ </span>
-            <p>Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara</p>
-        </div>
-
-        <footer class="bento-item footer-box reveal">
-            <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
-            <div
-                style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
-                OldKadampaVN - NARTHANG.COM • 2026
-            </div>
-        </footer>
+    <div class="bento-item lamrim-box reveal" onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Ancient Kadampa Lineage
+     </span>
+     <p>
+      The lineage was founded by the holy founder Atisha Dipamkara
+     </p>
     </div>
-
+    <footer class="bento-item footer-box reveal">
+     <span class="tibetan-footer">
+      ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།
+     </span>
+     <div style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
+      OldKadampaVN - NARTHANG.COM • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container">
+    <header class="bento-item header-box reveal">
+     <h1>
+      纳尔唐
+     </h1>
+     <div class="subtitle">
+      噶当巴智慧精华
+     </div>
+    </header>
+    <div class="bento-item heritage-box reveal" onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      纳尔唐遗产
+     </span>
+     <p>
+      欣赏Narthang Gompa 寺院
+     </p>
     </div>
-<div id="zh" class="lang-page">
-    <div class="container">
-        <header class="bento-item header-box reveal">
-            <h1>Narthang</h1>
-            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
-        </header>
-
-        <div class="bento-item heritage-box reveal"
-            onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
-            <span class="info-title">Narthang Heritage</span>
-            <p>Chiêm bái tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item guru-box reveal"
-            onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')"
-            onmouseleave="resetBg()">
-            <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-            <p>Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item lamrim-box reveal"
-            onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')"
-            onmouseleave="resetBg()">
-            <span class="info-title">Dòng truyền thừa Kadampa Cổ </span>
-            <p>Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara</p>
-        </div>
-
-        <footer class="bento-item footer-box reveal">
-            <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
-            <div
-                style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
-                OldKadampaVN - NARTHANG.COM • 2026
-            </div>
-        </footer>
+    <div class="bento-item guru-box reveal" onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      至尊噶当却杰东钦秋楚仁波切
+     </span>
+     <p>
+      那塘寺院创始人图敦罗卓扎巴圣祖事业成就的转世
+     </p>
     </div>
-
+    <div class="bento-item lamrim-box reveal" onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')" onmouseleave="resetBg()">
+     <span class="info-title">
+      古代噶当巴传承
+     </span>
+     <p>
+      该传承由圣祖阿底峡燃灯所创立
+     </p>
     </div>
-<div id="bo" class="lang-page">
-    <div class="container">
-        <header class="bento-item header-box reveal">
-            <h1>Narthang</h1>
-            <div class="subtitle">Tinh Hoa Trí Tuệ Kadampa</div>
-        </header>
-
-        <div class="bento-item heritage-box reveal"
-            onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
-            <span class="info-title">Narthang Heritage</span>
-            <p>Chiêm bái tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item guru-box reveal"
-            onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')"
-            onmouseleave="resetBg()">
-            <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-            <p>Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa</p>
-        </div>
-
-        <div class="bento-item lamrim-box reveal"
-            onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')"
-            onmouseleave="resetBg()">
-            <span class="info-title">Dòng truyền thừa Kadampa Cổ </span>
-            <p>Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara</p>
-        </div>
-
-        <footer class="bento-item footer-box reveal">
-            <span class="tibetan-footer">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།</span>
-            <div
-                style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
-                OldKadampaVN - NARTHANG.COM • 2026
-            </div>
-        </footer>
+    <footer class="bento-item footer-box reveal">
+     <span class="tibetan-footer">
+      ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།
+     </span>
+     <div style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
+      老噶当巴VN - NARTHANG.COM • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container">
+    <header class="bento-item header-box reveal">
+     <h1>
+      Narthang
+     </h1>
+     <div class="subtitle">
+      Tinh Hoa Trí Tuệ Kadampa
+     </div>
+    </header>
+    <div class="bento-item heritage-box reveal" onmouseenter="changeBg('https://i.ibb.co/XfXk5Sj/narthang-panorama.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Narthang Heritage
+     </span>
+     <p>
+      Chiêm bái tu viện Narthang Gompa
+     </p>
     </div>
-
+    <div class="bento-item guru-box reveal" onmouseenter="changeBg('https://kadampavn.com/wp-content/uploads/2026/01/8df819c0-8246-46e3-bfd7-d33c66959214-1.jpg')" onmouseleave="resetBg()">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      Hoá thân thành tựu sự nghiệp của Thánh Tổ Tumton Lodro Drakpa - người sáng lập tu viện Narthang Gompa
+     </p>
     </div>
-<script>
-
-        function setLang(langId) {
+    <div class="bento-item lamrim-box reveal" onmouseenter="changeBg('https://www.meditateinperth.org/wp-content/uploads/2020/11/Lamrim-retreat-image-Atisha.png')" onmouseleave="resetBg()">
+     <span class="info-title">
+      Dòng truyền thừa Kadampa Cổ
+     </span>
+     <p>
+      Dòng truyền thừa sáng lập bởi thánh tổ Atisha Dipamkara
+     </p>
+    </div>
+    <footer class="bento-item footer-box reveal">
+     <span class="tibetan-footer">
+      ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ།
+     </span>
+     <div style="letter-spacing: 4px; font-size: 0.7rem; color: var(--narthang-gold); font-family: 'Montserrat', sans-serif;">
+      OldKadampaVN - NARTHANG.COM • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -532,7 +556,6 @@
                 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
             };
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

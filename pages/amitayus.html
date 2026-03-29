@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Amitayus - Vô Lượng Thọ Phật | Super Kadampa</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>
+   Amitayus - Vô Lượng Thọ Phật | Super Kadampa
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --ami-red: #9e1a1a;
             --ami-gold: #c5a059;
             --ami-ruby: #ff0000;
@@ -184,196 +184,347 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-<body oncontextmenu="return false;">
-
-    <canvas id="ruby-canvas"></canvas>
-
-    <div class="mantra-pillar pillar-left"><div id="mantra-l" class="pillar-content"></div></div>
-    <div class="mantra-pillar pillar-right"><div id="mantra-r" class="pillar-content"></div></div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="ruby-canvas">
+  </canvas>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container">
+    <div class="amitayus-frame reveal">
+     <img alt="Amitayus Thangka" class="tara-image" src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg"/>
     </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="container">
-        <div class="amitayus-frame reveal">
-            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
-                 alt="Amitayus Thangka" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Amitayus</h1>
-        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
-                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM AMARANI JIWEN TIYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
-                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
-                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
-                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
-            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
-        </footer>
+    <h1 class="reveal">
+     Amitayus
+    </h1>
+    <div class="subtitle reveal">
+     ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA
     </div>
-
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Năng Lượng Diệu Quan Sát Trí
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Amitayus
+       </strong>
+       là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM AMARANI JIWEN TIYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học Vô Lượng Thọ
+      </span>
+      <p>
+       Trên đôi tay kết ấn Thiền Định, Ngài nâng
+       <strong>
+        Bình Báu (Kalasha)
+       </strong>
+       chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây
+       <strong>
+        Ashoka
+       </strong>
+       báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.
+      </p>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Di Sản Tinh Hoa Kadampa
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.
+      </p>
+     </div>
     </div>
-<div id="en" class="lang-page">
-    <div class="container">
-        <div class="amitayus-frame reveal">
-            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
-                 alt="Amitayus Thangka" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Amitayus</h1>
-        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
-                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM AMARANI JIWEN TIYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
-                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
-                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
-                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
-            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
-        </footer>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container">
+    <div class="amitayus-frame reveal">
+     <img alt="Amitayus Thangka" class="tara-image" src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg"/>
     </div>
-
+    <h1 class="reveal">
+     Amitayus
+    </h1>
+    <div class="subtitle reveal">
+     Immeasurable Buddha • AMITAYUS BUDDHA
     </div>
-<div id="zh" class="lang-page">
-    <div class="container">
-        <div class="amitayus-frame reveal">
-            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
-                 alt="Amitayus Thangka" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Amitayus</h1>
-        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
-                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM AMARANI JIWEN TIYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
-                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
-                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
-                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
-            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
-        </footer>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Magical Energy of Observing Wisdom
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Amitayus
+       </strong>
+       is the radiant embodiment of limitless lifespan and immortal wisdom. His red body color is not only a symbol of vital energy, but also of the transformation of desire into Wonderful Observation Wisdom. Practicing the Amitayus method helps practitioners escape the 18 types of sudden death and reside in a state of eternal bliss.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM AMARANI JIWEN TIYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Infinite Life Symbolism
+      </span>
+      <p>
+       On his hands, holding the Meditation seal, he raised it
+       <strong>
+        Treasure Pot (Kalasha)
+       </strong>
+       filled with the nectar of immortality. From the mouth of the vase rose a tree branch
+       <strong>
+        Ashoka
+       </strong>
+       precious, represents a state of mind that is no longer melancholy, completely free from the influence of impermanence.
+      </p>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Kadampa Elite Heritage
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.
+      </p>
+     </div>
     </div>
-
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     AMITAYUS • KADAMPA WISDOM HERITAGE
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container">
+    <div class="amitayus-frame reveal">
+     <img alt="Amitayus Thangka" class="tara-image" src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg"/>
     </div>
-<div id="bo" class="lang-page">
-    <div class="container">
-        <div class="amitayus-frame reveal">
-            <img src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg" 
-                 alt="Amitayus Thangka" class="tara-image">
-        </div>
-
-        <h1 class="reveal">Amitayus</h1>
-        <div class="subtitle reveal">ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title">Năng Lượng Diệu Quan Sát Trí</span>
-                <p><span class="lang-tag">VI</span> <strong>Amitayus</strong> là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM AMARANI JIWEN TIYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Vô Lượng Thọ</span>
-                <p>Trên đôi tay kết ấn Thiền Định, Ngài nâng <strong>Bình Báu (Kalasha)</strong> chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây <strong>Ashoka</strong> báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.</p>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Di Sản Tinh Hoa Kadampa</span>
-                <p><span class="lang-tag">BO</span> ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈</p>
-                <p><span class="lang-tag">EN</span> Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།</span>
-            AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
-        </footer>
+    <h1 class="reveal">
+     无量寿佛
+    </h1>
+    <div class="subtitle reveal">
+     无量佛•无量寿佛
     </div>
-
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       观察智慧的神奇能量
+      </span>
+      <p>
+       <span class="lang-tag">
+        六、
+       </span>
+       <strong>
+        无量寿佛
+       </strong>
+       是无量寿命和不朽智慧的光辉化身。其红色的体色不仅是元气的象征，也是欲转妙观慧的象征。修习无量寿佛法门，可以帮助修行者脱离十八种猝死，永住极乐境界。
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      “OM Amarani JIWEN TIYE SVAHA”
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       无限生命的象征意义
+      </span>
+      <p>
+       他的手上，握着冥想印，举了起来。
+       <strong>
+        宝藏罐（卡拉莎）
+       </strong>
+       充满了不朽的甘露。从花瓶口伸出一根树枝
+       <strong>
+        阿育王
+       </strong>
+       珍贵，代表一种不再忧郁、完全不受无常影响的心境。
+      </p>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       噶当巴精英传承
+      </span>
+      <p>
+       <span class="lang-tag">
+        博
+       </span>
+       ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       无量寿佛：嗡阿摩惹尼际文帝耶梭哈
+      </p>
+      <p>
+       <span class="lang-tag">
+        CN
+       </span>
+       阿弥陀佛：无量寿佛，净除长寿障碍。
+      </p>
+     </div>
     </div>
-<script>
-
-        function setLang(langId) {
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     阿弥陀佛•噶当巴智慧传承
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container">
+    <div class="amitayus-frame reveal">
+     <img alt="Amitayus Thangka" class="tara-image" src="https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg"/>
+    </div>
+    <h1 class="reveal">
+     Amitayus
+    </h1>
+    <div class="subtitle reveal">
+     ĐỨC PHẬT VÔ LƯỢNG THỌ • AMITAYUS BUDDHA
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title">
+       Năng Lượng Diệu Quan Sát Trí
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Amitayus
+       </strong>
+       là hiện thân rực rỡ của thọ mạng vô biên và trí tuệ bất diệt. Sắc thân đỏ của Ngài không chỉ là biểu tượng của năng lượng sinh khí, mà còn là sự chuyển hóa tham ái thành Diệu Quan Sát Trí. Việc hành trì pháp môn Amitayus giúp hành giả vượt thoát khỏi 18 loại cái chết bất đắc kỳ tử và an trú trong trạng thái đại lạc trường tồn.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM AMARANI JIWEN TIYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học Vô Lượng Thọ
+      </span>
+      <p>
+       Trên đôi tay kết ấn Thiền Định, Ngài nâng
+       <strong>
+        Bình Báu (Kalasha)
+       </strong>
+       chứa đầy nước cam lồ của sự bất tử. Từ miệng bình vươn lên cành cây
+       <strong>
+        Ashoka
+       </strong>
+       báu, biểu thị cho trạng thái tâm thức không còn u sầu, hoàn toàn thoát ly khỏi sự chi phối của vô thường.
+      </p>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Di Sản Tinh Hoa Kadampa
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཚེ་དཔག་མེད། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       無量壽佛：嗡 阿 嘛 惹 尼 際 文 帝 耶 梭 哈
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       Amitayus: The Buddha of Boundless Life, who purifies the obstacles of longevity.
+      </p>
+     </div>
+    </div>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨ་མ་ར་ཎི་ཛི་ཝན་ཏི་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     AMITAYUS • DI SẢN TINH HOA TRÍ TUỆ KADAMPA
+    </footer>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -446,6 +597,6 @@
             };
             window.onresize = resize;
         })();
-    </script>
-</body>
+  </script>
+ </body>
 </html>

@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
-
-    <title>Super Kadampa - Tumton Looro Drakpa</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="default-src 'self'; img-src https://thethangka.com https://rinchenshop.at https://rinchenshop.com https://scontent.fhan2-4.fna.fbcdn.net https://flagcdn.com 'self' https://flagcdn.com https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';" http-equiv="Content-Security-Policy"/>
+  <title>
+   Super Kadampa - Tumton Looro Drakpa
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --narthang-ink: #0d0b0a;
             /* Đen mun sâu thẳm */
             --narthang-red: #cc0000;
@@ -347,206 +341,265 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <canvas id="particle-canvas"></canvas>
-
-    <div class="lineage-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
-    </div>
-    <div class="lineage-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
-    </div>
-
-    <div class="speed-control">
-        <label>MANTRA VELOCITY</label>
-        <input type="range" id="speed-slider" min="0.1" max="4" step="0.1" value="1.0">
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
-                    alt="Narthang Monastery" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Tumton Lodro Drakpa</h1>
-            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
-
-            <div class="scripture-box reveal">
-                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="particle-canvas">
+  </canvas>
+  <div class="lineage-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="lineage-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="speed-control">
+   <label>
+    MANTRA VELOCITY
+   </label>
+   <input id="speed-slider" max="4" min="0.1" step="0.1" type="range" value="1.0"/>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Narthang Monastery" class="buddha-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"/>
+     </div>
+     <h1 class="reveal">
+      Tumton Lodro Drakpa
+     </h1>
+     <div class="mantra-display reveal">
+      OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </div>
+     <div class="scripture-box reveal">
+      "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
                 dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
                 tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
-                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Khai Sáng Narthang</h3>
-                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
-                    </p>
-                </div>
-                <div class="card reveal">
-                    <h3>Mộc Bản Vĩ Đại</h3>
-                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hạnh Nguyện Kadampa</h3>
-                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
-                        sự.</p>
-                </div>
-            </div>
-
-            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="en" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
-                    alt="Narthang Monastery" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Tumton Lodro Drakpa</h1>
-            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
-
-            <div class="scripture-box reveal">
-                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Di Sản Tinh Hoa Trí Tuệ Kadampa
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Khai Sáng Narthang
+       </h3>
+       <p>
+        Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Mộc Bản Vĩ Đại
+       </h3>
+       <p>
+        Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Hạnh Nguyện Kadampa
+       </h3>
+       <p>
+        Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.
+       </p>
+      </div>
+     </div>
+     <footer>
+      NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Narthang Monastery" class="buddha-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"/>
+     </div>
+     <h1 class="reveal">
+      Tumton Lodro Drakpa
+     </h1>
+     <div class="mantra-display reveal">
+      OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </div>
+     <div class="scripture-box reveal">
+      "In 1153, Master Tumton Lodro Drakpa laid the first stone to build Narthang monastery, the source of
+                glorious Tripa lineage. This place is not only the Watchtower of Kadampa Wisdom, but also the fruit
+                The great printing heart, where woodblock Dharma treasures are kept for all generations to come."
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Kadampa Wisdom Heritage
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Narthang Enlightenment
+       </h3>
+       <p>
+        Establishing exemplary monastic ashrams, laying the foundation for the famous Narthang Tripa lineage.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Great Woodblock
+       </h3>
+       <p>
+        Initiated the printing of classics, turning Narthang into the largest knowledge center in the Tsang region.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Kadampa Aspiration
+       </h3>
+       <p>
+        Live and teach fully the spirit of Atisha's practice, taking compassion as the root of all Buddhas
+                        the.
+       </p>
+      </div>
+     </div>
+     <footer>
+      NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Narthang Monastery" class="buddha-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"/>
+     </div>
+     <h1 class="reveal">
+      塔顿罗卓扎巴
+     </h1>
+     <div class="mantra-display reveal">
+      OM AH MAHA GURU SHRI JNANAN DARMA DVHAJA SIDDI HUNG HUNG
+     </div>
+     <div class="scripture-box reveal">
+      “1153年，Tumton Lodro Drakpa大师为建造Narthang寺奠定了第一块基石，Narthang寺是佛教的源头。
+                赤巴传承光辉灿烂。这里不仅是噶当巴智慧的瞭望塔，也是果实累累的地方。
+                伟大的印刷心，保存木版法宝，世代相传。”
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — 噶当巴智慧传承
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        纳尔唐启蒙
+       </h3>
+       <p>
+        建立模范寺院道场，为著名的那塘赤巴传承奠定基础。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        伟大的木版画
+       </h3>
+       <p>
+        开始印刷经典，使那塘成为藏区最大的知识中心。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        噶当巴发愿
+       </h3>
+       <p>
+        奉行阿底峡修行精神，以慈悲为诸佛根本
+                        的。
+       </p>
+      </div>
+     </div>
+     <footer>
+      NARTHANG 遗产 • OM AH MAHA GURU SHRI JNANAN DARMA DVHAJA SIDDI HUNG HUNG
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Narthang Monastery" class="buddha-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"/>
+     </div>
+     <h1 class="reveal">
+      Tumton Lodro Drakpa
+     </h1>
+     <div class="mantra-display reveal">
+      OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </div>
+     <div class="scripture-box reveal">
+      "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
                 dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
                 tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
-                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Khai Sáng Narthang</h3>
-                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
-                    </p>
-                </div>
-                <div class="card reveal">
-                    <h3>Mộc Bản Vĩ Đại</h3>
-                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hạnh Nguyện Kadampa</h3>
-                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
-                        sự.</p>
-                </div>
-            </div>
-
-            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="zh" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
-                    alt="Narthang Monastery" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Tumton Lodro Drakpa</h1>
-            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
-
-            <div class="scripture-box reveal">
-                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
-                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
-                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
-                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Khai Sáng Narthang</h3>
-                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
-                    </p>
-                </div>
-                <div class="card reveal">
-                    <h3>Mộc Bản Vĩ Đại</h3>
-                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hạnh Nguyện Kadampa</h3>
-                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
-                        sự.</p>
-                </div>
-            </div>
-
-            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg"
-                    alt="Narthang Monastery" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Tumton Lodro Drakpa</h1>
-            <div class="mantra-display reveal">OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</div>
-
-            <div class="scripture-box reveal">
-                "Năm 1153, Bậc Thầy Tumton Lodro Drakpa đã đặt viên đá đầu tiên xây dựng tu viện Narthang, cội nguồn của
-                dòng truyền thừa Tripa vinh quang. Nơi đây không chỉ là Tháp canh của Trí tuệ Kadampa, mà còn là trái
-                tim in ấn vĩ đại, nơi lưu giữ Pháp bảo mộc bản cho muôn đời sau."
-                <br><br><strong style="color: var(--atisha-gold)">— Di Sản Tinh Hoa Trí Tuệ Kadampa</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Khai Sáng Narthang</h3>
-                    <p>Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
-                    </p>
-                </div>
-                <div class="card reveal">
-                    <h3>Mộc Bản Vĩ Đại</h3>
-                    <p>Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hạnh Nguyện Kadampa</h3>
-                    <p>Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
-                        sự.</p>
-                </div>
-            </div>
-
-            <footer>NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG</footer>
-        </main>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Di Sản Tinh Hoa Trí Tuệ Kadampa
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Khai Sáng Narthang
+       </h3>
+       <p>
+        Thiết lập đạo tràng tu học mẫu mực, đặt nền móng cho dòng truyền thừa Narthang Tripa danh tiếng.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Mộc Bản Vĩ Đại
+       </h3>
+       <p>
+        Khởi xướng việc in ấn kinh điển, biến Narthang thành trung tâm tri thức lớn nhất vùng Tsang.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Hạnh Nguyện Kadampa
+       </h3>
+       <p>
+        Sống và giảng dạy trọn vẹn tinh thần thực hành của Atisha, lấy tâm từ bi làm gốc rễ cho mọi Phật
+                        sự.
+       </p>
+      </div>
+     </div>
+     <footer>
+      NARTHANG HERITAGE • OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG
+     </footer>
+    </main>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -638,7 +691,6 @@
                 render();
             };
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

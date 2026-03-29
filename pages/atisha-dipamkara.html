@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-                   img-src 'self' https://polish.pathgate.org data:; 
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="default-src 'self'; 
+                   img-src https://thethangka.com https://rinchenshop.at https://rinchenshop.com https://scontent.fhan2-4.fna.fbcdn.net https://upload.wikimedia.org https://flagcdn.com 'self' https://flagcdn.com https://polish.pathgate.org data:; 
                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
                    font-src https://fonts.gstatic.com; 
-                   script-src 'self' 'unsafe-inline';">
-
-    <title>Atisha Dipamkara - Old Kadampa VN</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+                   script-src 'self' 'unsafe-inline';" http-equiv="Content-Security-Policy"/>
+  <title>
+   Atisha Dipamkara - Old Kadampa VN
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --atisha-red: #8b0000;
             --atisha-gold: #d4af37;
             --atisha-dark: #0d0805;
@@ -315,242 +310,321 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <canvas id="particle-canvas"></canvas>
-
-    <div class="lineage-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
-    </div>
-    <div class="lineage-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
-    </div>
-
-    <div class="speed-control">
-        <label>BỒ ĐỀ TÂM VẬN HÀNH</label>
-        <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1.2">
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"
-                    alt="Atisha Dipamkara" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Atisha Dipamkara</h1>
-            <div class="sub-title reveal">Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức</div>
-
-            <div class="scripture-box reveal">
-                "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="particle-canvas">
+  </canvas>
+  <div class="lineage-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="lineage-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="speed-control">
+   <label>
+    BỒ ĐỀ TÂM VẬN HÀNH
+   </label>
+   <input id="speed-slider" max="5" min="0.1" step="0.1" type="range" value="1.2"/>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Atisha Dipamkara" class="buddha-image" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+     </div>
+     <h1 class="reveal">
+      Atisha Dipamkara
+     </h1>
+     <div class="sub-title reveal">
+      Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức
+     </div>
+     <div class="scripture-box reveal">
+      "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
                 nhất trong mọi kho tàng. Sự hiện hữu của các con là để phục vụ chúng sinh, và trí tuệ của các con là để
                 thấu suốt bản chất của duyên sinh."
-                <br><br><strong style="color: var(--atisha-gold)">— Lời Khuyên Của Ngài Atisha</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Bồ Đề Tâm</h3>
-                    <p>Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
-                        tìm cầu chân lý.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Bồ Đề Đạo Đăng</h3>
-                    <p>Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
-                        hành tuần tự.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hồi Sinh Chánh Pháp</h3>
-                    <p>Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
-                        giáo rực rỡ.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Giới Luật Tinh Khôi</h3>
-                    <p>Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
-                        vệ con ngươi mắt.</p>
-                </div>
-            </div>
-
-            <footer>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།</span>
-                Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
-            </footer>
-        </main>
-    </div>
-
-    </div>
-<div id="en" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"
-                    alt="Atisha Dipamkara" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Atisha Dipamkara</h1>
-            <div class="sub-title reveal">Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức</div>
-
-            <div class="scripture-box reveal">
-                "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Lời Khuyên Của Ngài Atisha
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Bồ Đề Tâm
+       </h3>
+       <p>
+        Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
+                        tìm cầu chân lý.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Bồ Đề Đạo Đăng
+       </h3>
+       <p>
+        Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
+                        hành tuần tự.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Hồi Sinh Chánh Pháp
+       </h3>
+       <p>
+        Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
+                        giáo rực rỡ.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Giới Luật Tinh Khôi
+       </h3>
+       <p>
+        Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
+                        vệ con ngươi mắt.
+       </p>
+      </div>
+     </div>
+     <footer>
+      <span class="tibetan-footer">
+       ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།
+      </span>
+      Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Atisha Dipamkara" class="buddha-image" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+     </div>
+     <h1 class="reveal">
+      Atisha Dipamkara
+     </h1>
+     <div class="sub-title reveal">
+      The Holder of the Lamp that Illuminates the Path of Awakening
+     </div>
+     <div class="scripture-box reveal">
+      "Dear disciples, give up all attachment to this world. Cultivate Bodhi Mind - the precious gem
+                of all treasures. Your existence is to serve sentient beings, and your wisdom is to
+                understand the nature of dependent origination."
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Atisha's Advice
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Bodhi Mind
+       </h3>
+       <p>
+        He spent 12 years searching for Master Serlingpa to receive the essential teachings on compassion and transcending oceans
+                        seek the truth.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Bodhidharma
+       </h3>
+       <p>
+        The author of the first Lamrim text, condensed the entire Buddhist teachings into the true path
+                        operate sequentially.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Reviving Dharma
+       </h3>
+       <p>
+        In Tibet, he purified false practices, unified Sutra and Tantra, and revived Buddha
+                        brilliant spear.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Pure Precepts
+       </h3>
+       <p>
+        A shining example of the combination of Wisdom and Practice, keeping the precepts strictly as prescribed
+                        protect eye pupils.
+       </p>
+      </div>
+     </div>
+     <footer>
+      <span class="tibetan-footer">
+       ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།
+      </span>
+      Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Atisha Dipamkara" class="buddha-image" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+     </div>
+     <h1 class="reveal">
+      阿底峡燃灯
+     </h1>
+     <div class="sub-title reveal">
+      照亮觉醒之路的灯持有者
+     </div>
+     <div class="scripture-box reveal">
+      “亲爱的弟子们，放弃对这个世界的一切执着。修菩提心——宝藏
+                所有的宝藏。你的存在是为了服务众生，你的智慧是为了服务众生。
+                了解缘起的本质。”
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       ——阿底峡尊者的忠告
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        菩提心
+       </h3>
+       <p>
+        他花了12年的时间寻找色林巴大师，以获得慈悲和超越海洋的基本教法
+                        寻求真相。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        达摩
+       </h3>
+       <p>
+        第一本《菩提道次第》的作者，将整个佛教教义浓缩为正道
+                        依次操作。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        复兴佛法
+       </h3>
+       <p>
+        在西藏净化邪行，统一显密，复兴佛陀。
+                        辉煌的矛。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        清净戒律
+       </h3>
+       <p>
+        慧行结合的光辉典范，严格遵守戒律
+                        保护眼睛瞳孔。
+       </p>
+      </div>
+     </div>
+     <footer>
+      <span class="tibetan-footer">
+       ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།
+      </span>
+      唵啊摩诃古鲁燃灯阿底峡斯瓦哈 • 老噶当巴 VN
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Atisha Dipamkara" class="buddha-image" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+     </div>
+     <h1 class="reveal">
+      Atisha Dipamkara
+     </h1>
+     <div class="sub-title reveal">
+      Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức
+     </div>
+     <div class="scripture-box reveal">
+      "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
                 nhất trong mọi kho tàng. Sự hiện hữu của các con là để phục vụ chúng sinh, và trí tuệ của các con là để
                 thấu suốt bản chất của duyên sinh."
-                <br><br><strong style="color: var(--atisha-gold)">— Lời Khuyên Của Ngài Atisha</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Bồ Đề Tâm</h3>
-                    <p>Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
-                        tìm cầu chân lý.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Bồ Đề Đạo Đăng</h3>
-                    <p>Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
-                        hành tuần tự.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hồi Sinh Chánh Pháp</h3>
-                    <p>Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
-                        giáo rực rỡ.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Giới Luật Tinh Khôi</h3>
-                    <p>Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
-                        vệ con ngươi mắt.</p>
-                </div>
-            </div>
-
-            <footer>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།</span>
-                Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
-            </footer>
-        </main>
-    </div>
-
-    </div>
-<div id="zh" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"
-                    alt="Atisha Dipamkara" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Atisha Dipamkara</h1>
-            <div class="sub-title reveal">Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức</div>
-
-            <div class="scripture-box reveal">
-                "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
-                nhất trong mọi kho tàng. Sự hiện hữu của các con là để phục vụ chúng sinh, và trí tuệ của các con là để
-                thấu suốt bản chất của duyên sinh."
-                <br><br><strong style="color: var(--atisha-gold)">— Lời Khuyên Của Ngài Atisha</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Bồ Đề Tâm</h3>
-                    <p>Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
-                        tìm cầu chân lý.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Bồ Đề Đạo Đăng</h3>
-                    <p>Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
-                        hành tuần tự.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hồi Sinh Chánh Pháp</h3>
-                    <p>Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
-                        giáo rực rỡ.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Giới Luật Tinh Khôi</h3>
-                    <p>Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
-                        vệ con ngươi mắt.</p>
-                </div>
-            </div>
-
-            <footer>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།</span>
-                Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
-            </footer>
-        </main>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"
-                    alt="Atisha Dipamkara" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Atisha Dipamkara</h1>
-            <div class="sub-title reveal">Bậc Trì Giữ Ngọn Đèn Soi Sáng Con Đường Tỉnh Thức</div>
-
-            <div class="scripture-box reveal">
-                "Hỡi các đệ tử, hãy từ bỏ mọi dính mắc vào thế gian này. Hãy trưởng dưỡng Bồ Đề Tâm – viên ngọc quý giá
-                nhất trong mọi kho tàng. Sự hiện hữu của các con là để phục vụ chúng sinh, và trí tuệ của các con là để
-                thấu suốt bản chất của duyên sinh."
-                <br><br><strong style="color: var(--atisha-gold)">— Lời Khuyên Của Ngài Atisha</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Bồ Đề Tâm</h3>
-                    <p>Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
-                        tìm cầu chân lý.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Bồ Đề Đạo Đăng</h3>
-                    <p>Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
-                        hành tuần tự.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Hồi Sinh Chánh Pháp</h3>
-                    <p>Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
-                        giáo rực rỡ.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Giới Luật Tinh Khôi</h3>
-                    <p>Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
-                        vệ con ngươi mắt.</p>
-                </div>
-            </div>
-
-            <footer>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།</span>
-                Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
-            </footer>
-        </main>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+      <br/>
+      <br/>
+      <strong style="color: var(--atisha-gold)">
+       — Lời Khuyên Của Ngài Atisha
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Bồ Đề Tâm
+       </h3>
+       <p>
+        Ngài dành 12 năm tầm sư Serlingpa để nhận giáo huấn cốt tủy về lòng bi mẫn, vượt trùng dương để
+                        tìm cầu chân lý.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Bồ Đề Đạo Đăng
+       </h3>
+       <p>
+        Tác giả của bản văn Lamrim đầu tiên, cô đọng toàn bộ giáo pháp Phật giáo thành con đường thực
+                        hành tuần tự.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Hồi Sinh Chánh Pháp
+       </h3>
+       <p>
+        Tại Tây Tạng, Ngài đã thanh lọc những thực hành sai lệch, hợp nhất Kinh - Mật, phục hưng Phật
+                        giáo rực rỡ.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Giới Luật Tinh Khôi
+       </h3>
+       <p>
+        Tấm gương sáng ngời về sự kết hợp giữa Trí tuệ và Hành trì, giữ gìn giới luật nghiêm cẩn như bảo
+                        vệ con ngươi mắt.
+       </p>
+      </div>
+     </div>
+     <footer>
+      <span class="tibetan-footer">
+       ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་དཱི་པཾ་ཀ་ར་ཨ་ཏི་ཤ་སྭཱ་ཧཱ།
+      </span>
+      Om Ah Maha Guru Dipamkara Atisha Svaha • Old Kadampa VN
+     </footer>
+    </main>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -640,7 +714,6 @@
                 render();
             };
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

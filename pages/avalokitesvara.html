@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-                   img-src 'self' https://thethangka.com data:; 
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="DENY" http-equiv="X-Frame-Options"/>
+  <meta content="default-src 'self'; 
+                   img-src https://rinchenshop.at https://rinchenshop.com https://scontent.fhan2-4.fna.fbcdn.net https://upload.wikimedia.org https://flagcdn.com 'self' https://flagcdn.com https://thethangka.com data:; 
                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
                    font-src https://fonts.gstatic.com; 
-                   script-src 'self' 'unsafe-inline';">
-
-    <title>Super Kadampa - Avalokiteśvara</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+                   script-src 'self' 'unsafe-inline';" http-equiv="Content-Security-Policy"/>
+  <title>
+   Super Kadampa - Avalokiteśvara
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --narthang-red: #5d1a1a;
             --narthang-gold: #c5a059;
             --narthang-dark: #0f0c0a;
@@ -370,210 +365,273 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <canvas id="particle-canvas"></canvas>
-
-    <div class="lineage-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
-    </div>
-    <div class="lineage-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
-    </div>
-
-    <div class="speed-control">
-        <label>KARUNA VELOCITY</label>
-        <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1.0">
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"
-                    alt="Avalokiteshvara Thangka" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Avalokiteśvara</h1>
-            <div class="mantra-display reveal">OM MANI PADME HUM</div>
-
-            <div class="scripture-box reveal">
-                "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="particle-canvas">
+  </canvas>
+  <div class="lineage-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="lineage-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="speed-control">
+   <label>
+    KARUNA VELOCITY
+   </label>
+   <input id="speed-slider" max="5" min="0.1" step="0.1" type="range" value="1.0"/>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Avalokiteshvara Thangka" class="buddha-image" src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"/>
+     </div>
+     <h1 class="reveal">
+      Avalokiteśvara
+     </h1>
+     <div class="mantra-display reveal">
+      OM MANI PADME HUM
+     </div>
+     <div class="scripture-box reveal">
+      "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
                 Âm Bồ Tát này, dốc lòng xưng danh, Ngài tức thì quán xét âm thanh kia, khiến đều được giải thoát."
-                <br><br><strong style="color: var(--narthang-gold)">— Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
-                    Sūtra)</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Đại Bi Nguyện</h3>
-                    <p>Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
-                        chúng sinh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Vô Úy Thí</h3>
-                    <p>Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
-                        minh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Diệu Âm Quan</h3>
-                    <p>Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
-                        ngại.</p>
-                </div>
-            </div>
-
-            <footer>KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="en" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"
-                    alt="Avalokiteshvara Thangka" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Avalokiteśvara</h1>
-            <div class="mantra-display reveal">OM MANI PADME HUM</div>
-
-            <div class="scripture-box reveal">
-                "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
+      <br/>
+      <br/>
+      <strong style="color: var(--narthang-gold)">
+       — Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
+                    Sūtra)
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Đại Bi Nguyện
+       </h3>
+       <p>
+        Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
+                        chúng sinh.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Vô Úy Thí
+       </h3>
+       <p>
+        Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
+                        minh.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Diệu Âm Quan
+       </h3>
+       <p>
+        Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
+                        ngại.
+       </p>
+      </div>
+     </div>
+     <footer>
+      KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Avalokiteshvara Thangka" class="buddha-image" src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"/>
+     </div>
+     <h1 class="reveal">
+      Avalokiteśvara
+     </h1>
+     <div class="mantra-display reveal">
+      OM MANI PADME HUM
+     </div>
+     <div class="scripture-box reveal">
+      "Good man! If there were immeasurable hundreds of thousands of billions of millions of sentient beings who suffered all kinds of suffering and heard the name Avalokiteshvara
+                This Bodhisattva sound, with all his heart, declared his name. He immediately contemplated that sound, causing everyone to be liberated."
+      <br/>
+      <br/>
+      <strong style="color: var(--narthang-gold)">
+       — Lotus Sutra of Wonderful Dharma (Saddharma Puṇḍarīka
+                    Sūtra)
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Great Compassion Vow
+       </h3>
+       <p>
+        Appears throughout the ten realms of method, using countless means to alleviate the pain of all kinds
+                        sentient beings.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Fearless Thi
+       </h3>
+       <p>
+        Bestows peace and courage in the midst of life's fluctuations, protecting practitioners from all fear
+                        Minh.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Dieu Am Quan
+       </h3>
+       <p>
+        Listen to the cry for help from suffering with perfect wisdom, penetrating the illusory nature of all obstacles
+                        shy.
+       </p>
+      </div>
+     </div>
+     <footer>
+      KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Avalokiteshvara Thangka" class="buddha-image" src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"/>
+     </div>
+     <h1 class="reveal">
+      观世音菩萨
+     </h1>
+     <div class="mantra-display reveal">
+      嗡玛尼巴美吽
+     </div>
+     <div class="scripture-box reveal">
+      “善男子！若有无量百千万亿众生，受种种苦，闻观音名号。
+                此菩萨音，一心宣名。他立即观照那个声音，令众生解脱。”
+      <br/>
+      <br/>
+      <strong style="color: var(--narthang-gold)">
+       ——妙法法华经（Saddharma Puṇḍarīka）
+                    经）
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        大悲愿
+       </h3>
+       <p>
+        遍及十界法门，用无数的手段减轻各种痛苦
+                        众生。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        无畏的蒂
+       </h3>
+       <p>
+        在人生的波动中赐予平静和勇气，保护修行者免受一切恐惧
+                        明。
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        迪厄·阿姆·泉
+       </h3>
+       <p>
+        以圆满智慧聆听苦难的呼救声，洞穿一切障碍的虚幻本质
+                        害羞。
+       </p>
+      </div>
+     </div>
+     <footer>
+      噶当巴那塘传承• 唵玛尼贝美吽
+     </footer>
+    </main>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="main-wrapper">
+    <main class="container">
+     <div class="buddha-frame reveal">
+      <img alt="Avalokiteshvara Thangka" class="buddha-image" src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"/>
+     </div>
+     <h1 class="reveal">
+      Avalokiteśvara
+     </h1>
+     <div class="mantra-display reveal">
+      OM MANI PADME HUM
+     </div>
+     <div class="scripture-box reveal">
+      "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
                 Âm Bồ Tát này, dốc lòng xưng danh, Ngài tức thì quán xét âm thanh kia, khiến đều được giải thoát."
-                <br><br><strong style="color: var(--narthang-gold)">— Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
-                    Sūtra)</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Đại Bi Nguyện</h3>
-                    <p>Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
-                        chúng sinh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Vô Úy Thí</h3>
-                    <p>Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
-                        minh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Diệu Âm Quan</h3>
-                    <p>Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
-                        ngại.</p>
-                </div>
-            </div>
-
-            <footer>KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="zh" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"
-                    alt="Avalokiteshvara Thangka" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Avalokiteśvara</h1>
-            <div class="mantra-display reveal">OM MANI PADME HUM</div>
-
-            <div class="scripture-box reveal">
-                "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
-                Âm Bồ Tát này, dốc lòng xưng danh, Ngài tức thì quán xét âm thanh kia, khiến đều được giải thoát."
-                <br><br><strong style="color: var(--narthang-gold)">— Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
-                    Sūtra)</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Đại Bi Nguyện</h3>
-                    <p>Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
-                        chúng sinh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Vô Úy Thí</h3>
-                    <p>Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
-                        minh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Diệu Âm Quan</h3>
-                    <p>Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
-                        ngại.</p>
-                </div>
-            </div>
-
-            <footer>KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM</footer>
-        </main>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="main-wrapper">
-        <main class="container">
-            <div class="buddha-frame reveal">
-                <img src="https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699"
-                    alt="Avalokiteshvara Thangka" class="buddha-image">
-            </div>
-
-            <h1 class="reveal">Avalokiteśvara</h1>
-            <div class="mantra-display reveal">OM MANI PADME HUM</div>
-
-            <div class="scripture-box reveal">
-                "Thiện nam tử! Nếu có vô lượng trăm nghìn muôn ức chúng sanh chịu các khổ não, nghe danh hiệu Quán Thế
-                Âm Bồ Tát này, dốc lòng xưng danh, Ngài tức thì quán xét âm thanh kia, khiến đều được giải thoát."
-                <br><br><strong style="color: var(--narthang-gold)">— Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
-                    Sūtra)</strong>
-            </div>
-
-            <div class="grid-info">
-                <div class="card reveal">
-                    <h3>Đại Bi Nguyện</h3>
-                    <p>Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
-                        chúng sinh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Vô Úy Thí</h3>
-                    <p>Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
-                        minh.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Diệu Âm Quan</h3>
-                    <p>Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
-                        ngại.</p>
-                </div>
-            </div>
-
-            <footer>KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM</footer>
-        </main>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+      <br/>
+      <br/>
+      <strong style="color: var(--narthang-gold)">
+       — Diệu Pháp Liên Hoa Kinh (Saddharma Puṇḍarīka
+                    Sūtra)
+      </strong>
+     </div>
+     <div class="grid-info">
+      <div class="card reveal">
+       <h3>
+        Đại Bi Nguyện
+       </h3>
+       <p>
+        Ứng hiện khắp mười phương pháp giới, dùng vô vàn phương tiện để xoa dịu nỗi đau của vạn loại
+                        chúng sinh.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Vô Úy Thí
+       </h3>
+       <p>
+        Ban tặng sự bình an và dũng khí giữa dòng đời biến động, bảo hộ hành giả khỏi mọi nỗi sợ hãi vô
+                        minh.
+       </p>
+      </div>
+      <div class="card reveal">
+       <h3>
+        Diệu Âm Quan
+       </h3>
+       <p>
+        Lắng nghe tiếng kêu cứu khổ bằng tuệ giác viên mãn, thấu suốt bản chất huyễn hóa của mọi chướng
+                        ngại.
+       </p>
+      </div>
+     </div>
+     <footer>
+      KADAMPA NARTHANG HERITAGE • OM MANI PADME HUM
+     </footer>
+    </main>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -665,7 +723,6 @@
                 render();
             };
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

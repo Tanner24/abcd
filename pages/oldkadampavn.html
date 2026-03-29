@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DÒNG TRUYỀN THỪA KADAMPA CỔ VIỆT NAM
-        SHAR NARTHANG DECHEN GANDEN PHOBRANG| Narthang 2026</title>
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-    <style>
-        .span-2 {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   DÒNG TRUYỀN THỪA KADAMPA CỔ VIỆT NAM
+        SHAR NARTHANG DECHEN GANDEN PHOBRANG| Narthang 2026
+  </title>
+  <link href="../css/narthang-style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .span-2 {
             grid-column: span 2;
         }
 
@@ -86,765 +85,873 @@
                 font-size: 0.7rem;
             }
         }
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-    <div id="bg-blur"></div>
-    <div id="main-bg-engine"></div>
-    <div class="bg-overlay"></div>
-    <div class="mantra-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
-    </div>
-    <div class="mantra-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-    <div id="vi" class="lang-page active-page">
-        <div class="container" id="main-container-vi">
-            <header class="bento-item header-box reveal">
-                <h1><a href="https://kadampavn.com" target="_blank" rel="noopener"
-                        style="color:inherit;text-decoration:none;">Old Kadampa VN</a></h1>
-                <div class="subtitle">NARTHANG KADAMPA</div>
-            </header>
-
-            <!-- DONGCHEN RINPOCHE — BIG HERO -->
-            <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'"
-                onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&_nc_ss=7a30f&oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
-                <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-                <p>Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <div id="bg-blur">
+  </div>
+  <div id="main-bg-engine">
+  </div>
+  <div class="bg-overlay">
+  </div>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <h1>
+      <a href="https://kadampavn.com" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">
+       Old Kadampa VN
+      </a>
+     </h1>
+     <div class="subtitle">
+      NARTHANG KADAMPA
+     </div>
+    </header>
+    <!-- DONGCHEN RINPOCHE — BIG HERO -->
+    <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'" onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=1d70fc&amp;_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&amp;_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan2-4.fna&amp;_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&amp;_nc_ss=7a30f&amp;oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&amp;oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
                     Narthang
-                    Gompa.</p>
-            </div>
-
-            <!-- ATISHA DIPAMKARA -->
-            <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'"
-                onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Atisha Dipamkara</span>
-                <p>Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.</p>
-            </div>
-
-            <!-- TUMTON LODRO DRAKPA -->
-            <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res()">
-                <span class="info-title">Tumton Lodro Drakpa</span>
-                <p>Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.</p>
-            </div>
-
-            <!-- SHAKYAMUNI BUDDHA — THE SOURCE -->
-            <div class="bento-item reveal" onclick="location.href='shakyamuni.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')"
-                onmouseleave="res()">
-                <span class="info-title">Shakyamuni Buddha</span>
-                <p>Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.</p>
-            </div>
-
-            <!-- AVALOKITESVARA -->
-            <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'"
-                onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')"
-                onmouseleave="res()">
-                <span class="info-title">Avalokitesvara</span>
-                <p>Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.</p>
-            </div>
-
-            <!-- MANJUSHRI -->
-            <div class="bento-item reveal" onclick="location.href='manjushri.html'"
-                onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Manjushri</span>
-                <p>Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.</p>
-            </div>
-
-            <!-- GREEN TARA -->
-            <div class="bento-item reveal" onclick="location.href='tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Green Tara</span>
-                <p>Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
-            </div>
-
-            <!-- WHITE TARA -->
-            <div class="bento-item reveal" onclick="location.href='white-tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">White Tara</span>
-                <p>Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.</p>
-            </div>
-
-            <!-- MEDICINE BUDDHA -->
-            <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Medicine Buddha</span>
-                <p>Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.</p>
-            </div>
-
-            <!-- AMITAYUS -->
-            <div class="bento-item reveal" onclick="location.href='amitayus.html'"
-                onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Amitayus</span>
-                <p>Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.</p>
-            </div>
-
-            <!-- ACALA -->
-            <div class="bento-item reveal" onclick="location.href='acala.html'"
-                onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')"
-                onmouseleave="res()">
-                <span class="info-title">Acala </span>
-                <p>Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
-                    ngộ.
-                </p>
-            </div>
-
-            <!-- ZAMBHALA -->
-            <div class="bento-item reveal" onclick="location.href='zambhala.html'"
-                onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Zambhala</span>
-                <p>Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.</p>
-            </div>
-
-            <!-- NAGABODHI -->
-            <div class="bento-item reveal" onclick="location.href='nagabodhi.html'"
-                onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Nagabodhi</span>
-                <p>Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.</p>
-            </div>
-
-            <!-- VAISHRAVANA -->
-            <div class="bento-item reveal" onclick="location.href='vaishravana.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Vaishravana</span>
-                <p>Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương </p>
-            </div>
-        </div>
-
-        <!-- FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES -->
-        <div class="footage-container container">
-            <div class="bento-item header-box reveal" style="grid-column: span 3;"
-                onclick="location.href='du-an-tu-vien.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')"
-                onmouseleave="res()">
-                <h1 style="font-size: 3.5rem; letter-spacing: 15px;">Dự Án Xây Dựng Tu Viện</h1>
-                <div class="subtitle" style="margin-top: 10px;">Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
-                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.</div>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')"
-                onmouseleave="res()">
-                <span class="info-title">Lịch Sử Narthang Cổ</span>
-                <p>Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')"
-                onmouseleave="res()">
-                <span class="info-title">Gây Quỹ và Bảo Trợ</span>
-                <p>Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')"
-                onmouseleave="res()">
-                <span class="info-title">Ấn Kinh Narthang</span>
-                <p>Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')"
-                onmouseleave="res()">
-                <span class="info-title">Thư Viện Học Thuật</span>
-                <p>Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')"
-                onmouseleave="res()">
-                <span class="info-title">Truyền Thừa và Chư Đạo Sư</span>
-                <p>Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.</p>
-            </div>
-
-            <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
-                <a href="../index.html" class="subtitle"
-                    style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">←
-                    Trang chủ</a>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-                <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
-            </footer>
-        </div>
-
+                    Gompa.
+     </p>
     </div>
-    <div id="en" class="lang-page">
-        <div class="container" id="main-container-en">
-            <header class="bento-item header-box reveal">
-                <h1><a href="https://kadampavn.com" target="_blank" rel="noopener"
-                        style="color:inherit;text-decoration:none;">Old Kadampa VN</a></h1>
-                <div class="subtitle">NARTHANG KADAMPA</div>
-            </header>
-
-            <!-- DONGCHEN RINPOCHE — BIG HERO -->
-            <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'"
-                onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&_nc_ss=7a30f&oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
-                <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-                <p>Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
+    <!-- ATISHA DIPAMKARA -->
+    <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'" onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Atisha Dipamkara
+     </span>
+     <p>
+      Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.
+     </p>
+    </div>
+    <!-- TUMTON LODRO DRAKPA -->
+    <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res()">
+     <span class="info-title">
+      Tumton Lodro Drakpa
+     </span>
+     <p>
+      Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.
+     </p>
+    </div>
+    <!-- SHAKYAMUNI BUDDHA — THE SOURCE -->
+    <div class="bento-item reveal" onclick="location.href='shakyamuni.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')" onmouseleave="res()">
+     <span class="info-title">
+      Shakyamuni Buddha
+     </span>
+     <p>
+      Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.
+     </p>
+    </div>
+    <!-- AVALOKITESVARA -->
+    <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'" onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')" onmouseleave="res()">
+     <span class="info-title">
+      Avalokitesvara
+     </span>
+     <p>
+      Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.
+     </p>
+    </div>
+    <!-- MANJUSHRI -->
+    <div class="bento-item reveal" onclick="location.href='manjushri.html'" onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Manjushri
+     </span>
+     <p>
+      Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.
+     </p>
+    </div>
+    <!-- GREEN TARA -->
+    <div class="bento-item reveal" onclick="location.href='tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Green Tara
+     </span>
+     <p>
+      Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.
+     </p>
+    </div>
+    <!-- WHITE TARA -->
+    <div class="bento-item reveal" onclick="location.href='white-tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      White Tara
+     </span>
+     <p>
+      Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.
+     </p>
+    </div>
+    <!-- MEDICINE BUDDHA -->
+    <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Medicine Buddha
+     </span>
+     <p>
+      Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.
+     </p>
+    </div>
+    <!-- AMITAYUS -->
+    <div class="bento-item reveal" onclick="location.href='amitayus.html'" onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Amitayus
+     </span>
+     <p>
+      Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.
+     </p>
+    </div>
+    <!-- ACALA -->
+    <div class="bento-item reveal" onclick="location.href='acala.html'" onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')" onmouseleave="res()">
+     <span class="info-title">
+      Acala
+     </span>
+     <p>
+      Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
+                    ngộ.
+     </p>
+    </div>
+    <!-- ZAMBHALA -->
+    <div class="bento-item reveal" onclick="location.href='zambhala.html'" onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Zambhala
+     </span>
+     <p>
+      Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.
+     </p>
+    </div>
+    <!-- NAGABODHI -->
+    <div class="bento-item reveal" onclick="location.href='nagabodhi.html'" onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Nagabodhi
+     </span>
+     <p>
+      Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.
+     </p>
+    </div>
+    <!-- VAISHRAVANA -->
+    <div class="bento-item reveal" onclick="location.href='vaishravana.html'" onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Vaishravana
+     </span>
+     <p>
+      Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương
+     </p>
+    </div>
+   </div>
+   <!-- FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES -->
+   <div class="footage-container container">
+    <div class="bento-item header-box reveal" onclick="location.href='du-an-tu-vien.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')" onmouseleave="res()" style="grid-column: span 3;">
+     <h1 style="font-size: 3.5rem; letter-spacing: 15px;">
+      Dự Án Xây Dựng Tu Viện
+     </h1>
+     <div class="subtitle" style="margin-top: 10px;">
+      Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
+                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.
+     </div>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')" onmouseleave="res()">
+     <span class="info-title">
+      Lịch Sử Narthang Cổ
+     </span>
+     <p>
+      Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'" onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')" onmouseleave="res()">
+     <span class="info-title">
+      Gây Quỹ và Bảo Trợ
+     </span>
+     <p>
+      Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')" onmouseleave="res()">
+     <span class="info-title">
+      Ấn Kinh Narthang
+     </span>
+     <p>
+      Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')" onmouseleave="res()">
+     <span class="info-title">
+      Thư Viện Học Thuật
+     </span>
+     <p>
+      Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')" onmouseleave="res()">
+     <span class="info-title">
+      Truyền Thừa và Chư Đạo Sư
+     </span>
+     <p>
+      Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.
+     </p>
+    </div>
+    <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
+     <a class="subtitle" href="../index.html" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">
+      ←
+                    Trang chủ
+     </a>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <div class="footer-text">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <h1>
+      <a href="https://kadampavn.com" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">
+       Old Kadampa VN
+      </a>
+     </h1>
+     <div class="subtitle">
+      NARTHANG KADAMPA
+     </div>
+    </header>
+    DONGCHEN RINPOCHE — BIG HERO
+    <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'" onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=1d70fc&amp;_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&amp;_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan2-4.fna&amp;_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&amp;_nc_ss=7a30f&amp;oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&amp;oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      The incarnation of the career achievements of Mahasiddha Tumton Lodro Drakpa — Founder of the monastery
                     Narthang
-                    Gompa.</p>
-            </div>
-
-            <!-- ATISHA DIPAMKARA -->
-            <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'"
-                onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Atisha Dipamkara</span>
-                <p>Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.</p>
-            </div>
-
-            <!-- TUMTON LODRO DRAKPA -->
-            <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res()">
-                <span class="info-title">Tumton Lodro Drakpa</span>
-                <p>Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.</p>
-            </div>
-
-            <!-- SHAKYAMUNI BUDDHA — THE SOURCE -->
-            <div class="bento-item reveal" onclick="location.href='shakyamuni.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')"
-                onmouseleave="res()">
-                <span class="info-title">Shakyamuni Buddha</span>
-                <p>Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.</p>
-            </div>
-
-            <!-- AVALOKITESVARA -->
-            <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'"
-                onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')"
-                onmouseleave="res()">
-                <span class="info-title">Avalokitesvara</span>
-                <p>Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.</p>
-            </div>
-
-            <!-- MANJUSHRI -->
-            <div class="bento-item reveal" onclick="location.href='manjushri.html'"
-                onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Manjushri</span>
-                <p>Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.</p>
-            </div>
-
-            <!-- GREEN TARA -->
-            <div class="bento-item reveal" onclick="location.href='tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Green Tara</span>
-                <p>Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
-            </div>
-
-            <!-- WHITE TARA -->
-            <div class="bento-item reveal" onclick="location.href='white-tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">White Tara</span>
-                <p>Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.</p>
-            </div>
-
-            <!-- MEDICINE BUDDHA -->
-            <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Medicine Buddha</span>
-                <p>Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.</p>
-            </div>
-
-            <!-- AMITAYUS -->
-            <div class="bento-item reveal" onclick="location.href='amitayus.html'"
-                onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Amitayus</span>
-                <p>Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.</p>
-            </div>
-
-            <!-- ACALA -->
-            <div class="bento-item reveal" onclick="location.href='acala.html'"
-                onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')"
-                onmouseleave="res()">
-                <span class="info-title">Acala </span>
-                <p>Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
-                    ngộ.
-                </p>
-            </div>
-
-            <!-- ZAMBHALA -->
-            <div class="bento-item reveal" onclick="location.href='zambhala.html'"
-                onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Zambhala</span>
-                <p>Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.</p>
-            </div>
-
-            <!-- NAGABODHI -->
-            <div class="bento-item reveal" onclick="location.href='nagabodhi.html'"
-                onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Nagabodhi</span>
-                <p>Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.</p>
-            </div>
-
-            <!-- VAISHRAVANA -->
-            <div class="bento-item reveal" onclick="location.href='vaishravana.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Vaishravana</span>
-                <p>Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương </p>
-            </div>
-        </div>
-
-        <!-- FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES -->
-        <div class="footage-container container">
-            <div class="bento-item header-box reveal" style="grid-column: span 3;"
-                onclick="location.href='du-an-tu-vien.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')"
-                onmouseleave="res()">
-                <h1 style="font-size: 3.5rem; letter-spacing: 15px;">Dự Án Xây Dựng Tu Viện</h1>
-                <div class="subtitle" style="margin-top: 10px;">Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
-                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.</div>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')"
-                onmouseleave="res()">
-                <span class="info-title">Lịch Sử Narthang Cổ</span>
-                <p>Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')"
-                onmouseleave="res()">
-                <span class="info-title">Gây Quỹ và Bảo Trợ</span>
-                <p>Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')"
-                onmouseleave="res()">
-                <span class="info-title">Ấn Kinh Narthang</span>
-                <p>Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')"
-                onmouseleave="res()">
-                <span class="info-title">Thư Viện Học Thuật</span>
-                <p>Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')"
-                onmouseleave="res()">
-                <span class="info-title">Truyền Thừa và Chư Đạo Sư</span>
-                <p>Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.</p>
-            </div>
-
-            <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
-                <a href="../index.html" class="subtitle"
-                    style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">←
-                    Trang chủ</a>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-                <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
-            </footer>
-        </div>
-
+                    Gompa.
+     </p>
     </div>
-    <div id="zh" class="lang-page">
-        <div class="container" id="main-container-zh">
-            <header class="bento-item header-box reveal">
-                <h1><a href="https://kadampavn.com" target="_blank" rel="noopener"
-                        style="color:inherit;text-decoration:none;">Old Kadampa VN</a></h1>
-                <div class="subtitle">NARTHANG KADAMPA</div>
-            </header>
-
-            <!-- DONGCHEN RINPOCHE — BIG HERO -->
-            <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'"
-                onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&_nc_ss=7a30f&oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
-                <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-                <p>Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
+    ATISHA DIPAMKARA
+    <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'" onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Atisha Dipamkara
+     </span>
+     <p>
+      Great Commentator Atisha — The man who revived Buddhism in Tibet and founded the Kadampa lineage.
+     </p>
+    </div>
+    TUMTON LODRO DRAKPA
+    <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res()">
+     <span class="info-title">
+      Tumton Lodro Drakpa
+     </span>
+     <p>
+      Mahasiddha Tumton Lodro Drakpa — Founder of the legendary Narthang Gompa monastery.
+     </p>
+    </div>
+    SHAKYAMUNI BUDDHA — THE SOURCE
+    <div class="bento-item reveal" onclick="location.href='shakyamuni.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')" onmouseleave="res()">
+     <span class="info-title">
+      Shakyamuni Buddha
+     </span>
+     <p>
+      Shakyamuni Buddha — Original Master of the Saha world, founder of Buddhism.
+     </p>
+    </div>
+    AVALOKITESVARA
+    <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'" onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')" onmouseleave="res()">
+     <span class="info-title">
+      Avalokitesvara
+     </span>
+     <p>
+      Avalokiteshvara - Compassion covers all three worlds.
+     </p>
+    </div>
+    MANJUSHRI
+    <div class="bento-item reveal" onclick="location.href='manjushri.html'" onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Manjushri
+     </span>
+     <p>
+      Manjushri — Shining wisdom dispels the veil of ignorance.
+     </p>
+    </div>
+    GREEN TARA
+    <div class="bento-item reveal" onclick="location.href='tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Green Tara
+     </span>
+     <p>
+      Tara - Born from the compassionate tears of Avalokiteshvara.
+     </p>
+    </div>
+    WHITE TARA
+    <div class="bento-item reveal" onclick="location.href='white-tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      White Tara
+     </span>
+     <p>
+      White Buddha Mother - Embodiment of longevity, wisdom and boundless peace.
+     </p>
+    </div>
+    MEDICINE BUDDHA
+    <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Medicine Buddha
+     </span>
+     <p>
+      Medicine Master Lapis lazuli Buddha - Eliminates illness and bestows longevity.
+     </p>
+    </div>
+    AMITAYUS
+    <div class="bento-item reveal" onclick="location.href='amitayus.html'" onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Amitayus
+     </span>
+     <p>
+      Buddha Amitabha — The ultimate longevity incarnation of Amitabha Buddha.
+     </p>
+    </div>
+    ACALA
+    <div class="bento-item reveal" onclick="location.href='acala.html'" onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')" onmouseleave="res()">
+     <span class="info-title">
+      Acala
+     </span>
+     <p>
+      The wrathful incarnation of Mahavairocana Tathagata — overcomes evil obstacles and protects practitioners on the path to enlightenment
+                    enlightenment.
+     </p>
+    </div>
+    ZAMBHALA
+    <div class="bento-item reveal" onclick="location.href='zambhala.html'" onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Zambhala
+     </span>
+     <p>
+      Royal God of Wealth Bodhisattva Zambhala — Bless prosperity and perfect fortune.
+     </p>
+    </div>
+    NAGABODHI
+    <div class="bento-item reveal" onclick="location.href='nagabodhi.html'" onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Nagabodhi
+     </span>
+     <p>
+      Mahasiddha Nagabodhi — Heart disciple of Nagarjuna Bodhisattva, Vajrayana lineage.
+     </p>
+    </div>
+    VAISHRAVANA
+    <div class="bento-item reveal" onclick="location.href='vaishravana.html'" onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Vaishravana
+     </span>
+     <p>
+      Tai Bao Thien Vuong — One of the Four Great Heavenly Kings
+     </p>
+    </div>
+   </div>
+   FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES
+   <div class="footage-container container">
+    <div class="bento-item header-box reveal" onclick="location.href='du-an-tu-vien.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')" onmouseleave="res()" style="grid-column: span 3;">
+     <h1 style="font-size: 3.5rem; letter-spacing: 15px;">
+      Monastery Construction Project
+     </h1>
+     <div class="subtitle" style="margin-top: 10px;">
+      Restoring the legendary Narthang monastery in Vietnam —
+                    A place to preserve and propagate the quintessence of Kadam Buddhism.
+     </div>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')" onmouseleave="res()">
+     <span class="info-title">
+      Ancient Narthang History
+     </span>
+     <p>
+      The thousand-year journey of Narthang Monastery — Tibet's greatest printing and learning center.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'" onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')" onmouseleave="res()">
+     <span class="info-title">
+      Fundraising and Sponsorship
+     </span>
+     <p>
+      Join hands to contribute bricks to build pagodas, protect the Three Jewels - Accumulate immeasurable merit for this life and the future.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')" onmouseleave="res()">
+     <span class="info-title">
+      Narthang Sutra Seal
+     </span>
+     <p>
+      Reviving the tradition of woodblock printing - Passing down holy teachings through precious sutras.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')" onmouseleave="res()">
+     <span class="info-title">
+      Academic Library
+     </span>
+     <p>
+      Multilingual treasure trove of Buddhist knowledge - A place for research and practice for modern practitioners.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')" onmouseleave="res()">
+     <span class="info-title">
+      Lineage and Masters
+     </span>
+     <p>
+      The Uninterrupted Spiritual Flow — From Shakyamuni Buddha to Contemporary Narthang Masters.
+     </p>
+    </div>
+    <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
+     <a class="subtitle" href="../index.html" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">
+      ←
+                    Home page
+     </a>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <div class="footer-text">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <h1>
+      <a href="https://kadampavn.com" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">
+       老噶当巴 VN
+      </a>
+     </h1>
+     <div class="subtitle">
+      那塘噶当巴
+     </div>
+    </header>
+    东钦仁波切——大英雄
+    <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'" onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=1d70fc&amp;_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&amp;_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan2-4.fna&amp;_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&amp;_nc_ss=7a30f&amp;oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&amp;oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
+     <span class="info-title">
+      至尊噶当却杰东钦秋楚仁波切
+     </span>
+     <p>
+      大成就者图顿罗卓扎巴 (Tumton Lodro Drakpa) 事业成就的化身 — 寺院创始人
+                    纳尔唐
+                    贡巴。
+     </p>
+    </div>
+    阿底峡燃灯
+    <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'" onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      阿底峡燃灯
+     </span>
+     <p>
+      大论者阿底峡——在西藏复兴佛教并创立噶当派传承的人。
+     </p>
+    </div>
+    塔姆顿·罗卓·德拉巴
+    <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res()">
+     <span class="info-title">
+      塔顿罗卓扎巴
+     </span>
+     <p>
+      Mahasiddha Tumton Lodro Drakpa — 传奇的 Narthang Gompa 寺院的创始人。
+     </p>
+    </div>
+    释迦牟尼佛——本源
+    <div class="bento-item reveal" onclick="location.href='shakyamuni.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')" onmouseleave="res()">
+     <span class="info-title">
+      释迦牟尼佛
+     </span>
+     <p>
+      释迦牟尼佛——娑婆世界的祖师，佛教的创始人。
+     </p>
+    </div>
+    观音
+    <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'" onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')" onmouseleave="res()">
+     <span class="info-title">
+      观音
+     </span>
+     <p>
+      观世音菩萨——慈悲遍及三界。
+     </p>
+    </div>
+    文殊菩萨
+    <div class="bento-item reveal" onclick="location.href='manjushri.html'" onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      文殊菩萨
+     </span>
+     <p>
+      文殊菩萨——光明的智慧驱散无明的面纱。
+     </p>
+    </div>
+    绿度母
+    <div class="bento-item reveal" onclick="location.href='tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      绿度母
+     </span>
+     <p>
+      度母——从观世音菩萨慈悲的眼泪中诞生。
+     </p>
+    </div>
+    白度母
+    <div class="bento-item reveal" onclick="location.href='white-tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      白度母
+     </span>
+     <p>
+      白佛母——长寿、智慧与无边平静的化身。
+     </p>
+    </div>
+    药师佛
+    <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      药师佛
+     </span>
+     <p>
+      药师青金石佛 - 除病延年。
+     </p>
+    </div>
+    阿弥陀佛
+    <div class="bento-item reveal" onclick="location.href='amitayus.html'" onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      无量寿佛
+     </span>
+     <p>
+      阿弥陀佛——阿弥陀佛的究竟长寿化身。
+     </p>
+    </div>
+    阿卡拉
+    <div class="bento-item reveal" onclick="location.href='acala.html'" onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')" onmouseleave="res()">
+     <span class="info-title">
+      阿卡拉
+     </span>
+     <p>
+      大日如来的愤怒化身——克服邪恶障碍，保护修行者走上菩提道
+                    启蒙。
+     </p>
+    </div>
+    藏巴拉
+    <div class="bento-item reveal" onclick="location.href='zambhala.html'" onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      藏巴拉
+     </span>
+     <p>
+      皇家财神财神菩萨——保佑繁荣昌盛、财源广进。
+     </p>
+    </div>
+    长菩提
+    <div class="bento-item reveal" onclick="location.href='nagabodhi.html'" onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      长菩提
+     </span>
+     <p>
+      龙菩提大成就者 — 金刚乘传承龙树菩萨的心弟子。
+     </p>
+    </div>
+    毗湿奴
+    <div class="bento-item reveal" onclick="location.href='vaishravana.html'" onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      外士天王
+     </span>
+     <p>
+      太保天王——四大天王之一
+     </p>
+    </div>
+   </div>
+   镜头部分：项目、历史、资源
+   <div class="footage-container container">
+    <div class="bento-item header-box reveal" onclick="location.href='du-an-tu-vien.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')" onmouseleave="res()" style="grid-column: span 3;">
+     <h1 style="font-size: 3.5rem; letter-spacing: 15px;">
+      寺院建设工程
+     </h1>
+     <div class="subtitle" style="margin-top: 10px;">
+      恢复越南传奇的那塘寺 —
+                    一个保存和弘扬噶当佛教精髓的地方。
+     </div>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')" onmouseleave="res()">
+     <span class="info-title">
+      古代纳唐历史
+     </span>
+     <p>
+      那塘寺的千年历程——西藏最大的印刷和学习中心。
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'" onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')" onmouseleave="res()">
+     <span class="info-title">
+      筹款和赞助
+     </span>
+     <p>
+      携手共进，捐砖建塔，守护三宝，为今生来世累积无量功德。
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')" onmouseleave="res()">
+     <span class="info-title">
+      那塘经印
+     </span>
+     <p>
+      复兴木刻印刷的传统——通过珍贵的佛经传承神圣的教义。
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')" onmouseleave="res()">
+     <span class="info-title">
+      学术图书馆
+     </span>
+     <p>
+      佛教知识的多语言宝库 - 现代修行者研究和实践的场所。
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')" onmouseleave="res()">
+     <span class="info-title">
+      传承与大师
+     </span>
+     <p>
+      不间断的精神流动——从释迦牟尼佛到当代纳尔唐大师。
+     </p>
+    </div>
+    <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
+     <a class="subtitle" href="../index.html" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">
+      ←
+                    主页
+     </a>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <div class="footer-text">
+      NARTHANG.COM • 老噶当巴越南• 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container" id="main-container-vi">
+    <header class="bento-item header-box reveal">
+     <h1>
+      <a href="https://kadampavn.com" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">
+       Old Kadampa VN
+      </a>
+     </h1>
+     <div class="subtitle">
+      NARTHANG KADAMPA
+     </div>
+    </header>
+    DONGCHEN RINPOCHE — BIG HERO
+    <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'" onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=1d70fc&amp;_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&amp;_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan2-4.fna&amp;_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&amp;_nc_ss=7a30f&amp;oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&amp;oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
+     <span class="info-title">
+      H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche
+     </span>
+     <p>
+      Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
                     Narthang
-                    Gompa.</p>
-            </div>
-
-            <!-- ATISHA DIPAMKARA -->
-            <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'"
-                onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Atisha Dipamkara</span>
-                <p>Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.</p>
-            </div>
-
-            <!-- TUMTON LODRO DRAKPA -->
-            <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res()">
-                <span class="info-title">Tumton Lodro Drakpa</span>
-                <p>Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.</p>
-            </div>
-
-            <!-- SHAKYAMUNI BUDDHA — THE SOURCE -->
-            <div class="bento-item reveal" onclick="location.href='shakyamuni.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')"
-                onmouseleave="res()">
-                <span class="info-title">Shakyamuni Buddha</span>
-                <p>Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.</p>
-            </div>
-
-            <!-- AVALOKITESVARA -->
-            <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'"
-                onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')"
-                onmouseleave="res()">
-                <span class="info-title">Avalokitesvara</span>
-                <p>Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.</p>
-            </div>
-
-            <!-- MANJUSHRI -->
-            <div class="bento-item reveal" onclick="location.href='manjushri.html'"
-                onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Manjushri</span>
-                <p>Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.</p>
-            </div>
-
-            <!-- GREEN TARA -->
-            <div class="bento-item reveal" onclick="location.href='tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Green Tara</span>
-                <p>Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
-            </div>
-
-            <!-- WHITE TARA -->
-            <div class="bento-item reveal" onclick="location.href='white-tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">White Tara</span>
-                <p>Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.</p>
-            </div>
-
-            <!-- MEDICINE BUDDHA -->
-            <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Medicine Buddha</span>
-                <p>Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.</p>
-            </div>
-
-            <!-- AMITAYUS -->
-            <div class="bento-item reveal" onclick="location.href='amitayus.html'"
-                onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Amitayus</span>
-                <p>Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.</p>
-            </div>
-
-            <!-- ACALA -->
-            <div class="bento-item reveal" onclick="location.href='acala.html'"
-                onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')"
-                onmouseleave="res()">
-                <span class="info-title">Acala </span>
-                <p>Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
-                    ngộ.
-                </p>
-            </div>
-
-            <!-- ZAMBHALA -->
-            <div class="bento-item reveal" onclick="location.href='zambhala.html'"
-                onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Zambhala</span>
-                <p>Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.</p>
-            </div>
-
-            <!-- NAGABODHI -->
-            <div class="bento-item reveal" onclick="location.href='nagabodhi.html'"
-                onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Nagabodhi</span>
-                <p>Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.</p>
-            </div>
-
-            <!-- VAISHRAVANA -->
-            <div class="bento-item reveal" onclick="location.href='vaishravana.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Vaishravana</span>
-                <p>Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương </p>
-            </div>
-        </div>
-
-        <!-- FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES -->
-        <div class="footage-container container">
-            <div class="bento-item header-box reveal" style="grid-column: span 3;"
-                onclick="location.href='du-an-tu-vien.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')"
-                onmouseleave="res()">
-                <h1 style="font-size: 3.5rem; letter-spacing: 15px;">Dự Án Xây Dựng Tu Viện</h1>
-                <div class="subtitle" style="margin-top: 10px;">Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
-                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.</div>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')"
-                onmouseleave="res()">
-                <span class="info-title">Lịch Sử Narthang Cổ</span>
-                <p>Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')"
-                onmouseleave="res()">
-                <span class="info-title">Gây Quỹ và Bảo Trợ</span>
-                <p>Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')"
-                onmouseleave="res()">
-                <span class="info-title">Ấn Kinh Narthang</span>
-                <p>Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')"
-                onmouseleave="res()">
-                <span class="info-title">Thư Viện Học Thuật</span>
-                <p>Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')"
-                onmouseleave="res()">
-                <span class="info-title">Truyền Thừa và Chư Đạo Sư</span>
-                <p>Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.</p>
-            </div>
-
-            <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
-                <a href="../index.html" class="subtitle"
-                    style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">←
-                    Trang chủ</a>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-                <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
-            </footer>
-        </div>
-
+                    Gompa.
+     </p>
     </div>
-    <div id="bo" class="lang-page">
-        <div class="container" id="main-container-bo">
-            <header class="bento-item header-box reveal">
-                <h1><a href="https://kadampavn.com" target="_blank" rel="noopener"
-                        style="color:inherit;text-decoration:none;">Old Kadampa VN</a></h1>
-                <div class="subtitle">NARTHANG KADAMPA</div>
-            </header>
-
-            <!-- DONGCHEN RINPOCHE — BIG HERO -->
-            <div class="bento-item big reveal" onclick="location.href='dongchen-rinpoche.html'"
-                onmouseenter="hub('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/495146815_585682717872726_1590195624689335318_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=wbseJphiLMMQ7kNvwHTqpLp&_nc_oc=Adq_IA3sU4qxuxcsvNS9V_dNOYdRyHowzUPaLgnl9tcNrOW3PquMHoCNQhbxVNHj-8E&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=P9g0Xu6IaUHutKLnUzJ_qQ&_nc_ss=7a30f&oh=00_AfyCES2oLX7eetvZM1A4Gd6cc_PIm4JbJ3DPg-8FP0HY1w&oe=69C77449', 'OM AH MAHA GURU SHRI JNAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res('OM MANI PADME HUM • ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ། • ')">
-                <span class="info-title">H.H Kyabje Kadam Choje Dongchen Chotrul Rinpoche</span>
-                <p>Hoá thân thành tựu sự nghiệp của Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện
-                    Narthang
-                    Gompa.</p>
-            </div>
-
-            <!-- ATISHA DIPAMKARA -->
-            <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'"
-                onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Atisha Dipamkara</span>
-                <p>Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.</p>
-            </div>
-
-            <!-- TUMTON LODRO DRAKPA -->
-            <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')"
-                onmouseleave="res()">
-                <span class="info-title">Tumton Lodro Drakpa</span>
-                <p>Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.</p>
-            </div>
-
-            <!-- SHAKYAMUNI BUDDHA — THE SOURCE -->
-            <div class="bento-item reveal" onclick="location.href='shakyamuni.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')"
-                onmouseleave="res()">
-                <span class="info-title">Shakyamuni Buddha</span>
-                <p>Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.</p>
-            </div>
-
-            <!-- AVALOKITESVARA -->
-            <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'"
-                onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')"
-                onmouseleave="res()">
-                <span class="info-title">Avalokitesvara</span>
-                <p>Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.</p>
-            </div>
-
-            <!-- MANJUSHRI -->
-            <div class="bento-item reveal" onclick="location.href='manjushri.html'"
-                onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Manjushri</span>
-                <p>Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.</p>
-            </div>
-
-            <!-- GREEN TARA -->
-            <div class="bento-item reveal" onclick="location.href='tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Green Tara</span>
-                <p>Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.</p>
-            </div>
-
-            <!-- WHITE TARA -->
-            <div class="bento-item reveal" onclick="location.href='white-tara.html'"
-                onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">White Tara</span>
-                <p>Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.</p>
-            </div>
-
-            <!-- MEDICINE BUDDHA -->
-            <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'"
-                onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Medicine Buddha</span>
-                <p>Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.</p>
-            </div>
-
-            <!-- AMITAYUS -->
-            <div class="bento-item reveal" onclick="location.href='amitayus.html'"
-                onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Amitayus</span>
-                <p>Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.</p>
-            </div>
-
-            <!-- ACALA -->
-            <div class="bento-item reveal" onclick="location.href='acala.html'"
-                onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')"
-                onmouseleave="res()">
-                <span class="info-title">Acala </span>
-                <p>Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
-                    ngộ.
-                </p>
-            </div>
-
-            <!-- ZAMBHALA -->
-            <div class="bento-item reveal" onclick="location.href='zambhala.html'"
-                onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Zambhala</span>
-                <p>Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.</p>
-            </div>
-
-            <!-- NAGABODHI -->
-            <div class="bento-item reveal" onclick="location.href='nagabodhi.html'"
-                onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')"
-                onmouseleave="res()">
-                <span class="info-title">Nagabodhi</span>
-                <p>Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.</p>
-            </div>
-
-            <!-- VAISHRAVANA -->
-            <div class="bento-item reveal" onclick="location.href='vaishravana.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')"
-                onmouseleave="res()">
-                <span class="info-title">Vaishravana</span>
-                <p>Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương </p>
-            </div>
-        </div>
-
-        <!-- FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES -->
-        <div class="footage-container container">
-            <div class="bento-item header-box reveal" style="grid-column: span 3;"
-                onclick="location.href='du-an-tu-vien.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')"
-                onmouseleave="res()">
-                <h1 style="font-size: 3.5rem; letter-spacing: 15px;">Dự Án Xây Dựng Tu Viện</h1>
-                <div class="subtitle" style="margin-top: 10px;">Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
-                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.</div>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')"
-                onmouseleave="res()">
-                <span class="info-title">Lịch Sử Narthang Cổ</span>
-                <p>Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'"
-                onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')"
-                onmouseleave="res()">
-                <span class="info-title">Gây Quỹ và Bảo Trợ</span>
-                <p>Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')"
-                onmouseleave="res()">
-                <span class="info-title">Ấn Kinh Narthang</span>
-                <p>Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')"
-                onmouseleave="res()">
-                <span class="info-title">Thư Viện Học Thuật</span>
-                <p>Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.</p>
-            </div>
-
-            <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'"
-                onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')"
-                onmouseleave="res()">
-                <span class="info-title">Truyền Thừa và Chư Đạo Sư</span>
-                <p>Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.</p>
-            </div>
-
-            <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
-                <a href="../index.html" class="subtitle"
-                    style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">←
-                    Trang chủ</a>
-                <span class="tibetan-footer">ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།</span>
-                <div class="footer-text">NARTHANG.COM • OLD KADAMPA VN • 2026</div>
-            </footer>
-        </div>
-
+    ATISHA DIPAMKARA
+    <div class="bento-item reveal" onclick="location.href='atisha-dipamkara.html'" onmouseenter="hub('https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg', 'NAMO GURU ATISHA DIPAMKARA SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Atisha Dipamkara
+     </span>
+     <p>
+      Đại Luận Sư Atisha — Người phục hưng Phật Pháp tại Tây Tạng, khai sáng dòng truyền thừa Kadampa.
+     </p>
     </div>
-    <script src="../js/mantra-engine.js"></script>
-    <script>
-
-        function setLang(langId) {
+    TUMTON LODRO DRAKPA
+    <div class="bento-item reveal" onclick="location.href='thanh-to-tumton.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'OM AH MAHA GURU SHRI JNANAN DHARMA DVHAJA SIDDI HUNG HUNG')" onmouseleave="res()">
+     <span class="info-title">
+      Tumton Lodro Drakpa
+     </span>
+     <p>
+      Đại Thành Tựu Giả Tumton Lodro Drakpa — Người sáng lập tu viện Narthang Gompa huyền thoại.
+     </p>
+    </div>
+    SHAKYAMUNI BUDDHA — THE SOURCE
+    <div class="bento-item reveal" onclick="location.href='shakyamuni.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg', 'NAMO TASSA BHAGAVATO ARAHATO SAMMASAMBUDDHASSA')" onmouseleave="res()">
+     <span class="info-title">
+      Shakyamuni Buddha
+     </span>
+     <p>
+      Đức Phật Thích Ca Mâu Ni — Bậc Đạo Sư gốc của cõi Ta Bà, người khai sáng đạo Phật.
+     </p>
+    </div>
+    AVALOKITESVARA
+    <div class="bento-item reveal" onclick="location.href='avalokitesvara.html'" onmouseenter="hub('https://thethangka.com/cdn/shop/products/IMG_5997.jpg?v=1627911699', 'OM MANI PADME HUM')" onmouseleave="res()">
+     <span class="info-title">
+      Avalokitesvara
+     </span>
+     <p>
+      Đức Quán Thế Âm — Lòng từ bi bao trùm khắp tam giới.
+     </p>
+    </div>
+    MANJUSHRI
+    <div class="bento-item reveal" onclick="location.href='manjushri.html'" onmouseenter="hub('https://cdn.exoticindia.com/images/products/original/paintings-2019/caa911.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Manjushri
+     </span>
+     <p>
+      Đức Văn Thù Sư Lợi — Trí tuệ tỏa sáng xua tan màn vô minh.
+     </p>
+    </div>
+    GREEN TARA
+    <div class="bento-item reveal" onclick="location.href='tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/large-thangkas-08-23-33.jpg', 'OM TARE TUTTARE TURE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Green Tara
+     </span>
+     <p>
+      Lục Độ Phật Mẫu Tara — Sinh ra từ giọt nước mắt bi mẫn của Đức Quán Thế Âm.
+     </p>
+    </div>
+    WHITE TARA
+    <div class="bento-item reveal" onclick="location.href='white-tara.html'" onmouseenter="hub('https://rinchenshop.at/cdn/shop/files/9D1A3914e.jpg', 'OM TARE TUTTARE TURE MAMA AYUR PUNYE JNANA PUSTIM KURU SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      White Tara
+     </span>
+     <p>
+      Bạch Độ Phật Mẫu — Hiện thân của trường thọ, trí tuệ và sự bình an vô biên.
+     </p>
+    </div>
+    MEDICINE BUDDHA
+    <div class="bento-item reveal" onclick="location.href='medicine-buddha.html'" onmouseenter="hub('https://rinchenshop.com/cdn/shop/products/thangka_deity_painting-medicine-buddha-II-cu.jpg', 'TADYATHA OM BEKANDZE BEKANDZE MAHA BEKANDZE RANDZE SAMUDGATE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Medicine Buddha
+     </span>
+     <p>
+      Dược Sư Lưu Ly Quang Vương Phật — Tiêu trừ bệnh tật, ban phước trường thọ.
+     </p>
+    </div>
+    AMITAYUS
+    <div class="bento-item reveal" onclick="location.href='amitayus.html'" onmouseenter="hub('https://i.etsystatic.com/34829979/r/il/811c00/5811576893/il_fullxfull.5811576893_1jmz.jpg', 'OM AMARANI JIVANTIYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Amitayus
+     </span>
+     <p>
+      Vô Lượng Thọ Phật — Hiện thân trường thọ tối thượng của Đức Phật A Di Đà.
+     </p>
+    </div>
+    ACALA
+    <div class="bento-item reveal" onclick="location.href='acala.html'" onmouseenter="hub('https://img.myshopline.com/image/store/1743433870073/--7.jpeg', 'Om Canda Maha Roshana Hum Phet')" onmouseleave="res()">
+     <span class="info-title">
+      Acala
+     </span>
+     <p>
+      Hoá thân phẫn nộ của Đức Đại Nhật Như Lai — Hàng phục ma chướng, bảo hộ hành giả trên con đường giác
+                    ngộ.
+     </p>
+    </div>
+    ZAMBHALA
+    <div class="bento-item reveal" onclick="location.href='zambhala.html'" onmouseenter="hub('https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg', 'OM ZAMBHALA ZALENDRAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Zambhala
+     </span>
+     <p>
+      Hoàng Thần Tài Bồ Tát Zambhala — Ban phước thịnh vượng, viên mãn tài lộc.
+     </p>
+    </div>
+    NAGABODHI
+    <div class="bento-item reveal" onclick="location.href='nagabodhi.html'" onmouseenter="hub('https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg', 'OM AH RA PA TSA NA DHI')" onmouseleave="res()">
+     <span class="info-title">
+      Nagabodhi
+     </span>
+     <p>
+      Đại Thành Tựu Giả Nagabodhi — Đệ tử tâm truyền của Long Thọ Bồ Tát, truyền thừa Kim Cương Thừa.
+     </p>
+    </div>
+    VAISHRAVANA
+    <div class="bento-item reveal" onclick="location.href='vaishravana.html'" onmouseenter="hub('https://i.pinimg.com/736x/b3/f2/b2/b3f2b208e2b268d779f1ee3041d2fcff.jpg', 'OM VAISHRAVANAYE SVAHA')" onmouseleave="res()">
+     <span class="info-title">
+      Vaishravana
+     </span>
+     <p>
+      Tài Bảo Thiên Vương — Một trong Tứ Đại Thiên Vương
+     </p>
+    </div>
+   </div>
+   FOOTAGE SECTION: PROJECT, HISTORY, RESOURCES
+   <div class="footage-container container">
+    <div class="bento-item header-box reveal" onclick="location.href='du-an-tu-vien.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'DỰ ÁN XÂY DỰNG TU VIỆN')" onmouseleave="res()" style="grid-column: span 3;">
+     <h1 style="font-size: 3.5rem; letter-spacing: 15px;">
+      Dự Án Xây Dựng Tu Viện
+     </h1>
+     <div class="subtitle" style="margin-top: 10px;">
+      Khôi phục tu viện huyền thoại Narthang tại Việt Nam —
+                    Nơi lưu giữ và truyền bá tinh hoa Phật giáo Kadam.
+     </div>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='lich-su-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Narthang_Monastery.jpg/1280px-Narthang_Monastery.jpg', 'LỊCH SỬ NARTHANG CỔ')" onmouseleave="res()">
+     <span class="info-title">
+      Lịch Sử Narthang Cổ
+     </span>
+     <p>
+      Hành trình ngàn năm của tu viện Narthang — Trung tâm ấn loát và học thuật vĩ đại nhất Tây Tạng.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='gay-quy-bao-tro.html'" onmouseenter="hub('https://i.pinimg.com/736x/21/2b/43/212b43b2f8664654b4df9d264560ea3d.jpg', 'GÂY QUỸ VÀ BẢO TRỢ')" onmouseleave="res()">
+     <span class="info-title">
+      Gây Quỹ và Bảo Trợ
+     </span>
+     <p>
+      Chung tay góp gạch xây chùa, hộ trì Tam Bảo — Tích luỹ công đức vô lượng cho đời này và mai sau.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='an-kinh-narthang.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tibetan_Scripture.jpg/1280px-Tibetan_Scripture.jpg', 'ẤN KINH NARTHANG')" onmouseleave="res()">
+     <span class="info-title">
+      Ấn Kinh Narthang
+     </span>
+     <p>
+      Phục hưng truyền thống in khắc mộc bản — Lưu truyền thánh giáo qua những trang kinh quý giá.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='thu-vien-hoc-thuat.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tibetan_Library.jpg/1280px-Tibetan_Library.jpg', 'THƯ VIỆN HỌC THUẬT')" onmouseleave="res()">
+     <span class="info-title">
+      Thư Viện Học Thuật
+     </span>
+     <p>
+      Kho tàng tri thức Phật giáo đa ngữ — Nơi nghiên cứu và tu học của các hành giả hiện đại.
+     </p>
+    </div>
+    <div class="bento-item reveal" onclick="location.href='truyen-thua-dao-su.html'" onmouseenter="hub('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg', 'TRUYỀN THỪA VÀ CHƯ ĐẠO SƯ')" onmouseleave="res()">
+     <span class="info-title">
+      Truyền Thừa và Chư Đạo Sư
+     </span>
+     <p>
+      Dòng chảy tâm linh bất đoạn — Từ Đức Phật Thích Ca Mâu Ni đến các bậc Thầy Narthang đương đại.
+     </p>
+    </div>
+    <footer class="bento-item footer-box reveal" style="grid-column: span 3;">
+     <a class="subtitle" href="../index.html" style="text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px; display: inline-block; margin-bottom: 20px;">
+      ←
+                    Trang chủ
+     </a>
+     <span class="tibetan-footer">
+      ཨོཾ་ཨཱཿ་མ་ཧཱ་གུ་རུ་ཤྲཱི་ཛྙཱ་ནན་དྷྭ་ཛ་སིདྡྷི་ཧཱུྃ་ཧཱུྃ།
+     </span>
+     <div class="footer-text">
+      NARTHANG.COM • OLD KADAMPA VN • 2026
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../js/mantra-engine.js">
+  </script>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -868,7 +975,6 @@
             resetBg(d);
             body.classList.remove('hover-active');
         };
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

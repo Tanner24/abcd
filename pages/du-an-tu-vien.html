@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dự Án Xây Dựng Tu Viện - Narthang</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/narthang-style.css">
-    <style>
-        #main-bg-engine {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dự Án Xây Dựng Tu Viện - Narthang
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/narthang-style.css" rel="stylesheet"/>
+  <style>
+   #main-bg-engine {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
             background-size: cover; background-position: center;
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narthang.jpeg/1280px-Narthang.jpeg');
@@ -99,21 +101,45 @@ nd: rgba(139, 0, 0, 0.9);
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-<body>
-    <div id="bg-blur"></div>
-    <div id="main-bg-engine"></div>
-    <div class="content-section">
-        <h1>Khôi phục tu viện huyền thoại Narthang tại Việt Nam</h1>
-        <p>Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.</p>
-        <br>
-        <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">← Quay lại</a>
-    </div>
-</div>
-<div id="en" class="lang-page">
-nd: rgba(139, 0, 0, 0.9);
+  </style>
+ </head>
+ <body>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div id="bg-blur">
+  </div>
+  <div id="main-bg-engine">
+  </div>
+  <div class="content-section">
+   <h1>
+    Khôi phục tu viện huyền thoại Narthang tại Việt Nam
+   </h1>
+   <p>
+    Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.
+   </p>
+   <br/>
+   <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">
+    ← Quay lại
+   </a>
+  </div>
+  <div class="lang-page" id="en">
+   nd: rgba(139, 0, 0, 0.9);
             padding: 15px;
             display: flex;
             justify-content: center;
@@ -174,21 +200,27 @@ nd: rgba(139, 0, 0, 0.9);
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-<body>
-    <div id="bg-blur"></div>
-    <div id="main-bg-engine"></div>
-    <div class="content-section">
-        <h1>Khôi phục tu viện huyền thoại Narthang tại Việt Nam</h1>
-        <p>Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.</p>
-        <br>
-        <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">← Quay lại</a>
+   <body>
+    <div id="bg-blur">
     </div>
-</div>
-<div id="zh" class="lang-page">
-nd: rgba(139, 0, 0, 0.9);
+    <div id="main-bg-engine">
+    </div>
+    <div class="content-section">
+     <h1>
+      Khôi phục tu viện huyền thoại Narthang tại Việt Nam
+     </h1>
+     <p>
+      Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.
+     </p>
+     <br/>
+     <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">
+      ← Quay lại
+     </a>
+    </div>
+   </body>
+  </div>
+  <div class="lang-page" id="zh">
+   nd: rgba(139, 0, 0, 0.9);
             padding: 15px;
             display: flex;
             justify-content: center;
@@ -249,21 +281,27 @@ nd: rgba(139, 0, 0, 0.9);
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-<body>
-    <div id="bg-blur"></div>
-    <div id="main-bg-engine"></div>
-    <div class="content-section">
-        <h1>Khôi phục tu viện huyền thoại Narthang tại Việt Nam</h1>
-        <p>Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.</p>
-        <br>
-        <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">← Quay lại</a>
+   <body>
+    <div id="bg-blur">
     </div>
-</div>
-<div id="bo" class="lang-page">
-nd: rgba(139, 0, 0, 0.9);
+    <div id="main-bg-engine">
+    </div>
+    <div class="content-section">
+     <h1>
+      Khôi phục tu viện huyền thoại Narthang tại Việt Nam
+     </h1>
+     <p>
+      Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.
+     </p>
+     <br/>
+     <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">
+      ← Quay lại
+     </a>
+    </div>
+   </body>
+  </div>
+  <div class="lang-page" id="bo">
+   nd: rgba(139, 0, 0, 0.9);
             padding: 15px;
             display: flex;
             justify-content: center;
@@ -324,23 +362,27 @@ nd: rgba(139, 0, 0, 0.9);
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-<body>
-    <div id="bg-blur"></div>
-    <div id="main-bg-engine"></div>
-    <div class="content-section">
-        <h1>Khôi phục tu viện huyền thoại Narthang tại Việt Nam</h1>
-        <p>Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.</p>
-        <br>
-        <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">← Quay lại</a>
+   <body>
+    <div id="bg-blur">
     </div>
-</div>
-
-<script>
-
-        function setLang(langId) {
+    <div id="main-bg-engine">
+    </div>
+    <div class="content-section">
+     <h1>
+      Khôi phục tu viện huyền thoại Narthang tại Việt Nam
+     </h1>
+     <p>
+      Thông tin về dự án tái thiết và khôi phục tu viện huyền thoại Narthang tại Việt Nam đang được cập nhật. Đây sẽ là nơi quy tụ các hành giả, lưu giữ kho tàng kinh điển và truyền bá giáo lý Kadampa tinh tuý.
+     </p>
+     <br/>
+     <a href="../index.html" style="color: var(--narthang-gold); text-decoration: none; border: 1px solid var(--narthang-gold); padding: 5px 15px;">
+      ← Quay lại
+     </a>
+    </div>
+   </body>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -354,7 +396,6 @@ nd: rgba(139, 0, 0, 0.9);
             const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
             setLang(savedLang);
         });
-
-</script>
-</body>
+  </script>
+ </body>
 </html>

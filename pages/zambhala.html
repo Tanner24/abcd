@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hoàng Thần Tài Bồ Tát - Zambhala | Super Kadampa</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>
+   Hoàng Thần Tài Bồ Tát - Zambhala | Super Kadampa
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;600;800&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
             --zam-gold: #ffd700;
             --zam-amber: #ffbf00;
             --zam-orange: #ff8c00;
@@ -335,274 +332,413 @@
                 font-size: 0.7rem;
             }
         }
-
-    </style>
-</head>
-
-<body oncontextmenu="return false;">
-
-    <canvas id="wealth-canvas"></canvas>
-
-    <div class="mantra-pillar pillar-left">
-        <div id="mantra-l" class="pillar-content"></div>
+  </style>
+ </head>
+ <body oncontextmenu="return false;">
+  <canvas id="wealth-canvas">
+  </canvas>
+  <div class="mantra-pillar pillar-left">
+   <div class="pillar-content" id="mantra-l">
+   </div>
+  </div>
+  <div class="mantra-pillar pillar-right">
+   <div class="pillar-content" id="mantra-r">
+   </div>
+  </div>
+  <div class="speed-panel">
+   <label>
+    ZAMBHALA FLOW
+   </label>
+   <input id="speed-slider" max="8" min="0.1" step="0.1" type="range" value="1.8"/>
+  </div>
+  <div class="nav-sticky">
+   <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
+    <img alt="VN" src="https://flagcdn.com/w80/vn.png"/>
+    TIẾNG VIỆT
+   </button>
+   <button class="flag-btn" id="btn-en" onclick="setLang('en')">
+    <img alt="EN" src="https://flagcdn.com/w80/us.png"/>
+    ENGLISH
+   </button>
+   <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
+    <img alt="CN" src="https://flagcdn.com/w80/cn.png"/>
+    中文
+   </button>
+   <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
+    <img alt="BO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"/>
+    བོད་སྐད།
+   </button>
+  </div>
+  <div class="lang-page active-page" id="vi">
+   <div class="container">
+    <div class="zam-frame reveal">
+     <img alt="Yellow Zambhala" class="zam-image" src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg"/>
     </div>
-    <div class="mantra-pillar pillar-right">
-        <div id="mantra-r" class="pillar-content"></div>
+    <h1 class="reveal">
+     Zambhala Serpo
+    </h1>
+    <div class="subtitle reveal">
+     HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA
     </div>
-
-    <div class="speed-panel">
-        <label>ZAMBHALA FLOW</label>
-        <input type="range" id="speed-slider" min="0.1" max="8" step="0.1" value="1.8">
-    </div>
-
-
-    <div class="nav-sticky">
-        <button class="flag-btn" id="btn-vi" onclick="setLang('vi')">
-            <img src="https://flagcdn.com/w80/vn.png" alt="VN"> TIẾNG VIỆT
-        </button>
-        <button class="flag-btn" id="btn-en" onclick="setLang('en')">
-            <img src="https://flagcdn.com/w80/us.png" alt="EN"> ENGLISH
-        </button>
-        <button class="flag-btn" id="btn-zh" onclick="setLang('zh')">
-            <img src="https://flagcdn.com/w80/cn.png" alt="CN"> 中文
-        </button>
-        <button class="flag-btn" id="btn-bo" onclick="setLang('bo')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tibet.svg/1920px-Flag_of_Tibet.svg.png"
-                alt="BO"> བོད་སྐད།
-        </button>
-    </div>
-
-<div id="vi" class="lang-page active-page">
-    <div class="container">
-        <div class="zam-frame reveal">
-            <img src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg" alt="Yellow Zambhala"
-                class="zam-image">
-        </div>
-
-        <h1 class="reveal">Zambhala Serpo</h1>
-        <div class="subtitle reveal">HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">Hộ Pháp Tài Bảo - Đấng Tăng
-                    Trưởng</span>
-                <p><span class="lang-tag">VI</span> <strong>Hoàng Thần Tài Bồ Tát</strong> (Yellow Zambhala) là một
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">
+       Hộ Pháp Tài Bảo - Đấng Tăng
+                    Trưởng
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Hoàng Thần Tài Bồ Tát
+       </strong>
+       (Yellow Zambhala) là một
                     trong 5 vị Thần Tài (Ngũ Bộ Zambhala) tối cao của Mật giáo Tây Tạng. Ngài là hóa thân của Bồ Tát
                     Quán Thế Âm, hiện thân để cứu độ chúng sinh khỏi cảnh nghèo khó, thiếu thốn, ban tặng thọ mạng, trí
                     tuệ và sự sung túc để hành giả có đủ điều kiện tu học và hành thiện tích đức. Sự thực hành về Ngài
-                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM ZAMBHALA DZALENDRAYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Zambhala</span>
-                <p>Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
-                    mãn.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--zam-gold)">Chuột Nakula:</strong> Tay trái Ngài ôm một con chuột báu
+                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM ZAMBHALA DZALENDRAYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học Zambhala
+      </span>
+      <p>
+       Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
+                    mãn.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Chuột Nakula:
+        </strong>
+        Tay trái Ngài ôm một con chuột báu
                         (con mang), đang nhả ra vô số ngọc báu, biểu thị kho tàng không bao giờ vơi.
-                    </div>
-                    <div>
-                        <strong style="color:var(--zam-gold)">Quả Bijapura:</strong> Tay phải Ngài cầm quả chanh (hoặc
+       </div>
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Quả Bijapura:
+        </strong>
+        Tay phải Ngài cầm quả chanh (hoặc
                         quả báu) tượng trưng cho hạt giống công đức đã viên mãn.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.</p>
-                <p><span class="lang-tag">EN</span> The Bodhisattva of Wealth, whose golden light purifies the karma of
-                    poverty and grants boundless merit.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</span>
-            HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
-        </footer>
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Truyền Thừa Đa Ngôn Ngữ
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Bodhisattva of Wealth, whose golden light purifies the karma of
+                    poverty and grants boundless merit.
+      </p>
+     </div>
     </div>
-
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="en">
+   <div class="container">
+    <div class="zam-frame reveal">
+     <img alt="Yellow Zambhala" class="zam-image" src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg"/>
     </div>
-<div id="en" class="lang-page">
-    <div class="container">
-        <div class="zam-frame reveal">
-            <img src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg" alt="Yellow Zambhala"
-                class="zam-image">
-        </div>
-
-        <h1 class="reveal">Zambhala Serpo</h1>
-        <div class="subtitle reveal">HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">Hộ Pháp Tài Bảo - Đấng Tăng
-                    Trưởng</span>
-                <p><span class="lang-tag">VI</span> <strong>Hoàng Thần Tài Bồ Tát</strong> (Yellow Zambhala) là một
+    <h1 class="reveal">
+     Zambhala Serpo
+    </h1>
+    <div class="subtitle reveal">
+     ROYAL GOD OF WEALTH BODHISATTVA • KADAMPA HERITAGE
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">
+       Dharma Protector of Wealth - The Sangha
+                    Chief
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Royal God of Wealth Bodhisattva
+       </strong>
+       (Yellow Zambhala) is one
+                    of the five Supreme Gods of Wealth (Five Zambhala Families) of Tibetan Esoteric Buddhism. He is the reincarnation of Bodhisattva
+                    Avalokiteshvara, appearing to save sentient beings from poverty and need, bestows longevity and wisdom
+                    wisdom and prosperity so that practitioners have enough conditions to study and practice good deeds to accumulate virtue. The practice of Him
+                    purify the mind of craving and open up boundless generosity.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM ZAMBHALA DZALENDRAYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Zambhala Symbolism
+      </span>
+      <p>
+       His body is brilliant gold, sitting majestically on a lotus throne. He holds a Dharma weapon to symbolize prosperity
+                    satisfied.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Nakula Rat:
+        </strong>
+        His left hand holds a precious mouse
+                        (manga), is releasing countless precious gems, indicating a treasure that will never run out.
+       </div>
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Bijapura fruit:
+        </strong>
+        His right hand holds a lemon (or
+                        precious fruit) symbolizes the perfected seed of merit.
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Multilingual Inheritance
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Bodhisattva of Wealth, whose golden light purifies the karma of
+                    poverty and grants boundless merit.
+      </p>
+     </div>
+    </div>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     HOANG GOD OF WEALTH BODHISATTVA • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="zh">
+   <div class="container">
+    <div class="zam-frame reveal">
+     <img alt="Yellow Zambhala" class="zam-image" src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg"/>
+    </div>
+    <h1 class="reveal">
+     赞巴拉塞尔波
+    </h1>
+    <div class="subtitle reveal">
+     皇家财神菩萨•噶当巴遗产
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">
+       财富护法 - 僧团
+                    酋长
+      </span>
+      <p>
+       <span class="lang-tag">
+        六、
+       </span>
+       <strong>
+        皇家财神菩萨
+       </strong>
+       （黄财神）是其中之一
+                    藏传密宗五财神（五财神）之首。他是菩萨转世
+                    观世音菩萨现身，拯救众生脱离贫困与需要，赐予长寿与智慧
+                    智慧与富足，使修行者有足够的条件去学、行善，积德。祂的实行
+                    净化贪爱之心，开启无边的布施。
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      “嗡 ZAMBHALA DZALENDRAY SVAHA”
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       藏巴拉象征主义
+      </span>
+      <p>
+       他的身躯金光灿烂，庄严地坐在莲花宝座上。他手持法器，象征繁荣
+                    满意。
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--zam-gold)">
+         纳库拉鼠：
+        </strong>
+        他的左手握着一只珍贵的老鼠
+                        （漫画），正在释放无数珍贵的宝石，预示着永远用不完的宝藏。
+       </div>
+       <div>
+        <strong style="color:var(--zam-gold)">
+         比贾普拉果：
+        </strong>
+        他的右手拿着一个柠檬（或
+                        宝果）象征圆满的功德种子。
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       多语言继承
+      </span>
+      <p>
+       <span class="lang-tag">
+        博
+       </span>
+       ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       黄财神：嗡藏巴拉乍冷乍耶梭哈。
+      </p>
+      <p>
+       <span class="lang-tag">
+        CN
+       </span>
+       财宝菩萨，其金光清净业障。
+                    贫穷而赐无量功德。
+      </p>
+     </div>
+    </div>
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     黄财神菩萨 • 老噶当巴 VN • 2026
+    </footer>
+   </div>
+  </div>
+  <div class="lang-page" id="bo">
+   <div class="container">
+    <div class="zam-frame reveal">
+     <img alt="Yellow Zambhala" class="zam-image" src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg"/>
+    </div>
+    <h1 class="reveal">
+     Zambhala Serpo
+    </h1>
+    <div class="subtitle reveal">
+     HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA
+    </div>
+    <div class="scripture-box reveal">
+     <div class="info-section">
+      <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">
+       Hộ Pháp Tài Bảo - Đấng Tăng
+                    Trưởng
+      </span>
+      <p>
+       <span class="lang-tag">
+        VI
+       </span>
+       <strong>
+        Hoàng Thần Tài Bồ Tát
+       </strong>
+       (Yellow Zambhala) là một
                     trong 5 vị Thần Tài (Ngũ Bộ Zambhala) tối cao của Mật giáo Tây Tạng. Ngài là hóa thân của Bồ Tát
                     Quán Thế Âm, hiện thân để cứu độ chúng sinh khỏi cảnh nghèo khó, thiếu thốn, ban tặng thọ mạng, trí
                     tuệ và sự sung túc để hành giả có đủ điều kiện tu học và hành thiện tích đức. Sự thực hành về Ngài
-                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM ZAMBHALA DZALENDRAYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Zambhala</span>
-                <p>Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
-                    mãn.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--zam-gold)">Chuột Nakula:</strong> Tay trái Ngài ôm một con chuột báu
+                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.
+      </p>
+     </div>
+     <div class="wisdom-quote">
+      "OM ZAMBHALA DZALENDRAYE SVAHA"
+     </div>
+     <div class="info-section">
+      <span class="info-title">
+       Biểu Tượng Học Zambhala
+      </span>
+      <p>
+       Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
+                    mãn.
+      </p>
+      <div class="icon-section">
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Chuột Nakula:
+        </strong>
+        Tay trái Ngài ôm một con chuột báu
                         (con mang), đang nhả ra vô số ngọc báu, biểu thị kho tàng không bao giờ vơi.
-                    </div>
-                    <div>
-                        <strong style="color:var(--zam-gold)">Quả Bijapura:</strong> Tay phải Ngài cầm quả chanh (hoặc
+       </div>
+       <div>
+        <strong style="color:var(--zam-gold)">
+         Quả Bijapura:
+        </strong>
+        Tay phải Ngài cầm quả chanh (hoặc
                         quả báu) tượng trưng cho hạt giống công đức đã viên mãn.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.</p>
-                <p><span class="lang-tag">EN</span> The Bodhisattva of Wealth, whose golden light purifies the karma of
-                    poverty and grants boundless merit.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</span>
-            HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
-        </footer>
+       </div>
+      </div>
+     </div>
+     <div class="info-section" style="margin-top:40px;">
+      <span class="info-title">
+       Truyền Thừa Đa Ngôn Ngữ
+      </span>
+      <p>
+       <span class="lang-tag">
+        BO
+       </span>
+       ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+      </p>
+      <p>
+       <span class="lang-tag">
+        ZH
+       </span>
+       黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.
+      </p>
+      <p>
+       <span class="lang-tag">
+        EN
+       </span>
+       The Bodhisattva of Wealth, whose golden light purifies the karma of
+                    poverty and grants boundless merit.
+      </p>
+     </div>
     </div>
-
-    </div>
-<div id="zh" class="lang-page">
-    <div class="container">
-        <div class="zam-frame reveal">
-            <img src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg" alt="Yellow Zambhala"
-                class="zam-image">
-        </div>
-
-        <h1 class="reveal">Zambhala Serpo</h1>
-        <div class="subtitle reveal">HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">Hộ Pháp Tài Bảo - Đấng Tăng
-                    Trưởng</span>
-                <p><span class="lang-tag">VI</span> <strong>Hoàng Thần Tài Bồ Tát</strong> (Yellow Zambhala) là một
-                    trong 5 vị Thần Tài (Ngũ Bộ Zambhala) tối cao của Mật giáo Tây Tạng. Ngài là hóa thân của Bồ Tát
-                    Quán Thế Âm, hiện thân để cứu độ chúng sinh khỏi cảnh nghèo khó, thiếu thốn, ban tặng thọ mạng, trí
-                    tuệ và sự sung túc để hành giả có đủ điều kiện tu học và hành thiện tích đức. Sự thực hành về Ngài
-                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM ZAMBHALA DZALENDRAYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Zambhala</span>
-                <p>Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
-                    mãn.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--zam-gold)">Chuột Nakula:</strong> Tay trái Ngài ôm một con chuột báu
-                        (con mang), đang nhả ra vô số ngọc báu, biểu thị kho tàng không bao giờ vơi.
-                    </div>
-                    <div>
-                        <strong style="color:var(--zam-gold)">Quả Bijapura:</strong> Tay phải Ngài cầm quả chanh (hoặc
-                        quả báu) tượng trưng cho hạt giống công đức đã viên mãn.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.</p>
-                <p><span class="lang-tag">EN</span> The Bodhisattva of Wealth, whose golden light purifies the karma of
-                    poverty and grants boundless merit.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</span>
-            HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
-        </footer>
-    </div>
-
-    </div>
-<div id="bo" class="lang-page">
-    <div class="container">
-        <div class="zam-frame reveal">
-            <img src="https://i.pinimg.com/1200x/5c/84/b7/5c84b7a3c7ae971a55f4e8ced2590867.jpg" alt="Yellow Zambhala"
-                class="zam-image">
-        </div>
-
-        <h1 class="reveal">Zambhala Serpo</h1>
-        <div class="subtitle reveal">HOÀNG THẦN TÀI BỒ TÁT • DI SẢN KADAMPA</div>
-
-        <div class="scripture-box reveal">
-            <div class="info-section">
-                <span class="info-title" style="color: var(--zam-gold); font-weight: 800;">Hộ Pháp Tài Bảo - Đấng Tăng
-                    Trưởng</span>
-                <p><span class="lang-tag">VI</span> <strong>Hoàng Thần Tài Bồ Tát</strong> (Yellow Zambhala) là một
-                    trong 5 vị Thần Tài (Ngũ Bộ Zambhala) tối cao của Mật giáo Tây Tạng. Ngài là hóa thân của Bồ Tát
-                    Quán Thế Âm, hiện thân để cứu độ chúng sinh khỏi cảnh nghèo khó, thiếu thốn, ban tặng thọ mạng, trí
-                    tuệ và sự sung túc để hành giả có đủ điều kiện tu học và hành thiện tích đức. Sự thực hành về Ngài
-                    tịnh hóa tâm tham ái và mở ra lòng rộng lượng vô biên.</p>
-            </div>
-
-            <div class="wisdom-quote">
-                "OM ZAMBHALA DZALENDRAYE SVAHA"
-            </div>
-
-            <div class="info-section">
-                <span class="info-title">Biểu Tượng Học Zambhala</span>
-                <p>Thân Ngài vàng rực rỡ, an tọa uy nghiêm trên tòa sen. Ngài cầm pháp khí biểu thị sự sung túc viên
-                    mãn.</p>
-                <div class="icon-section">
-                    <div>
-                        <strong style="color:var(--zam-gold)">Chuột Nakula:</strong> Tay trái Ngài ôm một con chuột báu
-                        (con mang), đang nhả ra vô số ngọc báu, biểu thị kho tàng không bao giờ vơi.
-                    </div>
-                    <div>
-                        <strong style="color:var(--zam-gold)">Quả Bijapura:</strong> Tay phải Ngài cầm quả chanh (hoặc
-                        quả báu) tượng trưng cho hạt giống công đức đã viên mãn.
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section" style="margin-top:40px;">
-                <span class="info-title">Truyền Thừa Đa Ngôn Ngữ</span>
-                <p><span class="lang-tag">BO</span> ཛམ་བྷ་ལ་སེར་པོ། ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</p>
-                <p><span class="lang-tag">ZH</span> 黃財神：嗡 藏巴拉 乍冷乍耶 梭哈.</p>
-                <p><span class="lang-tag">EN</span> The Bodhisattva of Wealth, whose golden light purifies the karma of
-                    poverty and grants boundless merit.</p>
-            </div>
-        </div>
-
-        <footer>
-            <span class="tibetan-footer">ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།</span>
-            HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
-        </footer>
-    </div>
-
-    </div>
-<script>
-
-        function setLang(langId) {
+    <footer>
+     <span class="tibetan-footer">
+      ཨོཾ་ཛམ་བྷ་ལ་ཛ་ལེནྡྲ་ཡེ་སྭཱ་ཧཱ།
+     </span>
+     HOÀNG THẦN TÀI BỒ TÁT • OLD KADAMPA VN • 2026
+    </footer>
+   </div>
+  </div>
+  <script>
+   function setLang(langId) {
             localStorage.setItem('selectedLanguage', langId);
             document.querySelectorAll('.lang-page').forEach(p => p.classList.remove('active-page'));
             const targetPage = document.getElementById(langId);
@@ -677,7 +813,6 @@
             };
             window.onresize = resize;
         })();
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>
