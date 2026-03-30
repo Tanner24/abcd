@@ -532,60 +532,107 @@
             margin-bottom: 10px;
         }
 
+        /* Mobile Responsive Improvements */
         @media (max-width: 992px) {
-            .grid-4, .academy-grid { grid-template-columns: repeat(2, 1fr); }
-            .intro-container, .lineage-container, .construction-container { flex-direction: column; }
+            .grid-4, .academy-grid { 
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 25px;
+            }
+            .intro-container, .lineage-container, .construction-container { flex-direction: column; padding: 0 40px; }
             .hero-logo { font-size: 3.5rem; }
+            .intro-text, .intro-video { width: 100%; }
         }
 
         @media (max-width: 600px) {
-            .grid-4, .academy-grid { grid-template-columns: 1fr; }
-            .hero-logo { font-size: 2.5rem; }
-            .intro-container, .grid-4, .lineage-container, .academy-grid, .construction-container { padding: 0 25px; }
+            /* Container padding reset */
+            .intro-container, 
+            .grid-4, 
+            .lineage-container, 
+            .academy-grid, 
+            .construction-container,
+            .deity-slider-wrapper { 
+                padding: 0 15px; 
+            }
+
+            /* Fix fixed widths (166px) */
+            .history-card, 
+            .academy-card, 
+            .master-thangka { 
+                width: 100% !important; 
+            }
+            
+            .history-card img,
+            .academy-card img,
+            .master-thangka {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100%;
+            }
+
+            /* Grid adjustments */
+            .grid-4, .academy-grid { 
+                display: grid;
+                grid-template-columns: 1fr; 
+                gap: 30px;
+            }
+            
+            .masters-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                width: 100%;
+            }
+
+            .masters-grid a {
+                width: 100%;
+            }
+
+            /* Slider (swipeable and larger images) */
+            .deity-slider-wrapper {
+                margin: 0;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .deity-slider-container {
+                padding: 20px 0;
+                display: flex;
+            }
+
+            .deity-card {
+                flex: 0 0 80vw !important; /* Larger carousel items */
+                margin-right: 15px;
+                scroll-snap-align: center;
+            }
+
+            .deity-card img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100%;
+            }
+
+            /* Hero adjustments */
+            .hero-banner { 
+                height: 480px; 
+                padding: 20px;
+            }
+            .hero-logo { font-size: 2.8rem; }
+            .hero-quote { font-size: 1.1rem; padding: 0 10px; }
+            .hero-content { width: 100%; }
+
+            .vintage-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .intro-container {
+                gap: 20px;
+            }
+            
+            .intro-video .video-thumb {
+                height: 200px;
+            }
         }
-        @media (max-width: 600px) {
-    /* Tràn viền khắp 2 bên màn hình */
-    .deity-slider-wrapper {
-        padding: 0;
-        margin: 0 calc(-50vw + 50%);
-        width: 100vw;
-    }
-    
-    .hero-banner {
-        padding: 0;
-        margin: 0 calc(-50vw + 50%);
-        width: 100vw;
-        height: 400px;
-    }
-    
-    .grid-4, 
-    .academy-grid {
-        padding: 0 15px;
-        grid-template-columns: 1fr;
-    }
-    
-    .intro-container,
-    .lineage-container,
-    .construction-container {
-        padding: 0 15px;
-        flex-direction: column;
-    }
-    
-    .hero-logo { 
-        font-size: 2.5rem; 
-    }
-    
-    /* Giữ nội dung bên trong slider không bị cắt */
-    .deity-slider-container,
-    .deity-slider-track {
-        width: 100%;
-    }
-    
-    .hero-content {
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-}
   </style>
  </head>
  <body oncontextmenu="return false;">
