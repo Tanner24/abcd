@@ -153,6 +153,7 @@
             margin: 0;
             background: linear-gradient(to bottom, #8b0000, #3e2723);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -627,22 +628,43 @@
         <h2>Truyền Thừa & Đạo Sư</h2>
       </div>
       <section class="lineage-container">
-        <div class="masters-grid">
-          <a href="pages/shakyamuni.html">
-            <img alt="Master 2" class="master-thangka" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
-          </a>
-          <a href="pages/atisha-dipamkara.html">
-            <img alt="Master 1" class="master-thangka" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
-          </a>
-          <a href="pages/84-mahasiddhas.html">
-            <img alt="Master 4" class="master-thangka" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
-          </a>
-          <a href="pages/trichenrinpoche.html">
-            <img alt="Master 5" class="master-thangka" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
-          </a>
-          <a href="pages/dongchen-rinpoche.html">
-            <img alt="Master 3" class="master-thangka" src="img/Guru/Dongchen Rinpoche.png"/>
-          </a>
+        <div class="deity-slider-wrapper" style="width: 100%;">
+          <div class="deity-nav-btn deity-prev" onclick="scrollSlider('vi-masters-slider', -1)">❮</div>
+          <div class="deity-slider-container" id="vi-masters-slider">
+            <div class="deity-slider-track">
+              <div class="deity-card">
+                <a href="pages/shakyamuni.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 2" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
+                  <h3>Đức Phật Thích Ca</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/atisha-dipamkara.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 1" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+                  <h3>Đức Atisha Dipamkara</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/84-mahasiddhas.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 4" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
+                  <h3>84 Đại Thành tựu giả</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/trichenrinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 5" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
+                  <h3>Đức Kadam Trichen Rinpoche</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/dongchen-rinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 3" src="img/Guru/Dongchen Rinpoche.png"/>
+                  <h3>Đức Dongchen Rinpoche</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="deity-nav-btn deity-next" onclick="scrollSlider('vi-masters-slider', 1)">❯</div>
         </div>
         <ul class="vintage-list">
           <li><a href="https://Kadampavn.com" target="_blank" style="color: inherit; text-decoration: none;">Dòng Truyền Thừa Cổ Kadampa Việt Nam</a></li>
@@ -774,7 +796,7 @@
           <li>Dự Án Khôi Phục Kangyur</li>
         </ul>
         <ul class="vintage-list">
-          <li>Thư Viện Số Hóa</li>
+          <li><a href="pages/nghiquychualanhbenhtat.html" style="color: inherit; text-decoration: none;">Thư Viện Số Hóa</a></li>
           <li>Chuẩn Hiệu Đính Kinh Điển</li>
         </ul>
       </section>
@@ -862,22 +884,43 @@
         <h2>Lineage & Masters</h2>
       </div>
       <section class="lineage-container">
-        <div class="masters-grid">
-          <a href="pages/shakyamuni.html">
-            <img alt="Master 2" class="master-thangka" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
-          </a>
-          <a href="pages/atisha-dipamkara.html">
-            <img alt="Master 1" class="master-thangka" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
-          </a>
-          <a href="pages/84-mahasiddhas.html">
-            <img alt="Master 4" class="master-thangka" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
-          </a>
-          <a href="pages/trichenrinpoche.html">
-            <img alt="Master 5" class="master-thangka" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
-          </a>
-          <a href="pages/dongchen-rinpoche.html">
-            <img alt="Master 3" class="master-thangka" src="img/Guru/Dongchen Rinpoche.png"/>
-          </a>
+        <div class="deity-slider-wrapper" style="width: 100%;">
+          <div class="deity-nav-btn deity-prev" onclick="scrollSlider('en-masters-slider', -1)">❮</div>
+          <div class="deity-slider-container" id="en-masters-slider">
+            <div class="deity-slider-track">
+              <div class="deity-card">
+                <a href="pages/shakyamuni.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 2" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
+                  <h3>Shakyamuni Buddha</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/atisha-dipamkara.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 1" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+                  <h3>Atisha Dipamkara</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/84-mahasiddhas.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 4" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
+                  <h3>84 Mahasiddhas</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/trichenrinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 5" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
+                  <h3>Kadam Trichen Rinpoche</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/dongchen-rinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 3" src="img/Guru/Dongchen Rinpoche.png"/>
+                  <h3>Dongchen Rinpoche</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="deity-nav-btn deity-next" onclick="scrollSlider('en-masters-slider', 1)">❯</div>
         </div>
         <ul class="vintage-list">
           <li><a href="https://Kadampavn.com" target="_blank" style="color: inherit; text-decoration: none;">Ancient Kadampa Lineage Vietnam</a></li>
@@ -1009,7 +1052,7 @@
           <li>Kangyur Restoration Project</li>
         </ul>
         <ul class="vintage-list">
-          <li>Digital Library</li>
+          <li><a href="pages/nghiquychualanhbenhtat.html" style="color: inherit; text-decoration: none;">Digital Library</a></li>
           <li>Scripture Editing Standards</li>
         </ul>
       </section>
@@ -1097,22 +1140,43 @@
         <h2>传承与导师</h2>
       </div>
       <section class="lineage-container">
-        <div class="masters-grid">
-          <a href="pages/shakyamuni.html">
-            <img alt="Master 2" class="master-thangka" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
-          </a>
-          <a href="pages/atisha-dipamkara.html">
-            <img alt="Master 1" class="master-thangka" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
-          </a>
-          <a href="pages/84-mahasiddhas.html">
-            <img alt="Master 4" class="master-thangka" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
-          </a>
-          <a href="pages/trichenrinpoche.html">
-            <img alt="Master 5" class="master-thangka" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
-          </a>
-          <a href="pages/dongchen-rinpoche.html">
-            <img alt="Master 3" class="master-thangka" src="img/Guru/Dongchen Rinpoche.png"/>
-          </a>
+        <div class="deity-slider-wrapper" style="width: 100%;">
+          <div class="deity-nav-btn deity-prev" onclick="scrollSlider('zh-masters-slider', -1)">❮</div>
+          <div class="deity-slider-container" id="zh-masters-slider">
+            <div class="deity-slider-track">
+              <div class="deity-card">
+                <a href="pages/shakyamuni.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 2" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
+                  <h3>释迦牟尼佛</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/atisha-dipamkara.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 1" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+                  <h3>阿底峡尊者</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/84-mahasiddhas.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 4" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
+                  <h3>84位大成就者</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/trichenrinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 5" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
+                  <h3>噶当赤钦仁波切</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/dongchen-rinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 3" src="img/Guru/Dongchen Rinpoche.png"/>
+                  <h3>东钦仁波切</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="deity-nav-btn deity-next" onclick="scrollSlider('zh-masters-slider', 1)">❯</div>
         </div>
         <ul class="vintage-list">
           <li><a href="https://Kadampavn.com" target="_blank" style="color: inherit; text-decoration: none;">越南噶当古老传承</a></li>
@@ -1244,7 +1308,7 @@
           <li>甘珠尔修复项目</li>
         </ul>
         <ul class="vintage-list">
-          <li>数字图书馆</li>
+          <li><a href="pages/nghiquychualanhbenhtat.html" style="color: inherit; text-decoration: none;">数字图书馆</a></li>
           <li>经典校勘标准</li>
         </ul>
       </section>
@@ -1332,22 +1396,43 @@
         <h2>བརྒྱུད་པ་དང་བླ་མ།</h2>
       </div>
       <section class="lineage-container">
-        <div class="masters-grid">
-          <a href="pages/shakyamuni.html">
-            <img alt="Master 2" class="master-thangka" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
-          </a>
-          <a href="pages/atisha-dipamkara.html">
-            <img alt="Master 1" class="master-thangka" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
-          </a>
-          <a href="pages/84-mahasiddhas.html">
-            <img alt="Master 4" class="master-thangka" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
-          </a>
-          <a href="pages/trichenrinpoche.html">
-            <img alt="Master 5" class="master-thangka" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
-          </a>
-          <a href="pages/dongchen-rinpoche.html">
-            <img alt="Master 3" class="master-thangka" src="img/Guru/Dongchen Rinpoche.png"/>
-          </a>
+        <div class="deity-slider-wrapper" style="width: 100%;">
+          <div class="deity-nav-btn deity-prev" onclick="scrollSlider('bo-masters-slider', -1)">❮</div>
+          <div class="deity-slider-container" id="bo-masters-slider">
+            <div class="deity-slider-track">
+              <div class="deity-card">
+                <a href="pages/shakyamuni.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 2" src="https://rinchenshop.com/cdn/shop/files/large-thangkas-08-23-13.jpg"/>
+                  <h3>སངས་རྒྱས་ཤཱཀྱ་ཐུབ་པ།</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/atisha-dipamkara.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 1" src="https://polish.pathgate.org/images/advice_from_enlightened_masters/atisha_thangka.jpg"/>
+                  <h3>ཇོ་བོ་རྗེ་དཔལ་ལྡན་ཨ་ཏི་ཤ།</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/84-mahasiddhas.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 4" src="https://commons.tsadra.org/images/f/f2/Nagabodhi.jpg"/>
+                  <h3>གྲུབ་ཆེན་བརྒྱད་ཅུ་རྩ་བཞི།</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/trichenrinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 5" src="https://www.dorjeshugden.com/images/hualian04.jpg"/>
+                  <h3>བཀའ་གདམས་ཁྲི་ཆེན་རིན་པོ་ཆེ།</h3>
+                </a>
+              </div>
+              <div class="deity-card">
+                <a href="pages/dongchen-rinpoche.html" style="text-decoration: none; color: inherit;">
+                  <img alt="Master 3" src="img/Guru/Dongchen Rinpoche.png"/>
+                  <h3>གདོང་ཆེན་རིན་པོ་ཆེ།</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="deity-nav-btn deity-next" onclick="scrollSlider('bo-masters-slider', 1)">❯</div>
         </div>
         <ul class="vintage-list">
           <li><a href="https://Kadampavn.com" target="_blank" style="color: inherit; text-decoration: none;">Ancient Kadampa Lineage Vietnam</a></li>
@@ -1468,15 +1553,31 @@
         <div class="deity-nav-btn deity-next" onclick="scrollSlider('bo-deity-slider', 1)">❯</div>
       </div>
 
-      <!-- Construction Section (Added for Tibetan) -->
+      <!-- Academy Section -->
       <div class="vintage-header">
-        <h2>Construction Project</h2>
+        <h2>སྣར་ཐང་དགོན་པ་ཝི་ཏི་ནམ།</h2>
+      </div>
+
+      <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 60px;">
+        <ul class="vintage-list">
+          <li>བཀའ་འགྱུར་པར་ཤིང་ལག་རྩལ།</li>
+          <li>བཀའ་འགྱུར་ཉམས་གསོ་ལས་གཞི།</li>
+        </ul>
+        <ul class="vintage-list">
+          <li><a href="pages/nghiquychualanhbenhtat.html" style="color: inherit; text-decoration: none;">གློག་རྡུལ་དཔེ་མཛོད་ཁང་།</a></li>
+          <li>གསུང་རབ་ཞུ་དག་ཚད་གཞི།</li>
+        </ul>
+      </section>
+
+      <!-- Construction Section -->
+      <div class="vintage-header">
+        <h2>འཛུགས་སྐྲུན་ལས་གཞི།</h2>
       </div>
       <section class="construction-container">
         <div class="construction-info">
           <ul class="vintage-list">
-            <li>Construction Plan</li>
-            <li>Periodic Reports</li>
+            <li>འཛུགས་སྐྲུན་འཆར་གཞི།</li>
+            <li>དུས་བཀག་སྙན་ཐོ།</li>
           </ul>
         </div>
         <div class="construction-plan">
@@ -1552,12 +1653,13 @@
              // Start hero slideshow
              initHeroSlideshow();
              
-             // Start auto-scroll for all deity and throne sliders
+             // Start auto-scroll for all deity, throne and masters sliders
              ['vi', 'en', 'zh', 'bo'].forEach(lang => {
                  const deitySliderId = `${lang}-deity-slider`;
                  const throneSliderId = `${lang}-throne-slider`;
+                 const mastersSliderId = `${lang}-masters-slider`;
                  
-                 [deitySliderId, throneSliderId].forEach(sliderId => {
+                 [deitySliderId, throneSliderId, mastersSliderId].forEach(sliderId => {
                      const container = document.getElementById(sliderId);
                      if (container) {
                          startAutoScroll(sliderId);
